@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 
@@ -9,8 +8,11 @@ const FooterSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img src="/logo.svg" alt="Aurora Fintech" className="h-8 w-auto" />
-              <span className="font-bold text-xl text-white">Aurora</span>
+              <img 
+                src="/lovable-uploads/79291b89-cf95-4814-b269-2a08945b2b5c.png" 
+                alt="Squirrell" 
+                className="h-10 w-auto" 
+              />
             </div>
             <p className="text-white/60 mb-6">Revolutionizing your financial experience with smart, intuitive tools for the modern world.</p>
             <div className="flex gap-4">
@@ -76,7 +78,7 @@ const FooterSection: React.FC = () => {
         </div>
         
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/40 text-sm">© {new Date().getFullYear()} Aurora Fintech. All rights reserved.</p>
+          <p className="text-white/40 text-sm">© {new Date().getFullYear()} Squirrell. All rights reserved.</p>
           
           <div className="mt-4 md:mt-0">
             <select className="bg-white/5 border border-white/10 rounded px-3 py-1 text-white/60 text-sm">
