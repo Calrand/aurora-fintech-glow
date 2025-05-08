@@ -5,7 +5,7 @@ const steps = [
   {
     number: "01",
     title: "Download the App",
-    description: "Get started by downloading the Aurora app from the App Store or Google Play Store.",
+    description: "Get started by downloading the Squirrelll app from the App Store or Google Play Store.",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
@@ -28,7 +28,7 @@ const HowItWorksSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How It <span className="gradient-text">Works</span></h2>
-          <p className="text-white/70 max-w-xl mx-auto">Getting started with Aurora is simple. Follow these easy steps to begin your journey to financial freedom.</p>
+          <p className="text-white/70 max-w-xl mx-auto">Getting started with Squirrelll is simple. Follow these easy steps to begin your journey to financial freedom.</p>
         </div>
         
         <div className="space-y-16 md:space-y-24">
