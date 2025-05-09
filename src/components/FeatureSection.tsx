@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 const features = [{
@@ -69,7 +70,7 @@ const FeatureSection: React.FC = () => {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Why Choose <span className="gradient-text">Aurora</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Why Choose <span className="gradient-text">Squirrelll</span></h2>
           <p className="text-white/70 max-w-xl mx-auto">Experience a comprehensive suite of financial tools designed to simplify your money management and accelerate your financial growth.</p>
         </div>
         

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Smartphone, Laptop } from "lucide-react";
@@ -7,14 +8,14 @@ const DownloadSection: React.FC = () => {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Download <span className="gradient-text">Aurora</span> Today</h2>
-          <p className="text-white/70 max-w-xl mx-auto">Take the first step toward financial freedom. Download Aurora now and start your journey to better finances.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Download <span className="gradient-text">Squirrelll</span> Today</h2>
+          <p className="text-white/70 max-w-xl mx-auto">Take the first step toward financial freedom. Download Squirrelll now and start your journey to better finances.</p>
         </div>
         
         <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Get Aurora on All Your Devices</h3>
+              <h3 className="text-2xl font-bold mb-6">Get Squirrelll on All Your Devices</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -63,7 +64,7 @@ const DownloadSection: React.FC = () => {
             
             <div className="relative">
               <div className="glow-amber">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Aurora App on Mobile" className="w-full rounded-xl shadow-xl" />
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Squirrelll App on Mobile" className="w-full rounded-xl shadow-xl" />
               </div>
               
               <div className="absolute -top-5 -right-5 bg-fintech-mint text-fintech-dark px-4 py-2 rounded-full font-semibold">
