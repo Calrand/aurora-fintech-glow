@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 relative">
             <div className="glow-mint animate-float">
               <div className="relative z-10 glass-card p-2 shadow-xl">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Finance app interface" className="rounded-lg w-full" />
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Squirrelll app interface" className="rounded-lg w-full" />
               </div>
             </div>
             
