@@ -63,7 +63,7 @@ const DownloadSection: React.FC = () => {
             
             <div className="relative">
               <div className="glow-amber">
-                <img alt="Squirrelll App on Mobile" className="w-full rounded-xl shadow-xl" src="/lovable-uploads/ce5e4179-c736-4bbd-b1a6-48d0379d3e4f.jpg" />
+                <img alt="Squirrelll App on Mobile" className="w-full rounded-xl shadow-xl" src="/lovable-uploads/79f59e83-3d83-409a-a070-db0311401c9e.jpg" />
               </div>
               
               <div className="absolute -top-5 -right-5 bg-fintech-mint text-fintech-dark px-4 py-2 rounded-full font-semibold">
