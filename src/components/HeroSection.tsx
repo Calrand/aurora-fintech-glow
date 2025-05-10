@@ -1,15 +1,12 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown } from "lucide-react";
-
 const HeroSection: React.FC = () => {
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-
   return <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fintech-mint/10 blur-[100px] -z-10" />
       
@@ -48,7 +45,7 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 relative">
             <div className="glow-mint animate-float">
               <div className="relative z-10 glass-card p-2 shadow-xl">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Squirrelll app interface" className="rounded-lg w-full" />
+                <img alt="Squirrelll app interface" className="rounded-lg w-full" src="/lovable-uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png" />
               </div>
             </div>
             
