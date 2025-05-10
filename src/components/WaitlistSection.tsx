@@ -1,19 +1,24 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/sonner";
+
 interface WaitlistFormValues {
   email: string;
 }
+
 const WaitlistSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<WaitlistFormValues>({
     defaultValues: {
       email: ""
     }
   });
+
   const onSubmit = async (data: WaitlistFormValues) => {
     setIsSubmitting(true);
 
@@ -29,70 +34,71 @@ const WaitlistSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="py-20 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue">
+
+  return (
+    <section className="py-16 bg-fintech-dark border-t border-white/5">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Updated Coming Soon badge design */}
-          <div className="inline-block mb-5 relative">
-            
-            <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-fintech-mint/20 to-fintech-amber/20 border border-fintech-mint/30 text-sm font-semibold text-fintech-mint flex items-center gap-2">
-              <span className="w-2 h-2 bg-fintech-mint rounded-full"></span>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-center mb-3">
+            <span className="text-xs font-medium text-fintech-mint/70 bg-fintech-mint/5 px-3 py-1 rounded-full border border-fintech-mint/10 inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-fintech-mint/50 rounded-full"></span>
               Coming Soon
             </span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Join the <span className="gradient-text">Squirrelll-Byt</span> Waitlist
-          </h2>
+          <h3 className="text-2xl font-medium text-center mb-3 text-white/90">
+            Join <span className="text-fintech-mint">Squirrelll-Byt</span> Waitlist
+          </h3>
           
-          <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-            Be among the first to experience our crypto-powered financial platform. 
-            Secure your spot in line for early access to DeFi tools, crypto rewards, 
-            and blockchain-based savings solutions.
+          <p className="text-white/50 text-sm text-center mb-6 max-w-lg mx-auto">
+            Be among the first to experience our crypto-powered financial platform.
+            Early access to DeFi tools and blockchain-based savings solutions.
           </p>
           
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-8 mb-8">
-            <div className="flex flex-col space-y-4">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
-                  <FormField control={form.control} name="email" render={({
-                  field
-                }) => <FormItem>
-                        <FormControl>
-                          <div className="flex flex-col sm:flex-row gap-3">
-                            <Input placeholder="Enter your email address" className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} />
-                            <Button type="submit" className="h-12 px-8 bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-dark font-medium" disabled={isSubmitting}>
-                              {isSubmitting ? "Joining..." : "Join Waitlist"}
-                            </Button>
-                          </div>
-                        </FormControl>
-                      </FormItem>} />
-                </form>
-              </Form>
-            </div>
+          <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-lg p-6">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+                <FormField control={form.control} name="email" render={({
+                field
+                }) => (
+                  <FormItem>
+                    <FormControl>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Input 
+                          placeholder="Enter your email address" 
+                          className="h-10 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm" 
+                          {...field} 
+                        />
+                        <Button 
+                          type="submit" 
+                          className="h-10 px-4 bg-white/10 hover:bg-white/15 text-white/80 text-sm font-normal" 
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? "Joining..." : "Join Waitlist"}
+                        </Button>
+                      </div>
+                    </FormControl>
+                  </FormItem>
+                )} />
+              </form>
+            </Form>
             
-            <div className="mt-6 flex flex-wrap justify-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-fintech-mint"></div>
-                <span className="text-white/70 text-sm">Crypto Rewards</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-fintech-amber"></div>
-                <span className="text-white/70 text-sm">DeFi Integration</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-white/70"></div>
-                <span className="text-white/70 text-sm">Early Access</span>
-              </div>
+            <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
+              <span className="text-white/40">Crypto Rewards</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/40">DeFi Integration</span>
+              <span className="text-white/40">•</span>
+              <span className="text-white/40">Early Access</span>
             </div>
           </div>
           
-          <p className="text-white/40 text-sm">
+          <p className="text-white/30 text-xs text-center mt-4">
             By joining the waitlist, you agree to receive updates about Squirrelll-Byt.
-            We respect your privacy and will never share your information.
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WaitlistSection;
