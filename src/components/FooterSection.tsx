@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
 const FooterSection: React.FC = () => {
-  return (
-    <footer className="bg-fintech-darkBlue py-16 border-t border-white/5">
+  return <footer className="bg-fintech-darkBlue py-16 border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img 
-                src="/lovable-uploads/79291b89-cf95-4814-b269-2a08945b2b5c.png" 
-                alt="Squirrell" 
-                className="h-10 w-auto" 
-              />
+              <img src="/lovable-uploads/79291b89-cf95-4814-b269-2a08945b2b5c.png" alt="Squirrell" className="h-10 w-auto" />
             </div>
             <p className="text-white/60 mb-6">Revolutionizing your financial experience with smart, intuitive tools for the modern world.</p>
             <div className="flex gap-4">
@@ -43,27 +37,9 @@ const FooterSection: React.FC = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">About Us</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Careers</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Press</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Blog</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Contact</Link></li>
-            </ul>
-          </div>
           
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Help Center</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Community</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Developers</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Partners</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Documentation</Link></li>
-            </ul>
-          </div>
+          
+          
           
           <div>
             <h3 className="font-semibold text-lg mb-4">Legal</h3>
@@ -90,8 +66,6 @@ const FooterSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default FooterSection;

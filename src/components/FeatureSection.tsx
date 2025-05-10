@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 const features = [{
@@ -65,27 +64,6 @@ const features = [{
   color: "bg-fintech-mistyRose text-fintech-dark"
 }];
 const FeatureSection: React.FC = () => {
-  return <section id="features" className="py-20 relative">
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-fintech-amber/10 blur-[100px] -z-10" />
-      
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Why Choose <span className="gradient-text">Squirrelll</span></h2>
-          <p className="text-white/70 max-w-xl mx-auto">Experience a comprehensive suite of financial tools designed to simplify your money management and accelerate your financial growth.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => <Card key={index} className="bg-fintech-darkBlue border-white/5 overflow-hidden">
-              <CardContent className="p-6">
-                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${feature.color}`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-white/70">{feature.description}</p>
-              </CardContent>
-            </Card>)}
-        </div>
-      </div>
-    </section>;
+  return;
 };
 export default FeatureSection;
