@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+
 const features = [{
   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
@@ -63,7 +65,36 @@ const features = [{
   description: "Bank-level encryption and biometric authentication to keep your financial data safe.",
   color: "bg-fintech-mistyRose text-fintech-dark"
 }];
+
 const FeatureSection: React.FC = () => {
-  return;
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-fintech-dark">
+            Powerful Features for Modern Finance
+          </h2>
+          <p className="text-gray-600">
+            Squirrelll combines cutting-edge technology with user-friendly design to give you complete control over your finances.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <Card key={index} className={`border-none shadow-md ${feature.color} transition-transform hover:scale-105`}>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
+                <p>{feature.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default FeatureSection;
