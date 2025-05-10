@@ -1,6 +1,13 @@
 
 import React from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 const steps = [
   {
@@ -25,37 +32,67 @@ const steps = [
 
 const HowItWorksSection: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-12 md:py-16 bg-fintech-darkBlue/50">
+    <section id="how-it-works" className="py-12 bg-fintech-darkBlue/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How It <span className="gradient-text">Works</span></h2>
-          <p className="text-white/70 max-w-xl mx-auto">Getting started with Squirrelll is simple. Follow these easy steps to begin your journey to financial freedom.</p>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">How It <span className="gradient-text">Works</span></h2>
+          <p className="text-white/70 max-w-xl mx-auto">Getting started with Squirrelll is simple. Follow these easy steps to begin your journey.</p>
         </div>
         
-        <div className="space-y-12 md:space-y-16">
+        {/* Mobile View - Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full max-w-sm mx-auto">
+            <CarouselContent>
+              {steps.map((step, index) => (
+                <CarouselItem key={index}>
+                  <div className="glass-card p-6 h-full">
+                    <div className="flex flex-col items-center text-center">
+                      <div className={`w-8 h-8 rounded-full ${index === 0 ? 'bg-fintech-mint' : index === 1 ? 'bg-fintech-amber' : 'bg-fintech-gold'} flex items-center justify-center text-fintech-dark font-bold text-sm mb-4`}>
+                        {step.number}
+                      </div>
+                      <div className="mb-4 w-full max-w-[180px]">
+                        <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg">
+                          <img 
+                            src={step.image} 
+                            alt={step.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </AspectRatio>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                      <p className="text-white/70 text-sm">{step.description}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious className="relative static left-0 translate-y-0 h-8 w-8" />
+              <CarouselNext className="relative static right-0 translate-y-0 h-8 w-8" />
+            </div>
+          </Carousel>
+        </div>
+        
+        {/* Desktop View - Grid layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {steps.map((step, index) => (
-            <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 md:gap-8 items-center`}>
-              <div className="flex-1 max-w-md mx-auto md:mx-0">
-                <div className="glass-card p-1 shadow-xl relative">
-                  <div className={`absolute -top-3 -left-3 w-10 h-10 rounded-full ${index === 0 ? 'bg-fintech-mint' : index === 1 ? 'bg-fintech-amber' : 'bg-fintech-gold'} flex items-center justify-center text-fintech-dark font-bold text-sm`}>
-                    {step.number}
-                  </div>
-                  <div className="w-full max-w-sm mx-auto">
-                    <AspectRatio ratio={16/9}>
-                      <img 
-                        src={step.image} 
-                        alt={step.title}
-                        className="rounded-lg w-full h-full object-cover"
-                      />
-                    </AspectRatio>
-                  </div>
+            <div key={index} className="glass-card p-5 hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className="flex flex-col items-center text-center">
+                <div className={`w-8 h-8 rounded-full ${index === 0 ? 'bg-fintech-mint' : index === 1 ? 'bg-fintech-amber' : 'bg-fintech-gold'} flex items-center justify-center text-fintech-dark font-bold text-sm mb-4`}>
+                  {step.number}
                 </div>
-              </div>
-              
-              <div className="flex-1">
-                <h3 className="text-xl md:text-2xl font-bold mb-3">{step.title}</h3>
-                <p className="text-white/70 text-base mb-4">{step.description}</p>
-                <div className={`h-1 w-16 ${index === 0 ? 'bg-fintech-mint' : index === 1 ? 'bg-fintech-amber' : 'bg-fintech-gold'}`}></div>
+                <div className="mb-4 w-full max-w-[180px]">
+                  <AspectRatio ratio={1/1} className="overflow-hidden rounded-lg">
+                    <img 
+                      src={step.image} 
+                      alt={step.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                  </AspectRatio>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-white/70 text-sm">{step.description}</p>
+                <div className={`h-1 w-12 mt-4 ${index === 0 ? 'bg-fintech-mint' : index === 1 ? 'bg-fintech-amber' : 'bg-fintech-gold'}`}></div>
               </div>
             </div>
           ))}
