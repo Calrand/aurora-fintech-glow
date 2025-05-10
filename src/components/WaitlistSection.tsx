@@ -1,30 +1,26 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/sonner";
-
 interface WaitlistFormValues {
   email: string;
 }
-
 const WaitlistSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<WaitlistFormValues>({
     defaultValues: {
-      email: "",
-    },
+      email: ""
+    }
   });
-
   const onSubmit = async (data: WaitlistFormValues) => {
     setIsSubmitting(true);
-    
+
     // Simulating API call
     try {
       // In a real implementation, this would be an API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       toast.success("You've been added to the Squirrelll-Byt waitlist!");
       form.reset();
     } catch (error) {
@@ -33,14 +29,12 @@ const WaitlistSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section className="py-20 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue">
+  return <section className="py-20 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Updated Coming Soon badge design */}
           <div className="inline-block mb-5 relative">
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-fintech-amber rounded-full animate-pulse"></div>
+            
             <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-fintech-mint/20 to-fintech-amber/20 border border-fintech-mint/30 text-sm font-semibold text-fintech-mint flex items-center gap-2">
               <span className="w-2 h-2 bg-fintech-mint rounded-full"></span>
               Coming Soon
@@ -61,30 +55,18 @@ const WaitlistSection: React.FC = () => {
             <div className="flex flex-col space-y-4">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
+                  <FormField control={form.control} name="email" render={({
+                  field
+                }) => <FormItem>
                         <FormControl>
                           <div className="flex flex-col sm:flex-row gap-3">
-                            <Input
-                              placeholder="Enter your email address"
-                              className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                              {...field}
-                            />
-                            <Button 
-                              type="submit" 
-                              className="h-12 px-8 bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-dark font-medium"
-                              disabled={isSubmitting}
-                            >
+                            <Input placeholder="Enter your email address" className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} />
+                            <Button type="submit" className="h-12 px-8 bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-dark font-medium" disabled={isSubmitting}>
                               {isSubmitting ? "Joining..." : "Join Waitlist"}
                             </Button>
                           </div>
                         </FormControl>
-                      </FormItem>
-                    )}
-                  />
+                      </FormItem>} />
                 </form>
               </Form>
             </div>
@@ -111,8 +93,6 @@ const WaitlistSection: React.FC = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WaitlistSection;
