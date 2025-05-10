@@ -38,8 +38,13 @@ const WaitlistSection: React.FC = () => {
     <section className="py-20 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-3 px-4 py-1 rounded-full bg-white/5 border border-white/10">
-            <span className="text-sm text-fintech-mint font-medium">Coming Soon</span>
+          {/* Updated Coming Soon badge design */}
+          <div className="inline-block mb-5 relative">
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-fintech-amber rounded-full animate-pulse"></div>
+            <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-fintech-mint/20 to-fintech-amber/20 border border-fintech-mint/30 text-sm font-semibold text-fintech-mint flex items-center gap-2">
+              <span className="w-2 h-2 bg-fintech-mint rounded-full"></span>
+              Coming Soon
+            </span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
