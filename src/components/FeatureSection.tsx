@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+
 const features = [{
   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
@@ -63,7 +65,34 @@ const features = [{
   description: "Bank-level encryption and biometric authentication to keep your financial data safe.",
   color: "bg-fintech-mistyRose text-fintech-dark"
 }];
+
 const FeatureSection: React.FC = () => {
-  return;
+  return (
+    <section className="py-16 bg-fintech-darkBlue">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Powerful Features</h2>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            Experience the future of financial management with our comprehensive suite of tools.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, index) => (
+            <Card key={index} className="border-0 shadow-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <CardContent className="p-6">
+                <div className={`w-12 h-12 rounded-full ${feature.color} flex items-center justify-center mb-4`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-white/70">{feature.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default FeatureSection;
