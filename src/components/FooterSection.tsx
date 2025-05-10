@@ -6,7 +6,7 @@ const FooterSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img src="/lovable-uploads/79291b89-cf95-4814-b269-2a08945b2b5c.png" alt="Squirrell" className="h-10 w-auto" />
+              <img alt="Squirrell" className="h-10 w-auto" src="/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" />
             </div>
             <p className="text-white/60 mb-6">Revolutionizing your financial experience with smart, intuitive tools for the modern world.</p>
             <div className="flex gap-4">
