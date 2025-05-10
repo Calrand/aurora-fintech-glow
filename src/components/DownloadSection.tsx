@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Smartphone, Laptop } from "lucide-react";
@@ -64,7 +63,7 @@ const DownloadSection: React.FC = () => {
             
             <div className="relative">
               <div className="glow-amber">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Squirrelll App on Mobile" className="w-full rounded-xl shadow-xl" />
+                <img alt="Squirrelll App on Mobile" className="w-full rounded-xl shadow-xl" src="/lovable-uploads/56780af8-f64c-4d83-ab69-15f7ecd841e2.png" />
               </div>
               
               <div className="absolute -top-5 -right-5 bg-fintech-mint text-fintech-dark px-4 py-2 rounded-full font-semibold">
