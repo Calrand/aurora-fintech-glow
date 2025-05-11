@@ -22,7 +22,7 @@ const steps = [
   {
     number: "03",
     title: "Start Squirrelll.ing",
-    description: "Begin your journey to better financial management with our powerful mobile app. Forget and grow effortlessly.",
+    description: "Begin your journey to better investment management with our mobile app. Forget and grow effortlessly.",
   }
 ];
 

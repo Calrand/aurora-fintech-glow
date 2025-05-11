@@ -11,18 +11,17 @@ const FooterSection: React.FC = () => {
             <img alt="Squirrell" className="h-12 w-auto" src="/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" />
           </div>
           <p className="text-white/60 mb-6 max-w-md text-center">
-            Revolutionizing your financial experience with smart, intuitive tools for the modern world.
+            A FinTech platform integrating micro finance into your life. Revolutionizing your financial experience with smart, intuitive tools for the modern world.
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center">
             <h3 className="font-semibold text-lg mb-6 text-white">Resources</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-12 gap-y-4 text-center">
               <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Terms of Service</Link>
-              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Cookie Policy</Link>
-              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">FAQs</Link>
+              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Payment Security</Link>
             </div>
           </div>
         </div>
