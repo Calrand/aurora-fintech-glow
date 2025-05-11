@@ -1,19 +1,24 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/sonner";
+
 interface WaitlistFormValues {
   email: string;
 }
+
 const WaitlistSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<WaitlistFormValues>({
     defaultValues: {
       email: ""
     }
   });
+  
   const onSubmit = async (data: WaitlistFormValues) => {
     setIsSubmitting(true);
 
@@ -29,7 +34,9 @@ const WaitlistSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="py-16 bg-fintech-dark border-t border-white/5">
+
+  return (
+    <section className="py-16 bg-fintech-dark border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center mb-3">
@@ -44,25 +51,39 @@ const WaitlistSection: React.FC = () => {
           </h3>
           
           <p className="text-white/50 text-sm text-center mb-6 max-w-lg mx-auto">
-            Be among the first to experience our crypto-powered financial platform.
+            Be among the first to experience crypto-powered Squirrelll platform.
             Early access to DeFi tools and blockchain-based savings solutions.
           </p>
           
           <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-lg p-6">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-                <FormField control={form.control} name="email" render={({
-                field
-              }) => <FormItem>
-                    <FormControl>
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Input placeholder="Enter your email address" className="h-10 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm" {...field} />
-                        <Button type="submit" className="h-10 px-4 bg-white/10 hover:bg-white/15 text-white/80 text-sm font-normal" disabled={isSubmitting}>
-                          {isSubmitting ? "Joining..." : "Join Waitlist"}
-                        </Button>
-                      </div>
-                    </FormControl>
-                  </FormItem>} />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <Input
+                            placeholder="Enter your email address"
+                            className="h-10 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm"
+                            type="email"
+                            aria-label="Email address for waitlist"
+                            {...field}
+                          />
+                          <Button
+                            type="submit"
+                            className="h-10 px-4 bg-white/10 hover:bg-white/15 text-white/80 text-sm font-normal"
+                            disabled={isSubmitting}
+                          >
+                            {isSubmitting ? "Joining..." : "Join Waitlist"}
+                          </Button>
+                        </div>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </form>
             </Form>
             
@@ -80,6 +101,8 @@ const WaitlistSection: React.FC = () => {
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WaitlistSection;
