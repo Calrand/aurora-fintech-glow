@@ -26,10 +26,6 @@ const HeroSection: React.FC = () => {
                 <Download size={18} />
                 Download Now
               </Button>
-              
-              <Button size="lg" variant="outline" className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10">
-                Learn More
-              </Button>
             </div>
             
             <div className="flex items-center gap-6 mt-10 justify-center lg:justify-start">

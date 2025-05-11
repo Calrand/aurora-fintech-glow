@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Smartphone, Laptop } from "lucide-react";
+import { Smartphone } from "lucide-react";
 const DownloadSection: React.FC = () => {
   return <section id="download" className="py-20 relative">
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-fintech-gold/10 blur-[100px] -z-10" />
@@ -14,7 +15,7 @@ const DownloadSection: React.FC = () => {
         <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Get Squirrelll on All Your Devices</h3>
+              <h3 className="text-2xl font-bold mb-6">Get Squirrelll on Your Device</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -24,16 +25,6 @@ const DownloadSection: React.FC = () => {
                   <div>
                     <h4 className="font-medium">Mobile App</h4>
                     <p className="text-white/60 text-sm">Available for iOS and Android</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-fintech-amber flex items-center justify-center">
-                    <Laptop className="text-fintech-dark" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Web Application</h4>
-                    <p className="text-white/60 text-sm">Access from any browser</p>
                   </div>
                 </div>
                 
