@@ -17,9 +17,7 @@ const HeroSection: React.FC = () => {
               <span className="gradient-text">Revolutionize</span> Your 
               <br />Financial Experience
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
-              Take control of your finances with our intuitive app that helps you manage, invest, and grow your money effortlessly.
-            </p>
+            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">Take control of your finances with our intuitive app that helps you save and invest to grow your money effortlessly.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium flex gap-2" onClick={scrollToDownload}>

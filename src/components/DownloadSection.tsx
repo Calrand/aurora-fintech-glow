@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Smartphone } from "lucide-react";
@@ -9,7 +8,7 @@ const DownloadSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 aurora-span">Download <span className="gradient-text">Squirrelll</span> Today</h2>
-          <p className="text-white/70 max-w-xl mx-auto">Take the first step toward financial freedom. Download Squirrelll now and start your journey to better finances.</p>
+          <p className="text-white/70 max-w-xl mx-auto">Take the first step toward innovative micro-financing. Download Squirrelll now and start your journey to better micro-investments.</p>
         </div>
         
         <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
