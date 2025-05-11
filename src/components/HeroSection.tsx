@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Download, ArrowDown } from "lucide-react";
+import { Download, ArrowDown, HelpCircle } from "lucide-react";
+
 const HeroSection: React.FC = () => {
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
   return <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fintech-mint/10 blur-[100px] -z-10" />
       
@@ -23,6 +26,10 @@ const HeroSection: React.FC = () => {
               <Button size="lg" className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium flex gap-2" onClick={scrollToDownload}>
                 <Download size={18} />
                 Download Now
+              </Button>
+              <Button size="lg" variant="outline" className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 flex gap-2">
+                <HelpCircle size={18} />
+                What is Squirrelll.ing?
               </Button>
             </div>
             
