@@ -16,13 +16,13 @@ const steps = [
   },
   {
     number: "02",
-    title: "Create Your Account",
-    description: "Sign up with your email or social media accounts and complete your profile in minutes.",
+    title: "Connect Your Payment Method",
+    description: "Securely link your payment methods to start using Squirrelll's features immediately.",
   },
   {
     number: "03",
-    title: "Connect Your Bank",
-    description: "Securely link your bank accounts to start tracking your finances automatically.",
+    title: "Start Squirrelll.ing",
+    description: "Begin your journey to better financial management with our powerful mobile app.",
   }
 ];
 

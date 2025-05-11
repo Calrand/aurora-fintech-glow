@@ -15,21 +15,20 @@ const FooterSection: React.FC = () => {
           </p>
         </div>
         
-        <div className="max-w-md mx-auto">
-          <div className="text-center">
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
-            <ul className="flex flex-wrap justify-center gap-4 md:gap-8">
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Terms of Service</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Cookie Policy</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Security</Link></li>
-              <li><Link to="#" className="text-white/60 hover:text-fintech-mint transition-colors">Compliance</Link></li>
-            </ul>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col items-center">
+            <h3 className="font-semibold text-lg mb-6 text-white">Resources</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-4 text-center">
+              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Cookie Policy</Link>
+              <Link to="#" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">FAQs</Link>
+            </div>
           </div>
         </div>
         
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col items-center">
-          <p className="text-white/40 text-sm">© {new Date().getFullYear()} Squirrell. All rights reserved.</p>
+          <p className="text-white/40 text-sm">© {new Date().getFullYear()} Squirrelll. All rights reserved.</p>
           
           <div className="mt-4">
             <select className="bg-white/5 border border-white/10 rounded px-3 py-1 text-white/60 text-sm">
