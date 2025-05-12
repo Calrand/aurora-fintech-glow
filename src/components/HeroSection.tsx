@@ -18,8 +18,8 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">
-              <span className="gradient-text">Revolutionize</span> Your 
-              <br className="hidden sm:block" />Financial Experience
+              <span className="gradient-text">A FinTech Platform</span> For Your 
+              <br className="hidden sm:block" />Micro Finances
             </h1>
             <p className="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">Take control of your finances with our intuitive app that helps you save and invest to grow your money effortlessly.</p>
             
