@@ -1,21 +1,17 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown } from "lucide-react";
-
 const HeroSection: React.FC = () => {
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-
-  return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+  return <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fintech-mint/10 blur-[100px] -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 top-image-section">
           <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">
               <span className="gradient-text">A FinTech Platform</span> For Your 
@@ -24,11 +20,7 @@ const HeroSection: React.FC = () => {
             <p className="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">Take control of your finances with our intuitive app that helps you save and invest to grow your money effortlessly.</p>
             
             <div className="flex justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium flex gap-2 w-full sm:w-auto"
-                onClick={scrollToDownload}
-              >
+              <Button size="lg" className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium flex gap-2 w-full sm:w-auto" onClick={scrollToDownload}>
                 <Download size={18} />
                 Download Now
               </Button>
@@ -47,20 +39,13 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 relative mt-6 lg:mt-0">
             <div className="glow-mint animate-float max-w-xs sm:max-w-sm mx-auto lg:mx-0 lg:max-w-none">
               <div className="relative z-10 glass-card p-2 shadow-xl">
-                <img 
-                  alt="Squirrelll app interface" 
-                  className="rounded-lg w-full" 
-                  src="/lovable-uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png" 
-                  loading="eager"
-                  width="400"
-                  height="800"
-                />
+                <img alt="Squirrelll app interface" className="rounded-lg w-full" src="/lovable-uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png" loading="eager" width="400" height="800" />
               </div>
             </div>
             
             <div className="absolute -top-6 -right-6 glass-card p-3 md:p-4 shadow-lg animate-float hidden sm:flex" style={{
-              animationDelay: "1s"
-            }}>
+            animationDelay: "1s"
+          }}>
               <div className="flex items-center gap-2 md:gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-fintech-mint flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-fintech-dark">
@@ -75,8 +60,8 @@ const HeroSection: React.FC = () => {
             </div>
             
             <div className="absolute -bottom-4 -left-4 glass-card p-3 md:p-4 shadow-lg animate-float hidden sm:flex" style={{
-              animationDelay: "2s"
-            }}>
+            animationDelay: "2s"
+          }}>
               <div className="flex items-center gap-2 md:gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-fintech-gold flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-fintech-dark">
@@ -94,22 +79,14 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="flex justify-center mt-12">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className="text-white/50 hover:text-white flex items-center gap-2 animate-bounce" 
-            onClick={() => document.getElementById('how-it-works')?.scrollIntoView({
-              behavior: 'smooth'
-            })}
-            aria-label="Scroll to explore"
-          >
+          <Button variant="ghost" size="sm" className="text-white/50 hover:text-white flex items-center gap-2 animate-bounce" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({
+          behavior: 'smooth'
+        })} aria-label="Scroll to explore">
             Scroll to explore
             <ArrowDown size={16} />
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
