@@ -1,15 +1,12 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown } from "lucide-react";
-
 const HeroSection: React.FC = () => {
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  
   return <section className="relative pt-28 pb-24 md:pt-36 md:pb-28 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fintech-mint/10 blur-[100px] -z-10" />
       
@@ -62,9 +59,9 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="absolute -bottom-4 -left-4 glass-card p-3 md:p-4 shadow-lg animate-float hidden sm:flex" style={{
+            <div style={{
             animationDelay: "2s"
-          }}>
+          }} className="absolute -bottom-4 -left-4 glass-card p-3 md:p-4 shadow-lg animate-float hidden sm:flex floating-elem">
               <div className="flex items-center gap-2 md:gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-fintech-gold flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-fintech-dark">
