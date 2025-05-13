@@ -1,21 +1,24 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown } from "lucide-react";
+
 const HeroSection: React.FC = () => {
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  return <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+  
+  return <section className="relative pt-28 pb-24 md:pt-36 md:pb-28 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-fintech-mint/10 blur-[100px] -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 top-image-section">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-8 md:py-12 top-image-section">
           <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6">
-              <span className="gradient-text">A FinTech Platform</span> For Your 
-              <br className="hidden sm:block" />Micro Finances
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              <span className="gradient-text block mb-2">A FinTech Platform</span> 
+              <span className="block">For Your Micro Finances</span>
             </h1>
             <p className="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">Take control of your finances with our intuitive app that helps you save and invest to grow your money effortlessly.</p>
             
