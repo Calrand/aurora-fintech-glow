@@ -75,4 +75,17 @@
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
   }
+  
+  /* Ensure floating elements are responsive */
+  .floating-elem {
+    @apply flex z-10;
+    max-width: 85%;
+  }
+  
+  @media (max-width: 640px) {
+    .floating-elem {
+      transform: scale(0.85);
+      transform-origin: center;
+    }
+  }
 }
