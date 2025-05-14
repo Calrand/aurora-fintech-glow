@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { Link } from 'react-router-dom';
-
 const DownloadSection: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -11,9 +9,7 @@ const DownloadSection: React.FC = () => {
       behavior: 'smooth'
     });
   };
-
-  return (
-    <section id="download-section" className="py-20 md:py-28 relative overflow-hidden">
+  return <section id="download-section" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-fintech-mint/5 to-white -z-10"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-fintech-mint/5 blur-[80px] -z-10"></div>
@@ -30,33 +26,18 @@ const DownloadSection: React.FC = () => {
             </div>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-8">
-              <Button 
-                onClick={scrollToTop} 
-                size="lg" 
-                className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base"
-              >
+              <Button onClick={scrollToTop} size="lg" className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base">
                 <Download size={20} />
                 Download for iOS
               </Button>
               
-              <Button 
-                onClick={scrollToTop} 
-                size="lg" 
-                className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base"
-              >
+              <Button onClick={scrollToTop} size="lg" className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base">
                 <Download size={20} />
                 Download for Android
               </Button>
             </div>
             
-            <div className="flex justify-center gap-2 items-center mt-6">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-fintech-cream flex items-center justify-center text-xs text-fintech-darkBlue">JD</div>
-                <div className="w-8 h-8 rounded-full bg-fintech-lightGreen flex items-center justify-center text-xs text-fintech-darkBlue">AM</div>
-                <div className="w-8 h-8 rounded-full bg-fintech-mistyRose flex items-center justify-center text-xs text-fintech-darkBlue">SK</div>
-              </div>
-              <p className="text-fintech-darkBlue/70 text-sm">Joined by <span className="text-fintech-mint font-medium">10,000+</span> users</p>
-            </div>
+            
           </div>
           
           <div className="text-center mt-10">
@@ -66,8 +47,6 @@ const DownloadSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default DownloadSection;
