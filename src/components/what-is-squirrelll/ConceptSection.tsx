@@ -16,35 +16,35 @@ const ConceptSection: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">How It Works</h2>
           <ol className="space-y-8 mb-12">
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">1</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">1</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Contribute Daily</h3>
                 <p className="text-fintech-darkBlue/80">Choose a small amount to deposit daily—$0.50, $1, or $2. It's simple, customizable, and adds up quickly.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">2</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">2</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Join the Daily Pool</h3>
                 <p className="text-fintech-darkBlue/80">Each day, a micro deposit goes into a shared reward pool. One user is randomly selected to win the pool. This is separated from your savings tool.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">3</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">3</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Win by Engagement</h3>
                 <p className="text-fintech-darkBlue/80">To claim the reward, the selected user completes a short, skill-based game before being able to participate in the Daily Pool.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">4</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">4</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Save or Withdraw</h3>
                 <p className="text-fintech-darkBlue/80">If you win, you can either withdraw the reward or move it into your personal savings inside the app.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">5</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">5</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Set Goals</h3>
                 <p className="text-fintech-darkBlue/80">You can also use Squirrelll.ing as a pure savings tool. Set a goal (e.g., "Trip Fund" or "Emergency Savings"), and choose how much you want to deposit daily or weekly. Everything is customizable—from the amount to the timeline.</p>
