@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Check } from "lucide-react";
-
 const ConceptSection: React.FC = () => {
-  return (
-    <section className="py-16 md:py-20">
+  return <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto glass-card bg-white/80 shadow-lg p-8 md:p-12 rounded-2xl mb-12">
           <p className="text-lg mb-8">
@@ -19,7 +16,7 @@ const ConceptSection: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">How It Works</h2>
           <ol className="space-y-8 mb-12">
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-mint to-fintech-amber rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">1</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">1</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Contribute Daily</h3>
                 <p className="text-fintech-darkBlue/80">Choose a small amount to deposit daily—$0.50, $1, or $2. It's simple, customizable, and adds up quickly.</p>
@@ -33,21 +30,21 @@ const ConceptSection: React.FC = () => {
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-gold to-fintech-amber rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">3</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">3</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Win by Engagement</h3>
                 <p className="text-fintech-darkBlue/80">To claim the reward, the selected user completes a short, skill-based game before being able to participate in the Daily Pool.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-mint to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">4</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">4</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Save or Withdraw</h3>
                 <p className="text-fintech-darkBlue/80">If you win, you can either withdraw the reward or move it into your personal savings inside the app.</p>
               </div>
             </li>
             <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-mint rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">5</div>
+              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">5</div>
               <div>
                 <h3 className="font-bold text-xl mb-2">Set Goals</h3>
                 <p className="text-fintech-darkBlue/80">You can also use Squirrelll.ing as a pure savings tool. Set a goal (e.g., "Trip Fund" or "Emergency Savings"), and choose how much you want to deposit daily or weekly. Everything is customizable—from the amount to the timeline.</p>
@@ -100,8 +97,6 @@ const ConceptSection: React.FC = () => {
           <p className="mb-6 text-fintech-darkBlue/80">These platforms all reflect the power of consistent, small-scale financial actions—the heart of Squirrelling.</p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ConceptSection;
