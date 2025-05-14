@@ -1,24 +1,17 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Link } from 'react-router-dom';
 import { Check, Shield } from 'lucide-react';
-
 const PaymentSecurity: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white text-fintech-darkBlue">
+  return <div className="min-h-screen bg-white text-fintech-darkBlue">
       <Navbar />
       
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 text-center">
-              <img 
-                src="/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
-                alt="Squirrelll Logo" 
-                className="h-16 w-auto mx-auto mb-6"
-              />
+              
               <h1 className="text-3xl md:text-4xl font-bold mb-6">Payment Security</h1>
               <p className="text-xl text-fintech-darkBlue/70">Your Transactions Are Always Protected</p>
               <div className="mt-6 h-1 w-20 bg-gradient-to-r from-fintech-mint to-fintech-amber mx-auto rounded-full"></div>
@@ -116,8 +109,6 @@ const PaymentSecurity: React.FC = () => {
       </section>
       
       <FooterSection />
-    </div>
-  );
+    </div>;
 };
-
 export default PaymentSecurity;
