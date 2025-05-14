@@ -78,7 +78,7 @@ const ConceptSection: React.FC = () => {
               <span className="text-fintech-darkBlue/80">Acorns – Micro-investments using spare change</span>
             </li>
             <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-amber/30 to-fintech-amber/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
               <span className="text-fintech-darkBlue/80">Stash – Simple investment tools and auto-saving</span>
             </li>
             <li className="flex gap-4 items-center">
@@ -86,11 +86,11 @@ const ConceptSection: React.FC = () => {
               <span className="text-fintech-darkBlue/80">Qapital – Goal-based saving with automation</span>
             </li>
             <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-amber/30 to-fintech-amber/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
               <span className="text-fintech-darkBlue/80">Raiz – Australian micro-investment and saving app</span>
             </li>
             <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-gold/30 to-fintech-gold/50 rounded-full p-1.5"><Check size={18} className="text-fintech-gold stroke-[3]" /></div>
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-gold stroke-[3]" /></div>
               <span className="text-fintech-darkBlue/80">Squirrelll.ing – Combining micro-savings with daily community engagement and games</span>
             </li>
           </ul>
