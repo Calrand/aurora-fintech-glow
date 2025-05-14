@@ -18,7 +18,7 @@ const DownloadSection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-fintech-mint/20">
             <div className="text-center mb-8">
-              <div className="mx-auto bg-gradient-to-r from-fintech-mint to-fintech-amber w-16 h-1 mb-6 rounded-full"></div>
+              
               <h2 className="text-2xl md:text-4xl font-bold mb-6 gradient-text">Start Squirrelll.ing Today</h2>
               <p className="text-lg md:text-xl mb-8 text-fintech-darkBlue/80 max-w-2xl mx-auto">
                 Make saving a daily habit. Build real financial momentum. Whether you're here to stay consistent or just make saving more fun—Squirrelll.ing makes the journey simple, social, and satisfying.
