@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
           <p className="text-xl md:text-2xl font-medium text-fintech-darkBlue/80 mb-8 md:mb-10 max-w-2xl mx-auto">
             A Smarter Way to Save, One Small Step at a Time
           </p>
-          <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-fintech-mint to-fintech-amber mx-auto rounded-full"></div>
+          
         </div>
       </div>
     </section>;
