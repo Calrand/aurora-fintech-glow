@@ -10,8 +10,8 @@ const Navbar: React.FC = () => {
   const isMobile = useIsMobile();
   const location = useLocation();
   
-  // Check if we're on the What is Squirrelling page
-  const isLightTheme = location.pathname === '/what-is-squirrelling';
+  // Check if we're on a light-themed page
+  const isLightTheme = ['/what-is-squirrelling', '/privacy-policy', '/terms-of-service', '/payment-security'].includes(location.pathname);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -47,20 +47,31 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop button */}
-        <Link to="/what-is-squirrelling">
-          <Button 
-            variant={isLightTheme ? "default" : "outline"}
-            className={
-              isLightTheme 
-                ? "bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-darkBlue hover:opacity-90 hidden sm:flex gap-2"
-                : "border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 hidden sm:flex gap-2"
-            }
-            aria-label="Learn what is Squirrelll.ing"
-          >
-            <HelpCircle size={18} />
-            What is Squirrelll.ing?
-          </Button>
-        </Link>
+        {location.pathname === '/' ? (
+          <Link to="/what-is-squirrelling">
+            <Button 
+              variant="outline"
+              className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 hidden sm:flex gap-2"
+              aria-label="Learn what is Squirrelll.ing"
+            >
+              <HelpCircle size={18} />
+              What is Squirrelll.ing?
+            </Button>
+          </Link>
+        ) : (
+          <Link to="/">
+            <Button 
+              variant={isLightTheme ? "default" : "outline"}
+              className={
+                isLightTheme 
+                  ? "bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-darkBlue hover:opacity-90 hidden sm:flex gap-2"
+                  : "border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 hidden sm:flex gap-2"
+              }
+            >
+              Back to Home
+            </Button>
+          </Link>
+        )}
         
         {/* Mobile menu */}
         {isMobile && isMenuOpen && (
@@ -69,19 +80,30 @@ const Navbar: React.FC = () => {
           } border-b ${
             isLightTheme ? 'border-fintech-mint/10' : 'border-white/10'
           } py-4 px-4 flex flex-col gap-3 shadow-lg animate-fade-in`}>
-            <Link to="/what-is-squirrelling" onClick={() => setIsMenuOpen(false)}>
-              <Button 
-                variant={isLightTheme ? "default" : "outline"}
-                className={
-                  isLightTheme
-                    ? "bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-darkBlue hover:opacity-90 w-full flex justify-center gap-2"
-                    : "border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 w-full flex justify-center gap-2"
-                }
-              >
-                <HelpCircle size={18} />
-                What is Squirrelll.ing?
-              </Button>
-            </Link>
+            {location.pathname === '/' ? (
+              <Link to="/what-is-squirrelling" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  variant="outline"
+                  className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 w-full flex justify-center gap-2"
+                >
+                  <HelpCircle size={18} />
+                  What is Squirrelll.ing?
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  variant={isLightTheme ? "default" : "outline"}
+                  className={
+                    isLightTheme
+                      ? "bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-darkBlue hover:opacity-90 w-full flex justify-center gap-2"
+                      : "border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 w-full flex justify-center gap-2"
+                  }
+                >
+                  Back to Home
+                </Button>
+              </Link>
+            )}
           </div>
         )}
       </div>

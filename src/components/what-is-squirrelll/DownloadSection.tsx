@@ -13,24 +13,57 @@ const DownloadSection: React.FC = () => {
   };
 
   return (
-    <section id="download-section" className="py-20 md:py-28 bg-gradient-to-b from-fintech-mint/5 to-white">
+    <section id="download-section" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-fintech-mint/5 to-white -z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-fintech-mint/5 blur-[80px] -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 gradient-text">Start Squirrelll.ing Today</h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
-            Make saving a daily habit. Build real financial momentum. Whether you're here to stay consistent or just make saving more fun—Squirrelll.ing makes the journey simple, social, and satisfying.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-fintech-mint/20">
+            <div className="text-center mb-8">
+              <div className="mx-auto bg-gradient-to-r from-fintech-mint to-fintech-amber w-16 h-1 mb-6 rounded-full"></div>
+              <h2 className="text-2xl md:text-4xl font-bold mb-6 gradient-text">Start Squirrelll.ing Today</h2>
+              <p className="text-lg md:text-xl mb-8 text-fintech-darkBlue/80 max-w-2xl mx-auto">
+                Make saving a daily habit. Build real financial momentum. Whether you're here to stay consistent or just make saving more fun—Squirrelll.ing makes the journey simple, social, and satisfying.
+              </p>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-8">
+              <Button 
+                onClick={scrollToTop} 
+                size="lg" 
+                className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base"
+              >
+                <Download size={20} />
+                Download for iOS
+              </Button>
+              
+              <Button 
+                onClick={scrollToTop} 
+                size="lg" 
+                className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-md px-8 py-6 h-auto text-base"
+              >
+                <Download size={20} />
+                Download for Android
+              </Button>
+            </div>
+            
+            <div className="flex justify-center gap-2 items-center mt-6">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-fintech-cream flex items-center justify-center text-xs text-fintech-darkBlue">JD</div>
+                <div className="w-8 h-8 rounded-full bg-fintech-lightGreen flex items-center justify-center text-xs text-fintech-darkBlue">AM</div>
+                <div className="w-8 h-8 rounded-full bg-fintech-mistyRose flex items-center justify-center text-xs text-fintech-darkBlue">SK</div>
+              </div>
+              <p className="text-fintech-darkBlue/70 text-sm">Joined by <span className="text-fintech-mint font-medium">10,000+</span> users</p>
+            </div>
+          </div>
           
-          <Button 
-            onClick={scrollToTop} 
-            size="lg" 
-            className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 mx-auto shadow-md"
-          >
-            <Download size={18} />
-            Download App Squirrelll.ing
-          </Button>
-          
-          <Link to="/" className="mt-8 inline-block text-fintech-mint hover:underline">Back to Home</Link>
+          <div className="text-center mt-10">
+            <Link to="/" className="text-fintech-mint hover:text-fintech-mint/80 hover:underline transition-all">
+              Back to Home
+            </Link>
+          </div>
         </div>
       </div>
     </section>
