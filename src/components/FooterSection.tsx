@@ -7,7 +7,7 @@ const FooterSection: React.FC = () => {
     <footer className="bg-fintech-darkBlue py-12 md:py-16 border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8 md:mb-10">
-          <div className="flex items-center gap-2 mb-4 md:mb-6">
+          <Link to="/" className="flex items-center gap-2 mb-4 md:mb-6 hover:opacity-90 transition-opacity">
             <img 
               alt="Squirrell" 
               className="h-10 md:h-12 w-auto" 
@@ -16,7 +16,7 @@ const FooterSection: React.FC = () => {
               width="48"
               height="48"
             />
-          </div>
+          </Link>
           <p className="text-white/60 mb-6 max-w-md text-center text-sm md:text-base">
             A FinTech platform integrating micro finance into your life. Revolutionizing your financial experience with smart, intuitive tools for the modern world.
           </p>

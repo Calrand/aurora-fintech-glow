@@ -16,7 +16,7 @@ const FAQSection: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center gradient-text">Frequently Asked Questions</h2>
           
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-1" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Is this a savings app or a game?
               </AccordionTrigger>
@@ -25,7 +25,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-2" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-2" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 What is the Daily Pool exactly?
               </AccordionTrigger>
@@ -34,7 +34,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-3" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-3" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Do I have to play the game to save money?
               </AccordionTrigger>
@@ -43,7 +43,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-4" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-4" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Is this gambling?
               </AccordionTrigger>
@@ -52,7 +52,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-5" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-5" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Can I withdraw my money?
               </AccordionTrigger>
@@ -61,7 +61,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-6" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-6" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Can I set my own savings goal?
               </AccordionTrigger>
@@ -70,7 +70,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-7" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-7" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 What are the fees and charges?
               </AccordionTrigger>
@@ -100,7 +100,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-8" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-8" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Is my money safe?
               </AccordionTrigger>
@@ -109,7 +109,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-9" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-9" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 Is the Daily Pool global or local?
               </AccordionTrigger>
@@ -118,7 +118,7 @@ const FAQSection: React.FC = () => {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-10" className="bg-white rounded-xl border border-fintech-mint/20 shadow-sm overflow-hidden">
+            <AccordionItem value="item-10" className="bg-white rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-fintech-darkBlue hover:text-fintech-darkBlue/80">
                 How can I get help or support?
               </AccordionTrigger>

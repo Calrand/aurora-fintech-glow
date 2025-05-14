@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
             alt="Squirrell" 
             className="h-8 md:h-10 w-auto" 
             src={isLightTheme 
-              ? "/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
+              ? "/lovable-uploads/bfdc704f-0326-4dfc-a399-2736f01b47be.png" 
               : "/lovable-uploads/7489bf58-8991-4385-9cbe-719585cd376d.png"
             } 
           />

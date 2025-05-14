@@ -1,11 +1,13 @@
+
 import React from 'react';
 import { Check } from "lucide-react";
+
 const ConceptSection: React.FC = () => {
   return <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto glass-card bg-white/80 shadow-lg p-8 md:p-12 rounded-2xl mb-12">
           <p className="text-lg mb-8">
-            Squirrelll is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like squirrels stash food bit by bit for winter, squirrelling in finance means building stability, habits, and wealth through consistent micro-savings over time.
+            Squirrelll is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like squirrels stash food bit by bit for winter, squirrellling in finance means building stability, habits, and wealth through consistent micro-savings over time.
           </p>
           
           <h2 className="text-2xl md:text-3xl font-bold mb-6 gradient-text">The Squirrelll.ing Platform</h2>
@@ -70,33 +72,44 @@ const ConceptSection: React.FC = () => {
             </li>
           </ol>
           
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">The Ecosystem of Squirrelling</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">The Ecosystem of Squirrellling</h2>
           <p className="mb-6 text-fintech-darkBlue/80">The core concept of Squirrelll has inspired several platforms globally:</p>
           <ul className="space-y-4 mb-12 pl-6">
             <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">Acorns – Micro-investments using spare change</span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">Stash – Simple investment tools and auto-saving</span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">Qapital – Goal-based saving with automation</span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">Raiz – Australian micro-investment and saving app</span>
-            </li>
-            <li className="flex gap-4 items-center">
               <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-gold stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">Squirrelll.ing – Combining micro-savings with daily community engagement and games</span>
+              <span className="text-fintech-darkBlue/80">
+                <a href="https://squirrelll.ing/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Squirrelll.ing</a> – Global Micro FinTech Platform for savings and investment
+              </span>
+            </li>
+            <li className="flex gap-4 items-center">
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
+              <span className="text-fintech-darkBlue/80">
+                <a href="https://www.acorns.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Acorns</a> – Micro-investments using spare change
+              </span>
+            </li>
+            <li className="flex gap-4 items-center">
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
+              <span className="text-fintech-darkBlue/80">
+                <a href="https://www.stash.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Stash</a> – Simple investment tools and auto-saving
+              </span>
+            </li>
+            <li className="flex gap-4 items-center">
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
+              <span className="text-fintech-darkBlue/80">
+                <a href="https://www.qapital.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Qapital</a> – Goal-based saving with automation
+              </span>
+            </li>
+            <li className="flex gap-4 items-center">
+              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
+              <span className="text-fintech-darkBlue/80">
+                <a href="https://raizinvest.com.au/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Raiz</a> – Australian micro-investment and saving app
+              </span>
             </li>
           </ul>
-          <p className="mb-6 text-fintech-darkBlue/80">These platforms all reflect the power of consistent, small-scale financial actions—the heart of Squirrelling.</p>
+          <p className="mb-6 text-fintech-darkBlue/80">These platforms all reflect the power of consistent, small-scale financial actions—the heart of Squirrellling.</p>
         </div>
       </div>
     </section>;
 };
+
 export default ConceptSection;
