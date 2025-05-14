@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check } from "lucide-react";
 const ConceptSection: React.FC = () => {
-  return <section className="md:py-20">
+  return <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto glass-card bg-white/80 shadow-lg p-8 md:p-12 rounded-2xl mb-12">
           <p className="text-lg mb-8">
