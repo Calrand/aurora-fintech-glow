@@ -1,16 +1,8 @@
-
 import React from 'react';
 import { Check } from "lucide-react";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const FAQSection: React.FC = () => {
-  return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue/90">
+  return <section className="py-16 md:py-24 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue/90">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center gradient-text">Frequently Asked Questions</h2>
@@ -26,9 +18,7 @@ const FAQSection: React.FC = () => {
             </AccordionItem>
             
             <AccordionItem value="item-1" className="bg-white/5 backdrop-blur-md rounded-xl shadow-md overflow-hidden">
-              <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-white hover:text-white/90">
-                Is this a savings app or a game?
-              </AccordionTrigger>
+              <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-white hover:text-white/90">Is this platform a savings app or a game?</AccordionTrigger>
               <AccordionContent className="px-6 pb-6 pt-2 text-white/80">
                 Both. Squirrelll.ing encourages saving through daily deposits and enhances motivation with fun, skill-based daily challenges.
               </AccordionContent>
@@ -138,8 +128,6 @@ const FAQSection: React.FC = () => {
           </Accordion>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FAQSection;
