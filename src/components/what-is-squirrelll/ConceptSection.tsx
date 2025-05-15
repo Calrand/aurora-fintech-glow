@@ -43,7 +43,7 @@ const ConceptSection: React.FC = () => {
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
-                    <span className="text-white/80">You deposit a small amount (e.g., $1-5) into the Daily Pool</span>
+                    <span className="text-white/80">You deposit a fixed small amount (e.g., $1-5) into the Daily Pool</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
@@ -55,7 +55,7 @@ const ConceptSection: React.FC = () => {
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
-                    <span className="text-white/80">One person from your country is randomly selected as the day's winner</span>
+                    <span className="text-white/80">One person from your country is randomly selected who gets the total daily pool</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
@@ -79,7 +79,7 @@ const ConceptSection: React.FC = () => {
                     <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
                     </div>
-                    <span className="text-white/80">We automatically save your chosen amount on schedule</span>
+                    <span className="text-white/80">We automatically deposit your chosen amount on schedule</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
@@ -127,9 +127,7 @@ const ConceptSection: React.FC = () => {
               </table>
             </div>
             
-            <p className="text-center text-white/60 text-sm mt-8">
-              Unlike traditional savings apps, Squirrelll.ing blends community engagement, gamification, and daily rewards.
-            </p>
+            <p className="text-center text-white/60 text-sm mt-8">Unlike traditional savings apps, Squirrelling platforms blends community engagement, gamification, and daily rewards.</p>
           </div>
         </div>
       </div>
