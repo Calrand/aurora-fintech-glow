@@ -9,7 +9,7 @@ import DownloadSection from '@/components/what-is-squirrelll/DownloadSection';
 
 const WhatIsSquirrelll: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white text-fintech-darkBlue">
+    <div className="min-h-screen bg-fintech-dark text-white">
       <Navbar />
       <HeroSection />
       <ConceptSection />

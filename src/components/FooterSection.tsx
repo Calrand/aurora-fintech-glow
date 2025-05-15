@@ -1,17 +1,25 @@
 
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const FooterSection: React.FC = () => {
+  const location = useLocation();
+  
+  // Check if we're on a light-themed page
+  const isLightTheme = ['/privacy-policy', '/terms-of-service', '/payment-security'].includes(location.pathname);
+  
   return (
-    <footer className="bg-fintech-darkBlue py-12 md:py-16 border-t border-white/5">
+    <footer className={`${isLightTheme ? 'bg-fintech-darkBlue' : 'bg-fintech-dark'} py-12 md:py-16 border-t border-white/5`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8 md:mb-10">
           <Link to="/" className="flex items-center gap-2 mb-4 md:mb-6 hover:opacity-90 transition-opacity">
             <img 
               alt="Squirrell" 
               className="h-10 md:h-12 w-auto" 
-              src="/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
+              src={isLightTheme 
+                ? "/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
+                : "/lovable-uploads/f22d1792-06d8-48f3-8847-3f067e54d9e3.png"
+              } 
               loading="lazy"
               width="48"
               height="48"

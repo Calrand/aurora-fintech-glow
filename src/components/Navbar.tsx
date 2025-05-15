@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   
   // Check if we're on a light-themed page
-  const isLightTheme = ['/what-is-squirrelling', '/privacy-policy', '/terms-of-service', '/payment-security'].includes(location.pathname);
+  const isLightTheme = ['/privacy-policy', '/terms-of-service', '/payment-security'].includes(location.pathname);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
             className="h-8 md:h-10 w-auto" 
             src={isLightTheme 
               ? "/lovable-uploads/bfdc704f-0326-4dfc-a399-2736f01b47be.png" 
-              : "/lovable-uploads/7489bf58-8991-4385-9cbe-719585cd376d.png"
+              : "/lovable-uploads/f22d1792-06d8-48f3-8847-3f067e54d9e3.png"
             } 
           />
         </Link>

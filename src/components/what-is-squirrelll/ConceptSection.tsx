@@ -1,115 +1,154 @@
 
 import React from 'react';
-import { Check } from "lucide-react";
+import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ConceptSection: React.FC = () => {
-  return <section className="py-16 md:py-20">
+  const platforms = [
+    {
+      name: "Squirrelll.ing",
+      description: "Global Micro FinTech Platform for savings and investment",
+      website: "https://squirrelll.ing/",
+      key: "squirrelll"
+    },
+    {
+      name: "Acorns",
+      description: "Rounds up your purchases and invests the spare change",
+      website: "https://www.acorns.com/",
+      key: "acorns"
+    },
+    {
+      name: "Stash",
+      description: "Offers fractional shares of stocks and ETFs",
+      website: "https://www.stash.com/",
+      key: "stash"
+    },
+    {
+      name: "Qapital",
+      description: "Uses rules to trigger saving based on daily behavior",
+      website: "https://www.qapital.com/",
+      key: "qapital"
+    },
+    {
+      name: "Raiz",
+      description: "Australian-based micro-investment app",
+      website: "https://raizinvest.com.au/",
+      key: "raiz"
+    }
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-fintech-darkBlue relative">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto glass-card bg-white/80 shadow-lg p-8 md:p-12 rounded-2xl mb-12">
-          <p className="text-lg mb-8">
-            Squirrelll is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like squirrels stash food bit by bit for winter, squirrellling in finance means building stability, habits, and wealth through consistent micro-savings over time.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">The Concept</h2>
+            <p className="text-lg text-white/80 mb-8 text-center">
+              Squirrelll.ing combines the psychology of gaming with the discipline of saving to create a unique financial experience.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass-card p-6 rounded-xl">
+                <h3 className="text-xl font-semibold mb-4 text-fintech-mint">The Daily Pool</h3>
+                <ul className="space-y-3">
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">You deposit a small amount (e.g., $1-5) into the Daily Pool</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">You play a quick skill-based game</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">One person from your country is randomly selected as the day's winner</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">They receive the entire pool (minus our 12% platform fee)</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="glass-card p-6 rounded-xl">
+                <h3 className="text-xl font-semibold mb-4 text-fintech-amber">Smart Savings</h3>
+                <ul className="space-y-3">
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">You set your savings goal and schedule (daily or weekly)</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">We automatically save your chosen amount on schedule</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">If you win a Daily Pool, you can withdraw or add it to your savings</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">You can track progress and celebrate milestones</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 gradient-text">The Squirrelll.ing Platform</h2>
-          <p className="text-lg mb-12">
-            Squirrelll.ing is a savings and micro-engagement platform that brings this timeless concept into the digital age. It helps users form daily saving habits by turning micro-deposits into both a savings tool and an engaging daily pool with fun, interactive challenges.
-          </p>
-          
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">How It Works</h2>
-          <ol className="space-y-8 mb-12">
-            <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">1</div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Contribute Daily</h3>
-                <p className="text-fintech-darkBlue/80">Choose a small amount to deposit daily—$0.50, $1, or $2. It's simple, customizable, and adds up quickly.</p>
-              </div>
-            </li>
-            <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">2</div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Join the Daily Pool</h3>
-                <p className="text-fintech-darkBlue/80">Each day, a micro deposit goes into a shared reward pool. One user is randomly selected to win the pool. This is separated from your savings tool.</p>
-              </div>
-            </li>
-            <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">3</div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Win by Engagement</h3>
-                <p className="text-fintech-darkBlue/80">To claim the reward, the selected user completes a short, skill-based game before being able to participate in the Daily Pool.</p>
-              </div>
-            </li>
-            <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">4</div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Save or Withdraw</h3>
-                <p className="text-fintech-darkBlue/80">If you win, you can either withdraw the reward or move it into your personal savings inside the app.</p>
-              </div>
-            </li>
-            <li className="flex gap-5">
-              <div className="bg-gradient-to-r from-fintech-amber to-fintech-gold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md">5</div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Set Goals</h3>
-                <p className="text-fintech-darkBlue/80">You can also use Squirrelll.ing as a pure savings tool. Set a goal (e.g., "Trip Fund" or "Emergency Savings"), and choose how much you want to deposit daily or weekly. Everything is customizable—from the amount to the timeline.</p>
-              </div>
-            </li>
-          </ol>
-          
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">Two Tools, One App</h2>
-          <ol className="space-y-8 mb-12">
-            <li className="flex gap-5">
-              <div className="bg-fintech-mint rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md"><Check size={22} /></div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Daily Pool (Gamified)</h3>
-                <p className="text-fintech-darkBlue/80">A micro-deposit gives you access to the country/region-based Daily Pool. A winner is selected randomly each day and must complete a skill-based game to claim the reward. The cycle runs from 12 PM to 12 PM local time every day.</p>
-              </div>
-            </li>
-            <li className="flex gap-5">
-              <div className="bg-fintech-amber rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-fintech-darkBlue font-bold shadow-md"><Check size={22} /></div>
-              <div>
-                <h3 className="font-bold text-xl mb-2">Savings Tool (Goal-Based)</h3>
-                <p className="text-fintech-darkBlue/80">You choose a goal, deposit schedule (daily or weekly), and amount. Over time, you build up your savings without pressure. You can also transfer rewards from the Daily Pool into this savings balance for better growth.</p>
-              </div>
-            </li>
-          </ol>
-          
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 gradient-text">The Ecosystem of Squirrellling</h2>
-          <p className="mb-6 text-fintech-darkBlue/80">The core concept of Squirrelll has inspired several platforms globally:</p>
-          <ul className="space-y-4 mb-12 pl-6">
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-gold stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">
-                <a href="https://squirrelll.ing/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Squirrelll.ing</a> – Global Micro FinTech Platform for savings and investment
-              </span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">
-                <a href="https://www.acorns.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Acorns</a> – Micro-investments using spare change
-              </span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">
-                <a href="https://www.stash.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Stash</a> – Simple investment tools and auto-saving
-              </span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-mint stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">
-                <a href="https://www.qapital.com/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Qapital</a> – Goal-based saving with automation
-              </span>
-            </li>
-            <li className="flex gap-4 items-center">
-              <div className="bg-gradient-to-r from-fintech-mint/30 to-fintech-mint/50 rounded-full p-1.5"><Check size={18} className="text-fintech-amber stroke-[3]" /></div>
-              <span className="text-fintech-darkBlue/80">
-                <a href="https://raizinvest.com.au/" target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline">Raiz</a> – Australian micro-investment and saving app
-              </span>
-            </li>
-          </ul>
-          <p className="mb-6 text-fintech-darkBlue/80">These platforms all reflect the power of consistent, small-scale financial actions—the heart of Squirrellling.</p>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">The Ecosystem of Squirrelll.ing</h2>
+            <p className="text-lg text-white/80 mb-8 text-center">
+              How we compare to other micro-saving solutions in the market:
+            </p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-4 px-4 font-medium text-fintech-mint">Platform</th>
+                    <th className="py-4 px-4 font-medium text-fintech-mint">Core Concept</th>
+                    <th className="py-4 px-4 font-medium text-fintech-mint hidden md:table-cell">Website</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {platforms.map((platform) => (
+                    <tr key={platform.key} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 font-medium">{platform.name}</td>
+                      <td className="py-4 px-4 text-white/80">{platform.description}</td>
+                      <td className="py-4 px-4 hidden md:table-cell">
+                        <a href={platform.website} target="_blank" rel="noopener noreferrer" className="text-fintech-mint hover:underline flex items-center gap-1">
+                          Visit <ExternalLink size={14} />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            <p className="text-center text-white/60 text-sm mt-8">
+              Unlike traditional savings apps, Squirrelll.ing blends community engagement, gamification, and daily rewards.
+            </p>
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default ConceptSection;
