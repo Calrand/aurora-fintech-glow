@@ -1,51 +1,39 @@
-
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const ConceptSection: React.FC = () => {
-  const platforms = [
-    {
-      name: "Squirrelll.ing",
-      description: "Global Micro FinTech Platform for savings and investment",
-      website: "https://squirrelll.ing/",
-      key: "squirrelll"
-    },
-    {
-      name: "Acorns",
-      description: "Rounds up your purchases and invests the spare change",
-      website: "https://www.acorns.com/",
-      key: "acorns"
-    },
-    {
-      name: "Stash",
-      description: "Offers fractional shares of stocks and ETFs",
-      website: "https://www.stash.com/",
-      key: "stash"
-    },
-    {
-      name: "Qapital",
-      description: "Uses rules to trigger saving based on daily behavior",
-      website: "https://www.qapital.com/",
-      key: "qapital"
-    },
-    {
-      name: "Raiz",
-      description: "Australian-based micro-investment app",
-      website: "https://raizinvest.com.au/",
-      key: "raiz"
-    }
-  ];
-
-  return (
-    <section className="py-16 md:py-24 bg-fintech-darkBlue relative">
+  const platforms = [{
+    name: "Squirrelll.ing",
+    description: "Global Micro FinTech Platform for savings and investment",
+    website: "https://squirrelll.ing/",
+    key: "squirrelll"
+  }, {
+    name: "Acorns",
+    description: "Rounds up your purchases and invests the spare change",
+    website: "https://www.acorns.com/",
+    key: "acorns"
+  }, {
+    name: "Stash",
+    description: "Offers fractional shares of stocks and ETFs",
+    website: "https://www.stash.com/",
+    key: "stash"
+  }, {
+    name: "Qapital",
+    description: "Uses rules to trigger saving based on daily behavior",
+    website: "https://www.qapital.com/",
+    key: "qapital"
+  }, {
+    name: "Raiz",
+    description: "Australian-based micro-investment app",
+    website: "https://raizinvest.com.au/",
+    key: "raiz"
+  }];
+  return <section className="py-16 md:py-24 bg-fintech-darkBlue relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">The Concept</h2>
-            <p className="text-lg text-white/80 mb-8 text-center">
-              Squirrelll.ing combines the psychology of gaming with the discipline of saving to create a unique financial experience.
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">The Platform</h2>
+            <p className="text-lg text-white/80 mb-8 text-center">Squirrelll.ing is a savings and micro-engagement platform that brings this timeless concept into the digital age.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="glass-card p-6 rounded-xl">
@@ -126,8 +114,7 @@ const ConceptSection: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {platforms.map((platform) => (
-                    <tr key={platform.key} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                  {platforms.map(platform => <tr key={platform.key} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       <td className="py-4 px-4 font-medium">{platform.name}</td>
                       <td className="py-4 px-4 text-white/80">{platform.description}</td>
                       <td className="py-4 px-4 hidden md:table-cell">
@@ -135,8 +122,7 @@ const ConceptSection: React.FC = () => {
                           Visit <ExternalLink size={14} />
                         </a>
                       </td>
-                    </tr>
-                  ))}
+                    </tr>)}
                 </tbody>
               </table>
             </div>
@@ -147,8 +133,6 @@ const ConceptSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ConceptSection;
