@@ -16,6 +16,15 @@ const FAQSection: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center gradient-text">Frequently Asked Questions</h2>
           
           <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-0" className="bg-white/5 backdrop-blur-md rounded-xl shadow-md overflow-hidden">
+              <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-white hover:text-white/90">
+                What is Squirrelling? (The Concept)
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6 pt-2 text-white/80">
+                Squirrelling is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like how squirrels stash food bit by bit for winter, squirrelling in micro-finance means building stability, habits, and wealth through consistent micro-savings over time.
+              </AccordionContent>
+            </AccordionItem>
+            
             <AccordionItem value="item-1" className="bg-white/5 backdrop-blur-md rounded-xl shadow-md overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline text-left font-semibold text-white hover:text-white/90">
                 Is this a savings app or a game?
