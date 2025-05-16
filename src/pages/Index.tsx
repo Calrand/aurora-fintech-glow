@@ -19,6 +19,9 @@ const SectionLoader = () => (
 const Index = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
+      return (
+        <h1>Loading...</h1>
+      )
       <Navbar />
       <HeroSection />
       
