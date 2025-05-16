@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 relative mt-6 lg:mt-0">
             <div className="glow-mint animate-float max-w-xs sm:max-w-sm mx-auto lg:mx-0 lg:max-w-none">
               <div className="relative z-10 glass-card p-2 shadow-xl">
-                <img alt="Squirrelll app interface" className="rounded-lg w-full" src="/lovable-uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png" loading="eager" width="400" height="800" />
+                <img alt="Squirrelll app interface" className="rounded-lg w-full" src="/uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png" loading="eager" width="400" height="800" />
               </div>
             </div>
             

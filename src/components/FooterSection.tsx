@@ -17,8 +17,8 @@ const FooterSection: React.FC = () => {
               alt="Squirrell" 
               className="h-10 md:h-12 w-auto" 
               src={isLightTheme 
-                ? "/lovable-uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
-                : "/lovable-uploads/f22d1792-06d8-48f3-8847-3f067e54d9e3.png"
+                ? "/uploads/fa0255ac-ff2d-4248-904b-e3e46f5db299.png" 
+                : "/uploads/f22d1792-06d8-48f3-8847-3f067e54d9e3.png"
               } 
               loading="lazy"
               width="48"

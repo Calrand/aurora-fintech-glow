@@ -63,7 +63,7 @@ const DownloadSection: React.FC = () => {
                 <img 
                   alt="Squirrelll App on Mobile" 
                   className="w-full rounded-xl shadow-xl" 
-                  src="/lovable-uploads/79f59e83-3d83-409a-a070-db0311401c9e.jpg"
+                  src="/uploads/79f59e83-3d83-409a-a070-db0311401c9e.jpg"
                   loading="lazy"
                   width="400"
                   height="800"
