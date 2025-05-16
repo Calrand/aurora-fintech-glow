@@ -17,8 +17,10 @@ const SectionLoader = () => (
 );
 
 const Index = () => {
+  console.log('Rendering Index');
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
+      <Navbar />
       <HeroSection />
       
       <Suspense fallback={<SectionLoader />}>
