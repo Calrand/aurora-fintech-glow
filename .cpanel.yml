@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - cd /home/tayekbxs/squirrelll.ing
+    - npm install
+    - npm run build
+    - /bin/rm -rf /home/tayekbxs/squirrelll.ing/web/*
+    - /bin/cp -r dist/* /home/tayekbxs/squirrelll.ing/web/
