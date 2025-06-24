@@ -68,26 +68,31 @@ const features = [{
 
 const FeatureSection: React.FC = () => {
   return (
-    <section id="features" className="py-20 bg-fintech-dark">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+    <section id="features" className="py-12 sm:py-14 md:py-16 lg:py-20 bg-fintech-dark">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 px-2">
             Innovative <span className="gradient-text">Features</span>
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base px-4">
             Our app is packed with powerful tools and features designed to give you complete control over your finances.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {features.map((feature, index) => (
             <Card key={index} className="border-0 shadow-lg glass-card overflow-hidden hover:-translate-y-1 transition-all">
-              <CardContent className="p-6">
-                <div className={`w-12 h-12 rounded-lg ${feature.color} flex items-center justify-center mb-4`}>
-                  {feature.icon}
+              <CardContent className="p-4 sm:p-5 md:p-6">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${feature.color} flex items-center justify-center mb-3 sm:mb-4 flex-shrink-0`}>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6">
+                    {React.cloneElement(feature.icon, { 
+                      width: "100%", 
+                      height: "100%" 
+                    })}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-white/70">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-white/70 text-sm sm:text-base leading-relaxed">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
