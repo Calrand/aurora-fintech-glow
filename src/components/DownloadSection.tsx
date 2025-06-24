@@ -48,7 +48,7 @@ const DownloadSection: React.FC = () => {
             </span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-            <span className="gradient-text">Squirrelll</span> is Almost Here
+            <span className="gradient-text">Squirrelll.ing</span> is Almost Here
           </h2>
           <p className="text-white/70 max-w-xl mx-auto text-sm md:text-base">
             Be the first to experience innovative micro-financing. Join our waitlist and get early access when we launch.
