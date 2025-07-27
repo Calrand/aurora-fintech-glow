@@ -43,25 +43,31 @@ const ConceptSection: React.FC = () => {
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
-                    <span className="text-white/80">You deposit a fixed small amount (e.g., $1-5) into the Daily Pool</span>
+                    <span className="text-white/80">You contribute a fixed insignificant small amount (e.g., $0.20-$1) into the Daily Pool</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
-                    <span className="text-white/80">You play a quick skill-based game</span>
+                    <span className="text-white/80">The total pool depends on the amount of users in total. Everyone has to contribute only the small insigficant amount. No more no less.</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
-                    <span className="text-white/80">One person from your country is randomly selected who gets the total daily pool</span>
+                    <span className="text-white/80">One person from your region will receive the total amount to help them towards their squirrelling savings goal</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
                     <span className="text-white/80">They receive the entire pool (minus our 12% platform fee)</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-mint/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">Every region has it's own separate pool</span>
                   </li>
                 </ul>
               </div>
