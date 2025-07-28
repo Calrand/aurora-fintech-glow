@@ -73,7 +73,7 @@ const ConceptSection: React.FC = () => {
               </div>
               
               <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4 text-fintech-amber">Smart Savings</h3>
+                <h3 className="text-xl font-semibold mb-4 text-fintech-amber">Savings Pods</h3>
                 <ul className="space-y-3">
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
@@ -85,7 +85,7 @@ const ConceptSection: React.FC = () => {
                     <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
                     </div>
-                    <span className="text-white/80">We automatically deposit your chosen amount on schedule</span>
+                    <span className="text-white/80">We automatically deposit your chosen small amount on schedule, like a subscription</span>
                   </li>
                   <li className="flex gap-3 items-start">
                     <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
@@ -98,6 +98,18 @@ const ConceptSection: React.FC = () => {
                       <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
                     </div>
                     <span className="text-white/80">You can track progress and celebrate milestones</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">Once you have reached your goal, you can withdraw the amount.</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <div className="bg-fintech-amber/20 rounded-full p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-fintech-amber rounded-full"></div>
+                    </div>
+                    <span className="text-white/80">You can have multiple Savings Pods for different goals and milestones</span>
                   </li>
                 </ul>
               </div>
@@ -133,7 +145,7 @@ const ConceptSection: React.FC = () => {
               </table>
             </div>
             
-            <p className="text-center text-white/60 text-sm mt-8">Unlike traditional savings apps, Squirrelling platforms blends community engagement, gamification, and daily rewards.</p>
+            <p className="text-center text-white/60 text-sm mt-8">Unlike traditional savings apps, Squirrelling platforms blends community engagement, nurture squirrelling habit and helps reach your financial goals without any burden.</p>
           </div>
         </div>
       </div>
