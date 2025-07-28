@@ -36,7 +36,7 @@ const FooterSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-12 sm:gap-y-4 text-center w-full max-w-md">
               <Link to="/privacy-policy" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Terms of Service</Link>
-              <Link to="/payment-security" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Payment Security</Link>
+              {/* <Link to="/payment-security" className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors">Payment Security</Link> */}
             </div>
           </div>
         </div>

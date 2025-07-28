@@ -24,7 +24,7 @@ const PaymentSecurity: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-lg mb-6">
-                    At Squirrelll.ing, your financial security is non-negotiable. All payment processing is handled through our trusted partner Checkout.com, a PCI DSS Level 1 certified provider—one of the highest standards for secure payment systems.
+                    At Squirrelll.ing, your financial security is non-negotiable. All payment processing is handled through our trusted partner Stripe.com, a PCI DSS Level 1 certified provider—one of the highest standards for secure payment systems.
                   </p>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const PaymentSecurity: React.FC = () => {
                     </div>
                     <h3 className="font-semibold text-xl">Fraud Detection</h3>
                   </div>
-                  <p className="text-fintech-darkBlue/80">Checkout.com uses advanced fraud prevention systems to protect against unauthorized transactions.</p>
+                  <p className="text-fintech-darkBlue/80">Stripe uses advanced fraud prevention systems to protect against unauthorized transactions.</p>
                 </div>
                 
                 <div className="bg-fintech-mint/5 rounded-xl p-6">

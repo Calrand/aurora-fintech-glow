@@ -44,7 +44,7 @@ const PrivacyPolicy: React.FC = () => {
               <p>We use cookies for performance and user experience improvement. You can manage cookie settings in your browser.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">5. Your Rights</h2>
-              <p>You can request access, correction, or deletion of your data at any time. Contact us at assist@squirrelll.ing.</p>
+              <p>You can request access, correction, or deletion of your data at any time. Contact us at support@squirrelll.ing.</p>
               
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <p className="italic text-fintech-darkBlue/60">Last updated: May 01, 2025</p>
