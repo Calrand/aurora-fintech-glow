@@ -35,7 +35,7 @@ const PrivacyPolicy: React.FC = () => {
               <h2 className="text-2xl font-bold mt-12 mb-6">3. Data Sharing and Security</h2>
               <ul className="list-disc pl-6 space-y-3 mb-8">
                 <li>We never sell your data.</li>
-                <li>We use Checkout.com as our payment partner, which adheres to strict PCI DSS Level 1 compliance to process all transactions securely.</li>
+                {/* <li>We use Checkout.com as our payment partner, which adheres to strict PCI DSS Level 1 compliance to process all transactions securely.</li> */}
                 <li>Data is encrypted and stored securely using industry-standard protocols.</li>
                 <li>We may share data with government or legal authorities only when required by law.</li>
               </ul>

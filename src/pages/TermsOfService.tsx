@@ -20,7 +20,8 @@ const TermsOfService: React.FC = () => {
               <p className="text-lg mb-8">Welcome to Squirrelll.ing. By accessing or using our platform, you agree to the following Terms of Service.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">1. Eligibility</h2>
-              <p>You must be 18 years or older to create an account and participate in financial transactions.</p>
+              <p>You must be 16 years or older to create an account and participate in financial transactions.</p>
+              <p>For fairness, and to prevent unwanted behavior amoung users, individuals can only open one account.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">2. Services Offered</h2>
               <p className="mb-4">Squirrelll.ing offers two financial tools:</p>
@@ -31,15 +32,16 @@ const TermsOfService: React.FC = () => {
               <p>Participation in the Daily Pool is optional. Rewards require completion of a skill-based game and are not guaranteed.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">3. Payments</h2>
-              <p className="mb-4">All transactions are securely processed through our payment partner, Checkout.com. By using our services, you agree to abide by their policies and processing terms.</p>
+              {/* <p className="mb-4">All transactions are securely processed through our payment partner. By using our services, you agree to abide by their policies and processing terms.</p> */}
+              <p className="mb-4">All transactions are securely processed</p>
               <ul className="list-disc pl-6 space-y-3 mb-4">
-                <li>3% fee applies to deposits (charged by Checkout.com).</li>
-                <li>12% platform fee applies to the Daily Pool reward before payout.</li>
-                <li>5% fee for withdrawing savings (waived if reward funds are reinvested into savings).</li>
+                <li>12% platform fee applies while participating in the Daily Pool before payout.</li>
+                {/* <li>5% fee for withdrawing savings (waived if collection funds are reinvested into savings).</li> */}
+                <li>5% fee for withdrawing savings.</li>
               </ul>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">4. Refunds</h2>
-              <p>Deposits to the daily pool are non-refundable once processed unless a technical or unauthorized issue is verified. Deposits to savings are withdrawable anytime from your wallet.</p>
+              <p>Deposits to the daily pool are non-refundable once processed unless a technical or unauthorized issue is verified. Deposits to saving pods are withdrawable anytime from your wallet.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">5. Account Termination</h2>
               <p>We reserve the right to suspend or terminate accounts that violate these terms, including but not limited to fraud, abuse, or misuse.</p>
