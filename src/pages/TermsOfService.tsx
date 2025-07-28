@@ -29,7 +29,7 @@ const TermsOfService: React.FC = () => {
                 <li>A Daily Pool, which users contribute to and from which one participant is randomly selected each day to get the total pool.</li>
                 <li>A Smart Savings Tool, allowing users to automate daily or weekly deposits toward personal goals.</li>
               </ul>
-              <p>Participation in the Daily Pool is optional. Rewards require completion of a skill-based game and are not guaranteed.</p>
+              <p>Participation in the Daily Pool is optional. Participation require completion of a skill-based game and are not guaranteed.</p>
               
               <h2 className="text-2xl font-bold mt-12 mb-6">3. Payments</h2>
               {/* <p className="mb-4">All transactions are securely processed through our payment partner. By using our services, you agree to abide by their policies and processing terms.</p> */}

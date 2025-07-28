@@ -96,7 +96,7 @@ const PaymentSecurity: React.FC = () => {
               
               <div className="mt-10 pt-6 border-t border-gray-100">
                 <p className="text-center text-lg">
-                  If you encounter any unauthorized activity or have payment concerns, please contact our support team at <strong className="text-fintech-mint">assist@squirrelll.ing</strong> or use the live chat within the app.
+                  If you encounter any unauthorized activity or have payment concerns, please contact our support team at <strong className="text-fintech-mint">support@squirrelll.ing</strong> or use the live chat within the app.
                 </p>
               </div>
             </div>
