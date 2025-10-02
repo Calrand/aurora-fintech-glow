@@ -68,7 +68,7 @@ const WaitlistForm: React.FC = () => {
                 <FormControl>
                   <div className="flex flex-col gap-2 sm:gap-3">
                     <Input
-                      id="email"
+                      id="squirrelll.ing-email"
                       name="email"
                       autoComplete="email"
                       placeholder="Enter your email address"
