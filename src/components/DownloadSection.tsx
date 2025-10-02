@@ -81,39 +81,76 @@ const DownloadSection: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="mt-4 sm:mt-6">
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormControl>
-                              <div className="flex flex-col gap-2 sm:gap-3">
-                                <Input
-                                  placeholder="Enter your email address"
-                                  className="h-10 sm:h-12 md:h-14 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm sm:text-base"
-                                  type="email"
-                                  required
-                                  aria-label="Email address for waitlist"
-                                  {...field}
-                                />
-                                <Button
-                                  type="submit"
-                                  className="h-10 sm:h-12 md:h-14 px-4 sm:px-6 bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium text-sm sm:text-base"
-                                  disabled={isSubmitting}
-                                >
-                                  {isSubmitting ? "Joining..." : "Join Waitlist"}
-                                </Button>
-                              </div>
-                            </FormControl>
-                          </FormItem>
-                        )}
-                      />
-                    </form>
-                  </Form>
-                </div>
+               import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Form, FormField, FormItem, FormControl, Input, Button } from "./YourFormComponents"; // Adjust your imports
+
+export default function WaitlistForm() {
+  const form = useForm();
+  const { handleSubmit, control } = form;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 🔹 onSubmit function sending email to Google Sheets
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxB_IWxf0K4BcGwX17YLyCCX93cIiqJWkRh9eq8fW4uJ0TVQYf4XYJsR5LO9kpZFl-7/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      if (res.ok) {
+        alert("✅ You’ve joined the waitlist!");
+        form.reset(); // Clear the input field
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error connecting to server");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="mt-4 sm:mt-6">
+      <Form {...form}>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+          <FormField
+            control={control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <div className="flex flex-col gap-2 sm:gap-3">
+                    <Input
+                      placeholder="Enter your email address"
+                      className="h-10 sm:h-12 md:h-14 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm sm:text-base"
+                      type="email"
+                      required
+                      aria-label="Email address for waitlist"
+                      {...field}
+                    />
+                    <Button
+                      type="submit"
+                      className="h-10 sm:h-12 md:h-14 px-4 sm:px-6 bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium text-sm sm:text-base"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Joining..." : "Join Waitlist"}
+                    </Button>
+                  </div>
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        </form>
+      </Form>
+    </div>
+  );
+}
+
               </div>
             </div>
             
@@ -139,11 +176,11 @@ const DownloadSection: React.FC = () => {
         <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16 text-center px-4">
           <p className="text-white/50 text-xs sm:text-sm">
             By joining the waitlist, you agree to our{" "}
-            <a href="#" className="underline hover:text-fintech-mint transition-colors">
+            <a href="/terms-of-service" className="underline hover:text-fintech-mint transition-colors">
               Terms of Service
             </a>{" "}
             and{" "}
-            <a href="#" className="underline hover:text-fintech-mint transition-colors">
+            <a href="/privacy-policy" className="underline hover:text-fintech-mint transition-colors">
               Privacy Policy
             </a>
           </p>
