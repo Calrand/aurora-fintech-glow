@@ -13,7 +13,7 @@ interface WaitlistFormValues {
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzpeUWVlRZoMmkFz8oWJOF_p4xBjGTl3VLeH_mrjchsTo-Ghf2LK13O3J6kOdv_M4Pb/exec";
 
-// ✅ Standalone child component (NOT nested in JSX)
+// Standalone child component
 const WaitlistForm: React.FC = () => {
   const form = useForm<WaitlistFormValues>({ defaultValues: { email: "" } });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,15 +27,22 @@ const WaitlistForm: React.FC = () => {
         body: JSON.stringify({ email: data.email }),
       });
 
-      if (res.ok) {
+      const raw = await res.text();
+      console.log("Apps Script raw response:", raw);
+
+      let json: any = {};
+      try { json = JSON.parse(raw); } catch {}
+
+      if (res.ok && json?.ok) {
         toast.success("You've been added to the Squirrelll waitlist!");
         form.reset();
       } else {
-        toast.error("Something went wrong. Please try again.");
+        const msg = json?.error || `Failed to add. HTTP ${res.status}`;
+        toast.error(msg);
       }
     } catch (err) {
       console.error(err);
-      toast.error("Error connecting to server");
+      toast.error("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -125,7 +132,7 @@ const DownloadSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 🔽 Clean insertion point for the form */}
+                {/* Insertion point for the form */}
                 <WaitlistForm />
               </div>
             </div>
