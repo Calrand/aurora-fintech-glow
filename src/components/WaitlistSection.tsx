@@ -69,7 +69,7 @@ const WaitlistSection: React.FC = () => {
 
           <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-lg p-4 sm:p-5 md:p-6">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="w-full squirrelll-byt-waitlist">
                 <FormField
                   control={form.control}
                   name="email"

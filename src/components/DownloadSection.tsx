@@ -59,7 +59,7 @@ const WaitlistForm: React.FC = () => {
   return (
     <div className="mt-4 sm:mt-6">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full squirrelll.ing-waitlist">
           <FormField
             control={form.control}
             name="email"
