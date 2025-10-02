@@ -11,7 +11,7 @@ interface WaitlistFormValues {
 }
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzpeUWVlRZoMmkFz8oWJOF_p4xBjGTl3VLeH_mrjchsTo-Ghf2LK13O3J6kOdv_M4Pb/exec";
+  "https://script.google.com/macros/s/AKfycbxzwjdd_E3ckTrU4Lovkok1Z1QefDBB6uNZCmRa3zjnOw5TUIfEihD0BsGzCIU3XenqeQ/exec";
 
 // Standalone child component that RENDERS the form
 const WaitlistForm: React.FC = () => {
