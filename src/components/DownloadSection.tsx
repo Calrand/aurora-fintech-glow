@@ -13,7 +13,7 @@ interface WaitlistFormValues {
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzpeUWVlRZoMmkFz8oWJOF_p4xBjGTl3VLeH_mrjchsTo-Ghf2LK13O3J6kOdv_M4Pb/exec";
 
-// Standalone child component
+// Standalone child component that RENDERS the form
 const WaitlistForm: React.FC = () => {
   const form = useForm<WaitlistFormValues>({ defaultValues: { email: "" } });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,24 +21,32 @@ const WaitlistForm: React.FC = () => {
   const onSubmit = async (data: WaitlistFormValues) => {
     setIsSubmitting(true);
     try {
+      // ✅ Use form-encoded body to avoid CORS preflight
+      const params = new URLSearchParams();
+      params.set("email", data.email);
+
       const res = await fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: data.email }),
+        // ⚠️ Do NOT set Content-Type header; the browser will set
+        // application/x-www-form-urlencoded automatically for URLSearchParams
+        body: params,
       });
 
-      const raw = await res.text();
-      console.log("Apps Script raw response:", raw);
+      // Try to read JSON (some GAS setups will allow it); otherwise fall back
+      let ok = false;
+      try {
+        const json = await res.json();
+        ok = !!json?.ok;
+      } catch (_) {
+        // If response isn't readable due to CORS but request succeeded, res.ok
+        ok = res.ok;
+      }
 
-      let json: any = {};
-      try { json = JSON.parse(raw); } catch {}
-
-      if (res.ok && json?.ok) {
+      if (ok) {
         toast.success("You've been added to the Squirrelll waitlist!");
         form.reset();
       } else {
-        const msg = json?.error || `Failed to add. HTTP ${res.status}`;
-        toast.error(msg);
+        toast.error("Failed to add. Please try again.");
       }
     } catch (err) {
       console.error(err);
@@ -60,6 +68,9 @@ const WaitlistForm: React.FC = () => {
                 <FormControl>
                   <div className="flex flex-col gap-2 sm:gap-3">
                     <Input
+                      id="email"
+                      name="email"
+                      autoComplete="email"
                       placeholder="Enter your email address"
                       className="h-10 sm:h-12 md:h-14 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm sm:text-base"
                       type="email"
