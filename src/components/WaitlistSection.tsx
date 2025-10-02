@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,25 +9,38 @@ interface WaitlistFormValues {
   email: string;
 }
 
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzcHBATr8lKLLJ_kFUhGxGIDfpe34mofN4MoHGqWUyZ1wMf6zTYj_0bRvJHK69ERorN/exec";
+
 const WaitlistSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const form = useForm<WaitlistFormValues>({
-    defaultValues: {
-      email: ""
-    }
+    defaultValues: { email: "" }
   });
-  
+
   const onSubmit = async (data: WaitlistFormValues) => {
     setIsSubmitting(true);
-
-    // Simulating API call
     try {
-      // In a real implementation, this would be an API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // ✅ form-encoded body; do NOT set Content-Type manually
+      const params = new URLSearchParams();
+      params.set("email", data.email);
+
+      const isProd =
+        typeof window !== "undefined" &&
+        window.location.hostname.includes("squirrelll.ing");
+
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: isProd ? "no-cors" : "cors",
+        body: params,
+      });
+
+      // We can't read response in no-cors, but the request is sent
       toast.success("You've been added to the Squirrelll-Byt waitlist!");
       form.reset();
     } catch (error) {
+      console.error(error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -45,16 +57,16 @@ const WaitlistSection: React.FC = () => {
               Coming Soon
             </span>
           </div>
-          
+
           <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-center mb-2 sm:mb-3 text-white/90 px-2">
             Join <span className="text-fintech-mint">Squirrelll-Byt</span> Waitlist
           </h3>
-          
+
           <p className="text-white/50 text-sm sm:text-base text-center mb-4 sm:mb-6 max-w-lg mx-auto px-4">
             Be among the first to experience crypto-powered Squirrelll platform.
             Early access to DeFi tools and blockchain-based savings solutions.
           </p>
-          
+
           <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-lg p-4 sm:p-5 md:p-6">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
@@ -66,9 +78,13 @@ const WaitlistSection: React.FC = () => {
                       <FormControl>
                         <div className="flex flex-col sm:flex-row gap-3">
                           <Input
+                            id="email"
+                            name="email"
+                            autoComplete="email"
                             placeholder="Enter your email address"
                             className="h-10 sm:h-12 bg-white/5 border-white/10 text-white/80 placeholder:text-white/30 text-sm sm:text-base flex-1"
                             type="email"
+                            required
                             aria-label="Email address for waitlist"
                             {...field}
                           />
@@ -86,7 +102,7 @@ const WaitlistSection: React.FC = () => {
                 />
               </form>
             </Form>
-            
+
             <div className="mt-4 sm:mt-5 flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
               <span className="text-white/40">Crypto Rewards</span>
               <span className="text-white/40 hidden sm:inline">•</span>
@@ -95,7 +111,7 @@ const WaitlistSection: React.FC = () => {
               <span className="text-white/40">Early Access</span>
             </div>
           </div>
-          
+
           <p className="text-white/30 text-xs sm:text-sm text-center mt-3 sm:mt-4 px-4">
             By joining the waitlist, you agree to receive updates about Squirrelll-Byt.
           </p>
