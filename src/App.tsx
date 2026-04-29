@@ -10,6 +10,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import PaymentSecurity from './pages/PaymentSecurity';
 import VerifyEmail from './pages/VerifyEmail';
+import DeleteAccount from './pages/DeleteAccount';
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/payment-security" element={<PaymentSecurity />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
