@@ -11,6 +11,7 @@ import TermsOfService from './pages/TermsOfService';
 import PaymentSecurity from './pages/PaymentSecurity';
 import VerifyEmail from './pages/VerifyEmail';
 import DeleteAccount from './pages/DeleteAccount';
+import BudgetCalculator from './pages/BudgetCalculator';
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/payment-security" element={<PaymentSecurity />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/budget-calculator" element={<BudgetCalculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
