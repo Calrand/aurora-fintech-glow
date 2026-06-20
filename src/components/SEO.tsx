@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SITE = 'https://squirrelll.ing';
-const DEFAULT_OG = 'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6756135-5b3d-41a7-8977-e1c5c5f1a496/id-preview-5287d2ae--804848c4-9f75-4785-b07b-ff5c10eee937.lovable.app-1781984274085.png';
+const DEFAULT_OG = 'https://squirrelll.ing/uploads/og-image.jpg';
 
 export interface SEOProps {
   title: string;
