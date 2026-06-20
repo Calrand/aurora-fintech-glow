@@ -63,7 +63,7 @@ const WaitlistSection: React.FC = () => {
           </h3>
 
           <p className="text-white/50 text-sm sm:text-base text-center mb-4 sm:mb-6 max-w-lg mx-auto px-4">
-            Be among the first to experience crypto-powered Squirrelll platform.
+            Be among the first to experience crypto-powered Squirrelll.ing platform.
             Early access to DeFi tools and blockchain-based savings solutions.
           </p>
 
