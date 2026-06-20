@@ -32,8 +32,10 @@ const App = () => (
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="/budget-calculator" element={<BudgetCalculator />} />
+          <Route path="/round-up-calculator" element={<RoundUpCalculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
