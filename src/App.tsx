@@ -12,6 +12,8 @@ import PaymentSecurity from './pages/PaymentSecurity';
 import VerifyEmail from './pages/VerifyEmail';
 import DeleteAccount from './pages/DeleteAccount';
 import BudgetCalculator from './pages/BudgetCalculator';
+import RoundUpCalculator from './pages/RoundUpCalculator';
+import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
 
@@ -30,8 +32,10 @@ const App = () => (
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="/budget-calculator" element={<BudgetCalculator />} />
+          <Route path="/round-up-calculator" element={<RoundUpCalculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
