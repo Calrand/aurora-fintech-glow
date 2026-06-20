@@ -6,9 +6,11 @@ const LoadingScreen: React.FC = () => {
     <div className="fixed inset-0 bg-fintech-dark flex flex-col items-center justify-center z-50">
       <div className="relative">
         <img
-          src="/uploads/7489bf58-8991-4385-9cbe-719585cd376d.png"
+          src={logoImg}
           alt="Squirrelll.ing Logo"
           className="h-24 md:h-32 w-auto animate-pulse mb-8"
+          width={1024}
+          height={1024}
         />
 
         <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
