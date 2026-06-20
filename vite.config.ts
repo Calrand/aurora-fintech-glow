@@ -34,6 +34,11 @@ export default defineConfig(({ mode }) => ({
           renderAfterTime: 4000,
           maxConcurrentRoutes: 2,
           headless: true,
+          executablePath:
+            process.env.PUPPETEER_EXECUTABLE_PATH ||
+            "/bin/chromium" ||
+            undefined,
+          args: ["--no-sandbox", "--disable-setuid-sandbox"],
         },
       }),
   ].filter(Boolean),
