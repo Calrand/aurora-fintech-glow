@@ -2,9 +2,16 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 const TermsOfService: React.FC = () => {
   return <div className="min-h-screen bg-white text-fintech-darkBlue">
+      <SEO
+        title="Terms of Service — Squirrelll.ing"
+        description="The rules for using Squirrelll.ing — eligibility, the Daily Pool, the Smart Savings tool, fees, and your responsibilities as a user."
+        path="/terms-of-service"
+      />
       <Navbar />
+      
       
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">

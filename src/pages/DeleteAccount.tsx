@@ -2,10 +2,16 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const DeleteAccount: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-fintech-darkBlue">
+      <SEO
+        title="Delete Your Account — Squirrelll.ing"
+        description="Request deletion of your Squirrelll.ing account and associated data. Step-by-step instructions and what data is removed or retained."
+        path="/delete-account"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20">

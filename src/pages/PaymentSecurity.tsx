@@ -3,9 +3,16 @@ import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Link } from 'react-router-dom';
 import { Check, Shield } from 'lucide-react';
+import SEO from '@/components/SEO';
 const PaymentSecurity: React.FC = () => {
   return <div className="min-h-screen bg-white text-fintech-darkBlue">
+      <SEO
+        title="Payment Security — Squirrelll.ing"
+        description="How Squirrelll.ing keeps your payments safe: PCI DSS Level 1 processing via Stripe, end-to-end encryption, and no card details stored on our servers."
+        path="/payment-security"
+      />
       <Navbar />
+      
       
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">

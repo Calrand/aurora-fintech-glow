@@ -3,6 +3,7 @@ import { useSearchParams, Link, Navigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { CheckCircle, XCircle, Loader2 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 type Status = 'loading' | 'success' | 'error';
 

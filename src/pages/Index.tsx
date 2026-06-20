@@ -2,6 +2,7 @@
 import React, { Suspense, lazy } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import SEO from '@/components/SEO';
 
 // Lazy load non-critical components
 const HowItWorksSection = lazy(() => import('@/components/HowItWorksSection'));
@@ -20,6 +21,21 @@ const Index = () => {
   console.log('Rendering Index');
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
+      <SEO
+        title="Squirrelll.ing — Community-Based Micro-Fintech Platform"
+        description="Save and invest in tiny daily steps. Join the Squirrelll.ing waitlist for round-ups, a community Daily Pool, and smart goal savings."
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: 'Squirrelll.ing',
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'iOS, Android',
+          description:
+            'A community-based micro-fintech platform integrating micro-savings, round-ups, and a Daily Pool into your everyday life.',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        }}
+      />
       <Navbar />
       <HeroSection />
       
