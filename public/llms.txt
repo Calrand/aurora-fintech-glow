@@ -1,0 +1,32 @@
+# Squirrelll.ing
+
+> Community-based micro-fintech platform that helps people save and
+> invest spare change through round-ups, daily savings pools, and
+> gamified financial tools.
+
+Squirrelll.ing (pronounced "squirrel-ing") is a pre-launch fintech
+app that turns small, everyday spending into automated savings and
+micro-investments. The platform combines round-up savings, a
+community Daily Pool gamification mechanic, and budgeting tools to
+make consistent saving feel effortless. The site currently runs an
+email waitlist while the mobile apps are being prepared for launch.
+
+## Pages
+
+- [Home](/): Product overview, hero, features, how it works, waitlist signup.
+- [What is Squirrellling](/what-is-squirrelling): Long-form explainer of the concept, mechanics, and FAQs.
+
+## Tools
+
+- [Round-Up Savings Calculator](/round-up-calculator): Estimate how much you can save by rounding up everyday purchases.
+- [Budget Calculator](/budget-calculator): Plan monthly budgets across income, expenses, and savings goals.
+
+## Legal & Trust
+
+- [Privacy Policy](/privacy-policy): How user data is collected, used, and protected.
+- [Terms of Service](/terms-of-service): User agreement and platform rules.
+- [Payment Security](/payment-security): Encryption, PCI posture, and how payments are safeguarded.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): Full machine-readable URL list.
