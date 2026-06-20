@@ -12,7 +12,7 @@ const Root = () => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 30000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
