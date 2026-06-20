@@ -72,6 +72,8 @@ const RoundUpCalculator: React.FC = () => {
       await navigator.clipboard.writeText(`${text} ${url}`);
       toast.success('Copied to clipboard!');
     }
+  };
+
   useEffect(() => {
     document.title = 'Round-Up Savings Calculator | Squirrelll.ing';
     const setMeta = (name: string, content: string, attr: 'name' | 'property' = 'name') => {
@@ -88,8 +90,9 @@ const RoundUpCalculator: React.FC = () => {
     setMeta('og:description', 'See how much spare change you could save by rounding up every purchase.', 'property');
   }, []);
 
-
+  return (
     <div className="min-h-screen bg-fintech-dark text-white">
+
 
       <Navbar />
 
