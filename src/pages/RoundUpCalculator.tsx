@@ -1,5 +1,4 @@
-import React, { useMemo, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import React, { useEffect, useMemo, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Button } from '@/components/ui/button';
