@@ -12,6 +12,8 @@ import PaymentSecurity from './pages/PaymentSecurity';
 import VerifyEmail from './pages/VerifyEmail';
 import DeleteAccount from './pages/DeleteAccount';
 import BudgetCalculator from './pages/BudgetCalculator';
+import RoundUpCalculator from './pages/RoundUpCalculator';
+import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
 
