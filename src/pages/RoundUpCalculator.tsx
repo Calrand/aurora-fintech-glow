@@ -76,31 +76,6 @@ const RoundUpCalculator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
-      <Helmet>
-        <title>Round-Up Savings Calculator | Squirrelll.ing</title>
-        <meta
-          name="description"
-          content="See how much spare change you could save by rounding up every purchase. Free round-up savings calculator with compound growth projection."
-        />
-        <link rel="canonical" href="https://squirrelll.ing/round-up-calculator" />
-        <meta property="og:title" content="Round-Up Savings Calculator" />
-        <meta
-          property="og:description"
-          content="See how much spare change you could save by rounding up every purchase."
-        />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Round-Up Savings Calculator',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Web',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            description:
-              'Calculate how much you could save by rounding up every purchase to the nearest dollar.',
-          })}
-        </script>
-      </Helmet>
 
       <Navbar />
 
