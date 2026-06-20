@@ -72,9 +72,23 @@ const RoundUpCalculator: React.FC = () => {
       await navigator.clipboard.writeText(`${text} ${url}`);
       toast.success('Copied to clipboard!');
     }
-  };
+  useEffect(() => {
+    document.title = 'Round-Up Savings Calculator | Squirrelll.ing';
+    const setMeta = (name: string, content: string, attr: 'name' | 'property' = 'name') => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    setMeta('description', 'See how much spare change you could save by rounding up every purchase. Free compound-growth savings calculator.');
+    setMeta('og:title', 'Round-Up Savings Calculator | Squirrelll.ing', 'property');
+    setMeta('og:description', 'See how much spare change you could save by rounding up every purchase.', 'property');
+  }, []);
 
-  return (
+
     <div className="min-h-screen bg-fintech-dark text-white">
 
       <Navbar />
