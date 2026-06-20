@@ -50,6 +50,12 @@ const VerifyEmail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-fintech-darkBlue">
+      <SEO
+        title="Verify Your Email — Squirrelll.ing"
+        description="Confirm your Squirrelll.ing email address to activate your account and start saving."
+        path="/verify-email"
+        noindex
+      />
       <Navbar />
 
       <section className="pt-32 pb-20">

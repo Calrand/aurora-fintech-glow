@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -92,8 +93,19 @@ const RoundUpCalculator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
-
-
+      <SEO
+        title="Round-Up Savings Calculator — See What Spare Change Adds Up To"
+        description="Free round-up savings calculator. Estimate how much spare change you'd save and grow in 1–10 years with compounding. Built by Squirrelll.ing."
+        path="/round-up-calculator"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: 'Squirrelll.ing Round-Up Calculator',
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'Any',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        }}
+      />
       <Navbar />
 
       <main className="pt-28 sm:pt-32 pb-20 relative overflow-hidden">
