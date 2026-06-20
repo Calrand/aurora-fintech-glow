@@ -1,90 +1,71 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Cookie, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { applyConsent, type Consent } from '@/lib/tracking';
 
 const STORAGE_KEY = 'squirrelll_cookie_consent_v1';
+const REOPEN_EVENT = 'squirrelll:open-cookie-settings';
 
-type Consent = {
-  necessary: true;
-  analytics: boolean;
-  marketing: boolean;
-  timestamp: string;
-};
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-const applyConsent = (c: Consent) => {
-  // Google Consent Mode v2 — covers GDPR (EU), CCPA/CPRA (California),
-  // LGPD (Brazil), and COPPA (kids) signals for downstream tools.
-  window.dataLayer = window.dataLayer || [];
-  const gtag = (...args: unknown[]) => window.dataLayer!.push(args);
-  gtag('consent', 'update', {
-    ad_storage: c.marketing ? 'granted' : 'denied',
-    ad_user_data: c.marketing ? 'granted' : 'denied',
-    ad_personalization: c.marketing ? 'granted' : 'denied',
-    analytics_storage: c.analytics ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    security_storage: 'granted',
-  });
-};
+/** Trigger from anywhere (e.g. footer link): window.dispatchEvent(new Event('squirrelll:open-cookie-settings')) */
+export const openCookieSettings = () =>
+  window.dispatchEvent(new Event(REOPEN_EVENT));
 
 const CookieConsent: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [analytics, setAnalytics] = useState(true);
+  const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) {
-        // Default-deny for GDPR/CCPA before choice
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push([
-          'consent',
-          'default',
-          {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'denied',
-            functionality_storage: 'granted',
-            security_storage: 'granted',
-            wait_for_update: 500,
-          },
-        ]);
-        setOpen(true);
+      if (raw) {
+        const stored: Consent = JSON.parse(raw);
+        setAnalytics(stored.analytics);
+        setMarketing(stored.marketing);
+        applyConsent(stored);
       } else {
-        applyConsent(JSON.parse(raw));
+        // No decision yet -> block everything, show banner
+        setOpen(true);
       }
     } catch {
       setOpen(true);
     }
+
+    const reopen = () => {
+      setShowSettings(true);
+      setOpen(true);
+    };
+    window.addEventListener(REOPEN_EVENT, reopen);
+    return () => window.removeEventListener(REOPEN_EVENT, reopen);
   }, []);
 
-  const save = (c: Omit<Consent, 'necessary' | 'timestamp'>) => {
+  const save = useCallback((a: boolean, m: boolean) => {
     const consent: Consent = {
       necessary: true,
-      analytics: c.analytics,
-      marketing: c.marketing,
+      analytics: a,
+      marketing: m,
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
     applyConsent(consent);
+    setAnalytics(a);
+    setMarketing(m);
     setOpen(false);
-  };
+    setShowSettings(false);
+  }, []);
 
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] p-3 sm:p-4 animate-fade-in">
+    <div
+      role="dialog"
+      aria-live="polite"
+      aria-label="Cookie consent"
+      className="fixed inset-x-0 bottom-0 z-[100] p-3 sm:p-4 animate-fade-in"
+    >
       <div className="mx-auto max-w-4xl rounded-2xl border border-white/10 bg-fintech-dark/95 backdrop-blur-xl shadow-2xl p-5 sm:p-6 text-white">
         <div className="flex items-start gap-3 sm:gap-4">
           <div className="w-10 h-10 shrink-0 rounded-xl bg-fintech-mint/15 flex items-center justify-center">
@@ -95,11 +76,10 @@ const CookieConsent: React.FC = () => {
               We value your privacy
             </h2>
             <p className="text-sm text-white/70">
-              We use cookies to keep the site working, measure performance, and
-              improve your experience. You can accept all, reject non-essential,
-              or customise your choices. We comply with GDPR, CCPA/CPRA, LGPD,
-              and COPPA — and never knowingly collect data from children under
-              13. Read our{' '}
+              We don't load Google Analytics, Meta Pixel, Reddit Pixel or any
+              other tracker until you say yes. Choose what you're comfortable
+              with — you can change this any time. We comply with GDPR,
+              CCPA/CPRA, LGPD and COPPA. See our{' '}
               <Link to="/privacy-policy" className="text-fintech-mint underline">
                 Privacy Policy
               </Link>
@@ -116,13 +96,13 @@ const CookieConsent: React.FC = () => {
                 />
                 <Row
                   title="Analytics"
-                  desc="Helps us understand how people use the site."
+                  desc="Google Analytics 4 & Google Tag Manager — helps us understand usage."
                   checked={analytics}
                   onChange={setAnalytics}
                 />
                 <Row
                   title="Marketing"
-                  desc="Used to personalise ads and measure campaigns."
+                  desc="Meta Pixel & Reddit Pixel — measure campaigns and personalise ads."
                   checked={marketing}
                   onChange={setMarketing}
                 />
@@ -131,14 +111,14 @@ const CookieConsent: React.FC = () => {
 
             <div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button
-                onClick={() => save({ analytics: true, marketing: true })}
+                onClick={() => save(true, true)}
                 className="bg-gradient-to-r from-fintech-mint to-fintech-amber text-fintech-darkBlue hover:opacity-90 flex-1"
               >
                 Accept all
               </Button>
               <Button
                 variant="outline"
-                onClick={() => save({ analytics: false, marketing: false })}
+                onClick={() => save(false, false)}
                 className="border-white/20 text-white hover:bg-white/10 flex-1"
               >
                 Reject non-essential
@@ -146,7 +126,7 @@ const CookieConsent: React.FC = () => {
               {showSettings ? (
                 <Button
                   variant="ghost"
-                  onClick={() => save({ analytics, marketing })}
+                  onClick={() => save(analytics, marketing)}
                   className="text-fintech-mint hover:bg-fintech-mint/10 flex-1"
                 >
                   Save choices
@@ -164,8 +144,8 @@ const CookieConsent: React.FC = () => {
           </div>
           <button
             type="button"
-            aria-label="Close"
-            onClick={() => save({ analytics: false, marketing: false })}
+            aria-label="Close (reject non-essential)"
+            onClick={() => save(false, false)}
             className="text-white/50 hover:text-white"
           >
             <X size={18} />
@@ -188,11 +168,7 @@ const Row: React.FC<{
       <p className="text-sm font-medium">{title}</p>
       <p className="text-xs text-white/60">{desc}</p>
     </div>
-    <Switch
-      checked={checked}
-      disabled={disabled}
-      onCheckedChange={onChange}
-    />
+    <Switch checked={checked} disabled={disabled} onCheckedChange={onChange} />
   </div>
 );
 
