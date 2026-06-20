@@ -29,13 +29,16 @@ const Root = () => {
 };
 
 const container = document.getElementById('root')!;
+const hasStaticFallback = Boolean(
+  container.querySelector('[data-static-fallback]')
+);
 const tree = (
   <HelmetProvider>
     <Root />
   </HelmetProvider>
 );
 
-if (container.hasChildNodes()) {
+if (container.hasChildNodes() && !hasStaticFallback) {
   hydrateRoot(container, tree);
 } else {
   createRoot(container).render(tree);
