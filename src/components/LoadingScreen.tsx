@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '@/assets/squirrelll-ing-logo.png';
 
 const LoadingScreen: React.FC = () => {
   return (
