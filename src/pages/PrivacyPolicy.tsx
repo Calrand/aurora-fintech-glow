@@ -2,10 +2,16 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/FooterSection';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-fintech-darkBlue">
+      <SEO
+        title="Privacy Policy — Squirrelll.ing"
+        description="How Squirrelll.ing collects, uses, and protects your personal information across the mobile app and website. GDPR, CCPA, LGPD and COPPA aligned."
+        path="/privacy-policy"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20">

@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import Navbar from '@/components/Navbar';
+import SEO from '@/components/SEO';
 import FooterSection from '@/components/FooterSection';
 import {
   Plus,
@@ -467,6 +468,19 @@ const BudgetCalculator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
+      <SEO
+        title="Free Budget Calculator — 50/30/20 Planner | Squirrelll.ing"
+        description="A free, mobile-friendly 50/30/20 budget calculator. Add your income and expenses to see what you can save, spend on needs, and spend on wants."
+        path="/budget-calculator"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: 'Squirrelll.ing Budget Calculator',
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'Any',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        }}
+      />
       <Navbar />
 
       <main className="pt-32 pb-20 relative overflow-hidden">
