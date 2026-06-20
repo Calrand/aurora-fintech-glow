@@ -8,6 +8,8 @@ import {
   PiggyBank,
   Wallet,
   ReceiptText,
+  Sparkles,
+  LoaderCircle,
 } from 'lucide-react';
 
 type Frequency = 'monthly' | 'biweekly' | 'weekly';
@@ -36,6 +38,41 @@ type SalaryHistoryItem = {
   monthName: string;
   amount: string;
 };
+
+type AiBudgetPayload = {
+  currency: 'USD';
+  summary: {
+    monthlyIncome: number;
+    monthlyExpenses: number;
+    monthlyNet: number;
+    savingsGoal: number;
+    monthsToGoal: number | null;
+  };
+  income: Array<{
+    category: string;
+    totalMonthly: number;
+    items: Array<{ name: string; monthly: number }>;
+  }>;
+  expenses: Array<{
+    category: string;
+    totalMonthly: number;
+    essential: boolean;
+    items: Array<{ name: string; monthly: number }>;
+  }>;
+};
+
+const OPENROUTER_MODEL = 'inclusionai/ring-2.6-1t:free';
+
+const essentialExpenseKeys = new Set([
+  'living',
+  'transportation',
+  'family',
+  'personal',
+  'health',
+  'debt',
+]);
+
+const roundMoney = (value: number) => Math.round(value * 100) / 100;
 
 const incomeCategories: IncomeCategory[] = [
   {
@@ -184,6 +221,9 @@ const BudgetCalculator: React.FC = () => {
 
   const [showBreakdown, setShowBreakdown] = useState(false);
   const [savingsGoal, setSavingsGoal] = useState('');
+  const [aiAnalysis, setAiAnalysis] = useState('');
+  const [aiError, setAiError] = useState('');
+  const [isAiLoading, setIsAiLoading] = useState(false);
 
   const totalMonthlyIncome = useMemo(() => {
     return Object.entries(incomeItems).reduce((total, [key, items]) => {
@@ -216,6 +256,152 @@ const BudgetCalculator: React.FC = () => {
     monthlySavings > 0 && goalAmount > 0
       ? Math.ceil(goalAmount / monthlySavings)
       : null;
+
+  const aiBudgetPayload: AiBudgetPayload = useMemo(() => {
+    const income = incomeCategories
+      .map((category) => {
+        const items =
+          category.key === 'salary' && showAverageSalary
+            ? [
+                {
+                  name: 'Average monthly salary',
+                  monthly: roundMoney(averageSalary),
+                },
+              ]
+            : incomeItems[category.key]
+                .map((item) => ({
+                  name: item.name.trim() || category.title,
+                  monthly: roundMoney(
+                    convertToMonthly(
+                      toNumber(item.amount),
+                      item.frequency || 'monthly',
+                    ),
+                  ),
+                }))
+                .filter((item) => item.monthly > 0);
+
+        return {
+          category: category.title,
+          totalMonthly: roundMoney(
+            items.reduce((sum, item) => sum + item.monthly, 0),
+          ),
+          items,
+        };
+      })
+      .filter((category) => category.totalMonthly > 0);
+
+    const expenses = expenseCategories
+      .map((category) => {
+        const items = expenseItems[category.key]
+          .map((item) => ({
+            name: item.name.trim() || category.title,
+            monthly: roundMoney(toNumber(item.amount)),
+          }))
+          .filter((item) => item.monthly > 0);
+
+        return {
+          category: category.title,
+          totalMonthly: roundMoney(
+            items.reduce((sum, item) => sum + item.monthly, 0),
+          ),
+          essential: essentialExpenseKeys.has(category.key),
+          items,
+        };
+      })
+      .filter((category) => category.totalMonthly > 0);
+
+    return {
+      currency: 'USD',
+      summary: {
+        monthlyIncome: roundMoney(totalMonthlyIncome),
+        monthlyExpenses: roundMoney(totalMonthlyExpense),
+        monthlyNet: roundMoney(monthlySavings),
+        savingsGoal: roundMoney(goalAmount),
+        monthsToGoal,
+      },
+      income,
+      expenses,
+    };
+  }, [
+    incomeItems,
+    expenseItems,
+    showAverageSalary,
+    averageSalary,
+    totalMonthlyIncome,
+    totalMonthlyExpense,
+    monthlySavings,
+    goalAmount,
+    monthsToGoal,
+  ]);
+
+  const handleShowBreakdown = async () => {
+    setShowBreakdown(true);
+    setAiError('');
+    setAiAnalysis('');
+
+    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
+
+    if (!apiKey) {
+      setAiError(
+        'Missing VITE_OPENROUTER_API_KEY. Add it to your .env file or call OpenRouter from a backend route.',
+      );
+      return;
+    }
+
+    setIsAiLoading(true);
+
+    try {
+      const response = await fetch(
+        'https://openrouter.ai/api/v1/chat/completions',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+            'HTTP-Referer': window.location.origin,
+            'X-Title': 'Budget Calculator',
+          },
+          body: JSON.stringify({
+            model: OPENROUTER_MODEL,
+            max_tokens: 320,
+            temperature: 0.3,
+            messages: [
+              {
+                role: 'system',
+                content:
+                  'You are a concise budget coach. Essentials are marked essential=true and must not be cut. Find extra flexible expenses, suggest realistic income increases, and keep the answer under 120 words. Do not mention token optimization.',
+              },
+              {
+                role: 'user',
+                content: JSON.stringify(aiBudgetPayload),
+              },
+            ],
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error(`OpenRouter request failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const content = data?.choices?.[0]?.message?.content?.trim();
+
+      if (!content) {
+        throw new Error('The AI response was empty.');
+      }
+
+      setAiAnalysis(content);
+    } catch (error) {
+      setAiError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to generate AI analysis right now.',
+      );
+    } finally {
+      setIsAiLoading(false);
+    }
+  };
 
   const updateIncomeItem = (
     categoryKey: string,
@@ -779,10 +965,18 @@ const BudgetCalculator: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => setShowBreakdown(true)}
-                className="rounded-full bg-fintech-mint text-fintech-dark px-8 py-4 font-semibold hover:bg-fintech-mint/90 transition"
+                onClick={handleShowBreakdown}
+                disabled={isAiLoading}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-fintech-mint text-fintech-dark px-8 py-4 font-semibold hover:bg-fintech-mint/90 transition disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Show Breakdown
+                {isAiLoading ? (
+                  <>
+                    <LoaderCircle size={18} className="animate-spin" />
+                    Analyzing...
+                  </>
+                ) : (
+                  'Show Breakdown'
+                )}
               </button>
 
               {showBreakdown && (
@@ -835,6 +1029,45 @@ const BudgetCalculator: React.FC = () => {
                         to reach it.
                       </p>
                     )}
+                  </div>
+
+                  <div className="md:col-span-3 rounded-2xl bg-white/[0.04] border border-white/10 p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Sparkles className="text-fintech-mint" size={20} />
+                      <h3 className="text-xl font-semibold">
+                        AI Budget Analysis
+                      </h3>
+                    </div>
+
+                    {isAiLoading ? (
+                      <div className="flex items-center gap-3 text-white/70">
+                        <LoaderCircle
+                          className="animate-spin text-fintech-mint"
+                          size={20}
+                        />
+                        Reviewing flexible expenses and income options...
+                      </div>
+                    ) : aiError ? (
+                      <p className="text-red-300">{aiError}</p>
+                    ) : aiAnalysis ? (
+                      <p className="whitespace-pre-line text-white/75 leading-relaxed">
+                        {aiAnalysis}
+                      </p>
+                    ) : (
+                      <p className="text-white/55">
+                        Click Show Breakdown to generate a short AI suggestion.
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="md:col-span-3 rounded-2xl bg-fintech-dark/60 border border-white/10 p-5">
+                    <p className="text-white/55 mb-3">
+                      Optimized data sent to AI
+                    </p>
+
+                    <pre className="max-h-80 overflow-auto rounded-xl bg-black/30 p-4 text-xs text-white/70">
+                      {JSON.stringify(aiBudgetPayload, null, 2)}
+                    </pre>
                   </div>
                 </div>
               )}
