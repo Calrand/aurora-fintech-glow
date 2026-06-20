@@ -35,14 +35,6 @@ export default defineConfig(({ mode }) => ({
           maxConcurrentRoutes: 2,
           headless: true,
         },
-        postProcess(renderedRoute: {
-          route: string;
-          html: string;
-          originalRoute: string;
-        }) {
-          // Ensure absolute asset URLs aren't required; nothing to rewrite.
-          return renderedRoute;
-        },
       }),
   ].filter(Boolean),
   resolve: {
