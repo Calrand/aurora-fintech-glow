@@ -2,6 +2,7 @@ deployment:
   tasks:
     - cd /home/tayekbxs/squirrelll.ing
     - npm install
+    - npx puppeteer browsers install chrome || echo "chromium install skipped"
     - npm run build
     - /bin/rm -rf /home/tayekbxs/squirrelll.ing/web/*
     - /bin/cp -r dist/* /home/tayekbxs/squirrelll.ing/web/

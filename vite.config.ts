@@ -4,8 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import prerender from "@prerenderer/rollup-plugin";
 
-// Routes to pre-render to static HTML at build time so crawlers, AI
-// agents, and link-preview bots see real content (not the empty SPA shell).
 const PRERENDER_ROUTES = [
   "/",
   "/what-is-squirrelling",
@@ -19,10 +17,7 @@ const PRERENDER_ROUTES = [
 ];
 
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
+  server: { host: "::", port: 8080 },
   plugins: [
     react(),
     mode === "development" && componentTagger(),
@@ -31,24 +26,28 @@ export default defineConfig(({ mode }) => ({
         routes: PRERENDER_ROUTES,
         renderer: "@prerenderer/renderer-puppeteer",
         rendererOptions: {
-          renderAfterTime: 4000,
+          renderAfterTime: 6000,
           maxConcurrentRoutes: 2,
           headless: true,
-          executablePath:
-            process.env.PUPPETEER_EXECUTABLE_PATH ||
-            "/bin/chromium" ||
-            undefined,
-          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+          // Let puppeteer find its bundled Chrome (downloaded via the
+          // `puppeteer` package's postinstall). Falls back to a system
+          // chromium binary if PUPPETEER_EXECUTABLE_PATH is set.
+          executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+          args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+          ],
+        },
+        postProcess(renderedRoute: { route: string; html: string }) {
+          // Strip the loading screen if it was still on-screen at capture.
+          renderedRoute.html = renderedRoute.html.replace(
+            /<div class="fixed inset-0 bg-fintech-dark[\s\S]*?Loading your financial future\.\.\.<\/p><\/div>/,
+            ""
+          );
         },
       }),
   ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-  },
+  resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
+  build: { outDir: "dist", emptyOutDir: true },
 }));
