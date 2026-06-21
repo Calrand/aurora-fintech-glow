@@ -24,20 +24,13 @@ export default defineConfig(({ mode }) => ({
     mode !== "development" &&
       prerender({
         routes: PRERENDER_ROUTES,
-        renderer: "@prerenderer/renderer-puppeteer",
+        renderer: "@prerenderer/renderer-jsdom",
         rendererOptions: {
-          renderAfterTime: 6000,
+          // jsdom has no native deps and runs in any build environment.
+          // Wait for the React app to mount and render into #root.
+          renderAfterDocumentEvent: "DOMContentLoaded",
+          renderAfterTime: 4000,
           maxConcurrentRoutes: 2,
-          headless: true,
-          // Let puppeteer find its bundled Chrome (downloaded via the
-          // `puppeteer` package's postinstall). Falls back to a system
-          // chromium binary if PUPPETEER_EXECUTABLE_PATH is set.
-          executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
-          args: [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage",
-          ],
         },
         postProcess(renderedRoute: { route: string; html: string }) {
           // Strip the loading screen if it was still on-screen at capture.
