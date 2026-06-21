@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { Smartphone, Mail } from 'lucide-react';
+import { Smartphone, Mail, Download } from 'lucide-react';
 
 interface WaitlistFormValues {
   email: string;
