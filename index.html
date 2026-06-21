@@ -16,6 +16,18 @@
     <meta name="keywords" content="fintech, micro-investments, financial app, DeFi, cryptocurrency, savings" />
     <meta name="author" content="Squirrelll.ing" />
     <meta name="robots" content="index, follow" />
+    <script>
+      // Block indexing on Lovable preview/staging hosts so only squirrelll.ing ranks.
+      (function () {
+        var h = location.hostname;
+        if (h.endsWith('.lovable.app') || h.endsWith('.lovable.dev')) {
+          var m = document.querySelector('meta[name="robots"]') || document.createElement('meta');
+          m.setAttribute('name', 'robots');
+          m.setAttribute('content', 'noindex, nofollow');
+          if (!m.parentNode) document.head.appendChild(m);
+        }
+      })();
+    </script>
     <meta name="theme-color" content="#0A0F16" />
 
     <!-- Open Graph / Facebook -->
