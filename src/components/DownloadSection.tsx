@@ -99,6 +99,8 @@ const WaitlistForm: React.FC = () => {
   );
 };
 
+const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.squirrelll.ing';
+
 const DownloadSection: React.FC = () => {
   return (
     <section
@@ -112,15 +114,15 @@ const DownloadSection: React.FC = () => {
           <div className="flex items-center justify-center mb-3 sm:mb-4">
             <span className="text-xs sm:text-sm font-medium text-fintech-mint/70 bg-fintech-mint/5 px-2 sm:px-3 py-1 rounded-full border border-fintech-mint/10 inline-flex items-center gap-1 sm:gap-1.5">
               <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-fintech-mint/50 rounded-full"></span>
-              Coming Soon
+              Now on Google Play
             </span>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 px-2">
-            <span className="gradient-text">Squirrelll.ing</span> is Almost Here
+            <span className="gradient-text">Squirrelll.ing</span> is Live on Android
           </h2>
           <p className="text-white/70 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto text-xs sm:text-sm md:text-base px-4">
-            Be the first to experience innovative micro-financing. Join our
-            waitlist and get early access when we launch.
+            Download the Squirrelll.ing app on Google Play and start saving today.
+            iPhone user? Join the waitlist to get notified when we launch on the App Store.
           </p>
         </div>
 
@@ -128,7 +130,7 @@ const DownloadSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-6 text-center lg:text-left">
-                Join the Waitlist
+                Get Early Access
               </h3>
 
               <div className="space-y-3 sm:space-y-4 md:space-y-6">
@@ -141,7 +143,7 @@ const DownloadSection: React.FC = () => {
                       Mobile App
                     </h4>
                     <p className="text-white/60 text-xs sm:text-sm">
-                      Coming soon for iOS and Android
+                      Available now on Google Play. iOS coming soon.
                     </p>
                   </div>
                 </div>
@@ -152,13 +154,20 @@ const DownloadSection: React.FC = () => {
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-medium text-sm sm:text-base">
-                      Early Access
+                      iOS Early Access
                     </h4>
                     <p className="text-white/60 text-xs sm:text-sm">
-                      Get notified when we launch
+                      Get notified when we launch on the App Store
                     </p>
                   </div>
                 </div>
+
+                <Button asChild className="w-full h-10 sm:h-12 md:h-14 bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-dark font-medium text-sm sm:text-base">
+                  <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+                    <Download size={18} />
+                    Download on Google Play
+                  </a>
+                </Button>
 
                 {/* Insertion point for the form */}
                 <WaitlistForm />
@@ -178,7 +187,7 @@ const DownloadSection: React.FC = () => {
               </div>
 
               <div className="absolute -top-2 sm:-top-3 md:-top-5 -right-2 sm:-right-3 md:-right-5 bg-fintech-mint text-fintech-dark px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 rounded-full font-semibold text-xs sm:text-sm">
-                Coming Soon
+                Live
               </div>
             </div>
           </div>
