@@ -4,14 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { Link } from 'react-router-dom';
 
+const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.squirrelll.ing';
+
 const DownloadSection: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-  
   return <section id="download-section" className="py-16 md:py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-fintech-darkBlue/90 to-fintech-dark -z-10"></div>
@@ -28,14 +23,17 @@ const DownloadSection: React.FC = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-              <Button onClick={scrollToTop} size="lg" className="bg-fintech-mint/30 hover:bg-fintech-mint/40 text-white font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base">
+              <Button disabled size="lg" className="bg-white/10 text-white/50 font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base cursor-not-allowed">
                 <Download size={18} />
                 Download for iOS
+                <span className="text-[10px] ml-1 opacity-70">(Coming Soon)</span>
               </Button>
               
-              <Button onClick={scrollToTop} size="lg" className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base">
-                <Download size={18} />
-                Download for Android
+              <Button asChild size="lg" className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base">
+                <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+                  <Download size={18} />
+                  Download for Android
+                </a>
               </Button>
             </div>
           </div>
