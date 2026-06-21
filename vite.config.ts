@@ -29,16 +29,23 @@ export default defineConfig(({ mode }) => ({
     mode !== "development" &&
       prerender({
         routes: PRERENDER_ROUTES,
-        renderer: "@prerenderer/renderer-puppeteer",
+        // JSDOM renderer works on any Node host (including cPanel shared
+        // hosting) — no Chromium binary required, unlike puppeteer.
+        renderer: "@prerenderer/renderer-jsdom",
         rendererOptions: {
-          renderAfterTime: 4000,
-          maxConcurrentRoutes: 2,
-          headless: true,
-          executablePath:
-            process.env.PUPPETEER_EXECUTABLE_PATH ||
-            "/bin/chromium" ||
-            undefined,
-          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+          renderAfterTime: 5000,
+          maxConcurrentRoutes: 1,
+        },
+        postProcess(renderedRoute: {
+          route: string;
+          html: string;
+        }) {
+          // Strip the loading-screen markup if it got captured before the
+          // real page rendered, so crawlers never see only "Loading...".
+          renderedRoute.html = renderedRoute.html.replace(
+            /<div class="fixed inset-0 bg-fintech-dark[\s\S]*?Loading your financial future\.\.\.<\/p><\/div>/,
+            ""
+          );
         },
       }),
   ].filter(Boolean),
