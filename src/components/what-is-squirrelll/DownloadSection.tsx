@@ -7,13 +7,6 @@ import { Link } from 'react-router-dom';
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.squirrelll.ing';
 
 const DownloadSection: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-  
   return <section id="download-section" className="py-16 md:py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-fintech-darkBlue/90 to-fintech-dark -z-10"></div>
