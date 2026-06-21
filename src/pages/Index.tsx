@@ -23,7 +23,7 @@ const Index = () => {
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
         title="Squirrelll.ing — Community-Based Micro-Fintech Platform"
-        description="Save and invest in tiny daily steps. Join the Squirrelll.ing waitlist for round-ups, a community Daily Pool, and smart goal savings."
+        description="Save and invest in tiny daily steps. Download Squirrelll.ing on Google Play or join the waitlist for the iOS launch."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
