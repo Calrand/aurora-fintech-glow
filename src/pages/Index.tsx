@@ -34,6 +34,7 @@ const Index = () => {
           description:
             'A community-based micro-fintech platform integrating micro-savings, round-ups, and a Daily Pool into your everyday life.',
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+          downloadUrl: 'https://play.google.com/store/apps/details?id=com.squirrelll.ing',
         }}
       />
       <Navbar />
