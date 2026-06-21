@@ -158,69 +158,116 @@ const ROUTE_META: Record<string, RouteMeta> = {
   },
   "/privacy-policy": {
     title: "Privacy Policy | Squirrelll.ing",
-    description: "How Squirrelll.ing collects, uses, and protects your data.",
+    description:
+      "How Squirrelll.ing collects, uses, stores, and protects your personal and financial data across the mobile app and website. GDPR, CCPA, LGPD, and COPPA aligned.",
     h1: "Privacy Policy",
-    bodyHtml: simpleBody(
-      "Privacy Policy",
-      "How Squirrelll.ing collects, uses, and protects your personal and financial data.",
-    ),
+    bodyHtml: `
+      <header><h1>Privacy Policy</h1><p>At Squirrelll.ing, your privacy is our priority. This policy explains what we collect, why we collect it, how we use it, and the controls you have over your information when you use the Squirrelll.ing mobile app and website.</p></header>
+      <section><h2>1. Information we collect</h2>
+        <p><strong>Personal information:</strong> name, email, phone number, location, and payment-related details you provide when creating an account or transacting.</p>
+        <p><strong>Usage data:</strong> activity logs, Daily Pool participation, savings behavior, wallet activity, and transaction history.</p>
+        <p><strong>Device information:</strong> IP address, device type, operating system, browser type, diagnostics, crash logs, and device identifiers.</p>
+      </section>
+      <section><h2>2. How we use your information</h2>
+        <ul>
+          <li>To process daily contributions, savings goals, wallet activity, and Daily Pool participation.</li>
+          <li>To create, manage, and secure your account.</li>
+          <li>To send important account, transaction, security, and product updates.</li>
+          <li>To improve app performance, diagnose issues, and maintain reliability.</li>
+          <li>To comply with legal, financial, fraud prevention, and security requirements.</li>
+        </ul>
+      </section>
+      <section><h2>3. Sharing your information</h2><p>We do not sell your personal information. We share limited data only with trusted service providers (such as payment processors and analytics partners) under strict confidentiality, and with authorities when legally required.</p></section>
+      <section><h2>4. Data security</h2><p>We use encryption in transit and at rest, tokenization for payment data, and continuous monitoring to keep your information safe.</p></section>
+      <section><h2>5. Your rights</h2><p>Depending on your region (GDPR, CCPA, LGPD, COPPA and others), you may access, correct, export, or delete your data, and object to certain processing. Contact us to exercise these rights.</p></section>
+      <section><h2>6. Contact</h2><p>For privacy questions or requests, contact the Squirrelll.ing team via the in-app support or the contact details on our website.</p></section>
+    `,
   },
   "/terms-of-service": {
     title: "Terms of Service | Squirrelll.ing",
-    description: "The terms governing your use of Squirrelll.ing.",
+    description:
+      "The rules for using Squirrelll.ing — eligibility, the Daily Pool, the Smart Savings tool, fees, refunds, and your responsibilities as a user.",
     h1: "Terms of Service",
-    bodyHtml: simpleBody(
-      "Terms of Service",
-      "The terms that govern your use of the Squirrelll.ing app and website.",
-    ),
+    bodyHtml: `
+      <header><h1>Terms of Service</h1><p>Welcome to Squirrelll.ing. By accessing or using our platform you agree to these Terms of Service.</p></header>
+      <section><h2>1. Eligibility</h2><p>You must be 16 years or older to create an account and participate in financial transactions. To keep the community fair, each individual may open only one account.</p></section>
+      <section><h2>2. Services offered</h2><p>Squirrelll.ing offers two financial tools:</p>
+        <ul>
+          <li><strong>Daily Pool:</strong> users contribute a small fixed amount, and one participant from the region is selected each day to receive the total pool.</li>
+          <li><strong>Smart Savings Tool:</strong> automate daily or weekly deposits toward personal savings goals through Savings Pods.</li>
+        </ul>
+        <p>Participation in the Daily Pool is optional and requires completion of a skill-based step; outcomes are not guaranteed.</p>
+      </section>
+      <section><h2>3. Payments and fees</h2><p>All transactions are securely processed. A 12% platform fee applies to Daily Pool payouts before disbursement. A 5% fee applies to savings withdrawals.</p></section>
+      <section><h2>4. Refunds</h2><p>Deposits to the Daily Pool are non-refundable once processed, unless a technical or unauthorized issue is verified. Deposits to Savings Pods can be withdrawn anytime from your wallet, subject to the withdrawal fee.</p></section>
+      <section><h2>5. Account termination</h2><p>We may suspend or terminate accounts that violate these terms, including fraud, abuse, or misuse of the platform.</p></section>
+      <section><h2>6. Limitation of liability</h2><p>Squirrelll.ing is not liable for indirect or consequential damages arising from the use or inability to use the platform.</p></section>
+      <section><h2>7. Updates to these terms</h2><p>We may update these Terms of Service from time to time. Users will be notified, and continued use of the platform constitutes acceptance.</p></section>
+    `,
   },
   "/payment-security": {
     title: "Payment Security | Squirrelll.ing",
     description:
-      "How Squirrelll.ing keeps your payments and financial data secure.",
+      "How Squirrelll.ing keeps your payments safe: PCI DSS Level 1 processing via Stripe, end-to-end encryption, tokenization, 3D Secure authentication, and active fraud detection.",
     h1: "Payment Security",
-    bodyHtml: simpleBody(
-      "Payment Security",
-      "How Squirrelll.ing safeguards your payments, deposits, and financial data end-to-end.",
-    ),
+    bodyHtml: `
+      <header><h1>Payment Security</h1><p>Your financial security is non-negotiable. All Squirrelll.ing payments are processed through Stripe, a PCI DSS Level 1 certified provider — the highest standard for secure payment systems.</p></header>
+      <section><h2>How we keep you safe</h2>
+        <ul>
+          <li><strong>End-to-end encryption:</strong> your data is encrypted in transit and at rest.</li>
+          <li><strong>Tokenization:</strong> sensitive card information is tokenized so your actual card details are never stored on our servers.</li>
+          <li><strong>Fraud detection:</strong> Stripe's advanced systems actively protect against unauthorized transactions.</li>
+          <li><strong>Secure authentication:</strong> we use industry-standard 3D Secure (3DS) to verify payments.</li>
+        </ul>
+      </section>
+      <section><h2>What this means for you</h2><p>Squirrelll.ing never sees or stores your raw card number. Deposits to the Daily Pool and Savings Pods, plus withdrawals from your wallet, are all handled inside Stripe's secure environment, so your money and your data stay protected.</p></section>
+    `,
   },
   "/verify-email": {
     title: "Verify Email | Squirrelll.ing",
-    description: "Verify your email address for your Squirrelll.ing account.",
-    h1: "Verify Email",
-    bodyHtml: simpleBody(
-      "Verify Email",
-      "Confirm your email address to activate your Squirrelll.ing account.",
-    ),
+    description:
+      "Verify your email address to activate your Squirrelll.ing account and start saving with round-ups, the Daily Pool, and Savings Pods.",
+    h1: "Verify your email",
+    bodyHtml: `
+      <header><h1>Verify your email</h1><p>Confirm your email address to activate your Squirrelll.ing account. Verification protects your wallet, secures your Daily Pool participation, and lets us send you transaction and security updates.</p></header>
+      <section><h2>Didn't get the email?</h2><p>Check your spam or promotions folder, make sure you used the correct address, and request a new verification link from inside the Squirrelll.ing app if needed.</p></section>
+    `,
   },
   "/delete-account": {
     title: "Delete Account | Squirrelll.ing",
-    description: "Request deletion of your Squirrelll.ing account.",
-    h1: "Delete Account",
-    bodyHtml: simpleBody(
-      "Delete Account",
-      "Request permanent deletion of your Squirrelll.ing account and associated data.",
-    ),
+    description:
+      "Request permanent deletion of your Squirrelll.ing account and associated data. Learn what gets removed, what is retained for legal reasons, and how long it takes.",
+    h1: "Delete your account",
+    bodyHtml: `
+      <header><h1>Delete your account</h1><p>You can request permanent deletion of your Squirrelll.ing account at any time. Submitting a deletion request closes your account, cancels active Savings Pods, and removes your personal profile data.</p></header>
+      <section><h2>What gets deleted</h2><ul><li>Your profile information (name, email, phone, location).</li><li>Your saved preferences, notifications, and device identifiers.</li><li>Your wallet history visible inside the app.</li></ul></section>
+      <section><h2>What we may retain</h2><p>Some transaction records and identity data are retained for legal, accounting, fraud-prevention, and regulatory compliance reasons, as required by applicable financial regulations.</p></section>
+      <section><h2>Before you delete</h2><p>Withdraw any remaining balance from your wallet and complete or close out active Savings Pods. Once deletion is processed, your account cannot be restored.</p></section>
+    `,
   },
   "/budget-calculator": {
     title: "Free Budget Calculator | Squirrelll.ing",
     description:
-      "Plan your monthly budget with our free, easy-to-use budget calculator.",
-    h1: "Budget Calculator",
-    bodyHtml: simpleBody(
-      "Budget Calculator",
-      "Plan your monthly income, expenses, and savings with our free budget calculator.",
-    ),
+      "Plan your monthly budget with Squirrelll.ing's free 50/30/20 budget calculator. See how much to spend on needs, wants, and savings — and how Squirrellling can grow that savings bucket effortlessly.",
+    h1: "Free Budget Calculator",
+    bodyHtml: `
+      <header><h1>Free Budget Calculator</h1><p>Plan your monthly income, expenses, and savings in seconds with the Squirrelll.ing Budget Calculator. Enter what you earn and what you spend, and see exactly how much room you have left to save.</p></header>
+      <section><h2>The 50/30/20 rule</h2><p>A simple budgeting framework: spend roughly <strong>50% on needs</strong> (rent, groceries, utilities, transport), <strong>30% on wants</strong> (eating out, subscriptions, entertainment), and put <strong>20% toward savings</strong> and debt repayment. The calculator shows your current split and where you can adjust.</p></section>
+      <section><h2>How to use it</h2><ol><li>Enter your monthly take-home income.</li><li>Add your fixed and variable expenses by category.</li><li>Review your remaining cash flow and savings rate.</li><li>Open a Savings Pod in Squirrelll.ing to automate the savings portion daily or weekly.</li></ol></section>
+      <section><h2>Why pair it with Squirrelll.ing</h2><p>A budget only works if you act on it. Squirrelll.ing turns your savings target into automatic micro-deposits, adds spare-change round-ups on everyday purchases, and gives you a shot at the community Daily Pool — so the savings line of your budget actually fills up.</p></section>
+    `,
   },
   "/round-up-calculator": {
     title: "Round-Up Savings Calculator | Squirrelll.ing",
     description:
-      "See how much you could save by rounding up everyday purchases with Squirrelll.ing.",
+      "See how much spare change you could save each month and year by rounding up everyday purchases with Squirrelll.ing — coffees, groceries, fuel, and more.",
     h1: "Round-Up Savings Calculator",
-    bodyHtml: simpleBody(
-      "Round-Up Savings Calculator",
-      "Estimate how much spare change you could save each month by rounding up your everyday purchases.",
-    ),
+    bodyHtml: `
+      <header><h1>Round-Up Savings Calculator</h1><p>Estimate how much spare change you could save by rounding every purchase up to the nearest whole unit. Enter your typical weekly transactions and see the monthly and yearly total Squirrelll.ing would tuck away for you.</p></header>
+      <section><h2>How round-ups work</h2><p>Every time you spend, Squirrelll.ing rounds the total up to the next whole dollar (or your local currency) and moves the difference into your Savings Pod. A $3.40 coffee saves $0.60. A $27.15 grocery run saves $0.85. Individually tiny, collectively meaningful.</p></section>
+      <section><h2>What the calculator shows</h2><ul><li>Average round-up per transaction.</li><li>Estimated monthly and annual savings.</li><li>How long it would take to hit a savings goal at that pace.</li></ul></section>
+      <section><h2>From estimate to real savings</h2><p>Once you see the number, download Squirrelll.ing on Google Play, link a payment method, and let round-ups, Savings Pods, and the Daily Pool do the work in the background.</p></section>
+    `,
   },
 };
 
