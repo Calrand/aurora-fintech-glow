@@ -139,6 +139,57 @@ const howToJsonLd = {
   })),
 };
 
+const breadcrumb = (items: { name: string; path: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((it, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: it.name,
+    item: `${SITE}${it.path}`,
+  })),
+});
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Squirrelll.ing",
+  url: SITE,
+  logo: `${SITE}/logo.svg`,
+  sameAs: [
+    "https://play.google.com/store/apps/details?id=com.squirrelll.ing",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Squirrelll.ing",
+  url: SITE,
+};
+
+const softwareAppJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Squirrelll.ing",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "iOS, Android",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  downloadUrl:
+    "https://play.google.com/store/apps/details?id=com.squirrelll.ing",
+  description:
+    "A community-based micro-fintech platform integrating micro-savings, round-ups, and a Daily Pool into your everyday life.",
+};
+
+const webAppCalc = (name: string) => ({
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name,
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+});
+
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
     title: "Squirrelll.ing - Community Based Micro-Fintech Platform",
@@ -146,7 +197,7 @@ const ROUTE_META: Record<string, RouteMeta> = {
       "Squirrelll.ing turns spare change and small daily habits into real savings through round-ups, a community Daily Pool, and goal-based Savings Pods. On Google Play now.",
     h1: "Squirrelll.ing — Community-Based Micro-Fintech Platform",
     bodyHtml: homeBody,
-    jsonLd: [faqJsonLd, howToJsonLd],
+    jsonLd: [orgJsonLd, websiteJsonLd, softwareAppJsonLd, faqJsonLd, howToJsonLd],
   },
   "/what-is-squirrelling": {
     title: "What is Squirrellling? A Smarter Way to Save, One Step at a Time",
@@ -154,7 +205,14 @@ const ROUTE_META: Record<string, RouteMeta> = {
       "Learn how Squirrellling works: automatic round-ups, a community Daily Pool that pays out daily, and goal-based Savings Pods that make saving effortless.",
     h1: "What is Squirrellling?",
     bodyHtml: whatIsBody,
-    jsonLd: [faqJsonLd, howToJsonLd],
+    jsonLd: [
+      faqJsonLd,
+      howToJsonLd,
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "What is Squirrellling", path: "/what-is-squirrelling" },
+      ]),
+    ],
   },
   "/privacy-policy": {
     title: "Privacy Policy | Squirrelll.ing",
@@ -182,6 +240,12 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <section><h2>5. Your rights</h2><p>Depending on your region (GDPR, CCPA, LGPD, COPPA and others), you may access, correct, export, or delete your data, and object to certain processing. Contact us to exercise these rights.</p></section>
       <section><h2>6. Contact</h2><p>For privacy questions or requests, contact the Squirrelll.ing team via the in-app support or the contact details on our website.</p></section>
     `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Privacy Policy", path: "/privacy-policy" },
+      ]),
+    ],
   },
   "/terms-of-service": {
     title: "Terms of Service | Squirrelll.ing",
@@ -204,6 +268,12 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <section><h2>6. Limitation of liability</h2><p>Squirrelll.ing is not liable for indirect or consequential damages arising from the use or inability to use the platform.</p></section>
       <section><h2>7. Updates to these terms</h2><p>We may update these Terms of Service from time to time. Users will be notified, and continued use of the platform constitutes acceptance.</p></section>
     `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Terms of Service", path: "/terms-of-service" },
+      ]),
+    ],
   },
   "/payment-security": {
     title: "Payment Security | Squirrelll.ing",
@@ -222,6 +292,34 @@ const ROUTE_META: Record<string, RouteMeta> = {
       </section>
       <section><h2>What this means for you</h2><p>Squirrelll.ing never sees or stores your raw card number. Deposits to the Daily Pool and Savings Pods, plus withdrawals from your wallet, are all handled inside Stripe's secure environment, so your money and your data stay protected.</p></section>
     `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Payment Security", path: "/payment-security" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How does Squirrelll.ing process payments securely?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "All payments are processed by Stripe, a PCI DSS Level 1 certified provider. Card details are tokenized, transmitted over end-to-end encryption, and verified with 3D Secure where applicable.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does Squirrelll.ing store my card number?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No. Card numbers are tokenized by Stripe and never stored on Squirrelll.ing servers.",
+            },
+          },
+        ],
+      },
+    ],
   },
   "/verify-email": {
     title: "Verify Email | Squirrelll.ing",
@@ -232,6 +330,12 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <header><h1>Verify your email</h1><p>Confirm your email address to activate your Squirrelll.ing account. Verification protects your wallet, secures your Daily Pool participation, and lets us send you transaction and security updates.</p></header>
       <section><h2>Didn't get the email?</h2><p>Check your spam or promotions folder, make sure you used the correct address, and request a new verification link from inside the Squirrelll.ing app if needed.</p></section>
     `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Verify Email", path: "/verify-email" },
+      ]),
+    ],
   },
   "/delete-account": {
     title: "Delete Account | Squirrelll.ing",
@@ -244,6 +348,22 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <section><h2>What we may retain</h2><p>Some transaction records and identity data are retained for legal, accounting, fraud-prevention, and regulatory compliance reasons, as required by applicable financial regulations.</p></section>
       <section><h2>Before you delete</h2><p>Withdraw any remaining balance from your wallet and complete or close out active Savings Pods. Once deletion is processed, your account cannot be restored.</p></section>
     `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Delete Account", path: "/delete-account" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: "How to delete your Squirrelll.ing account",
+        step: [
+          { "@type": "HowToStep", position: 1, name: "Email support", text: "Email support@squirrelll.ing from your registered address." },
+          { "@type": "HowToStep", position: 2, name: "Include your username", text: "Include your username and clearly state you are requesting account deletion." },
+          { "@type": "HowToStep", position: 3, name: "Wait for processing", text: "Our team will process your request within 3–5 business days." },
+        ],
+      },
+    ],
   },
   "/budget-calculator": {
     title: "Free Budget Calculator | Squirrelll.ing",
@@ -256,6 +376,13 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <section><h2>How to use it</h2><ol><li>Enter your monthly take-home income.</li><li>Add your fixed and variable expenses by category.</li><li>Review your remaining cash flow and savings rate.</li><li>Open a Savings Pod in Squirrelll.ing to automate the savings portion daily or weekly.</li></ol></section>
       <section><h2>Why pair it with Squirrelll.ing</h2><p>A budget only works if you act on it. Squirrelll.ing turns your savings target into automatic micro-deposits, adds spare-change round-ups on everyday purchases, and gives you a shot at the community Daily Pool — so the savings line of your budget actually fills up.</p></section>
     `,
+    jsonLd: [
+      webAppCalc("Squirrelll.ing Budget Calculator"),
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Budget Calculator", path: "/budget-calculator" },
+      ]),
+    ],
   },
   "/round-up-calculator": {
     title: "Round-Up Savings Calculator | Squirrelll.ing",
@@ -268,8 +395,16 @@ const ROUTE_META: Record<string, RouteMeta> = {
       <section><h2>What the calculator shows</h2><ul><li>Average round-up per transaction.</li><li>Estimated monthly and annual savings.</li><li>How long it would take to hit a savings goal at that pace.</li></ul></section>
       <section><h2>From estimate to real savings</h2><p>Once you see the number, download Squirrelll.ing on Google Play, link a payment method, and let round-ups, Savings Pods, and the Daily Pool do the work in the background.</p></section>
     `,
+    jsonLd: [
+      webAppCalc("Squirrelll.ing Round-Up Calculator"),
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Round-Up Calculator", path: "/round-up-calculator" },
+      ]),
+    ],
   },
 };
+
 
 function staticSeoPlugin(): Plugin {
   return {
