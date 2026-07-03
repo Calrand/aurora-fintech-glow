@@ -457,11 +457,12 @@ function staticSeoPlugin(): Plugin {
           `<link rel="canonical" href="${canonical}" />${jsonLdTags}</head>`,
         );
 
-        // Crawler-visible content inside #root. React will replace this on mount
-        // for real users; crawlers and AI tools read the static copy.
+        // Crawler-visible content inside #root. React replaces this on mount
+        // for real users. Kept on-screen (not off-screen with -9999px) so
+        // search engines and AI crawlers don't treat it as cloaked/hidden text.
         html = html.replace(
           '<div id="root"></div>',
-          `<div id="root"><div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">${meta.bodyHtml}</div></div>`,
+          `<div id="root"><div data-prerender="true">${meta.bodyHtml}</div></div>`,
         );
 
         if (route === "/") {
