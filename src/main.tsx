@@ -1,19 +1,20 @@
 import React from 'react';
-import { createRoot, hydrateRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 
 const container = document.getElementById('root')!;
-const tree = (
+
+// Prerendered HTML lives inside <div data-prerender="true"> for crawlers/SEO.
+// On the client we intentionally discard it (not hydrate) because the
+// prerendered markup is SEO-only content that doesn't match the React tree.
+// React would otherwise log hydration mismatch warnings.
+const prerender = container.querySelector('[data-prerender="true"]');
+if (prerender) prerender.remove();
+
+createRoot(container).render(
   <HelmetProvider>
     <App />
-  </HelmetProvider>
+  </HelmetProvider>,
 );
-
-// If the build produced prerendered HTML, hydrate it; otherwise mount fresh.
-if (container.hasChildNodes()) {
-  hydrateRoot(container, tree);
-} else {
-  createRoot(container).render(tree);
-}
