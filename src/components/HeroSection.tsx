@@ -59,12 +59,12 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex-1 relative mt-4 sm:mt-6 lg:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0">
+          <div className="flex-1 relative mt-4 sm:mt-6 lg:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0 lg:flex lg:justify-center">
             <div className="glow-mint animate-float">
-              <div className="relative z-10 glass-card p-1 sm:p-2 shadow-xl max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] mx-auto">
+              <div className="relative z-10 glass-card p-1 sm:p-2 shadow-xl max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-none mx-auto lg:w-[381.333px] lg:h-[241.5px]">
                 <img
                   alt="Squirrelll.ing app interface"
-                  className="rounded-lg w-full"
+                  className="rounded-lg w-full lg:w-full lg:h-full lg:object-cover"
                   src="/uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png"
                   loading="eager"
                   width="400"
