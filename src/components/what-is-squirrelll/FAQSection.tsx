@@ -47,11 +47,13 @@ const FAQSection: React.FC = () => {
                 What is the Daily Pool exactly?
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 pt-2 text-white/80">
-                It's a daily micro-contribution act. You contribute a small
-                fixed amount and one person (including you) from your
-                region/country receives the total pool at 12 PM. Which can help
-                you and others to help towards their financial goal or
-                milestone. The pool happens daily.
+                It's a daily micro-contribution act. You contribute a small fixed
+                amount determined by your region's currency (e.g., $0.20-$1) and
+                one person (including you) from your region/country receives the
+                entire pool, minus our 12% platform fee, at 12 PM local time.
+                If you don't receive it today, you are still helping another
+                until your day comes. The pool happens daily and every region
+                has its own separate pool.
               </AccordionContent>
             </AccordionItem>
 
