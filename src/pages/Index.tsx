@@ -5,6 +5,8 @@ import HeroSection from '@/components/HeroSection';
 import SEO from '@/components/SEO';
 
 // Lazy load non-critical components
+const ConceptSection = lazy(() => import('@/components/what-is-squirrelll/ConceptSection'));
+const FAQSection = lazy(() => import('@/components/what-is-squirrelll/FAQSection'));
 const HowItWorksSection = lazy(() => import('@/components/HowItWorksSection'));
 const DownloadSection = lazy(() => import('@/components/DownloadSection'));
 const WaitlistSection = lazy(() => import('@/components/WaitlistSection'));
