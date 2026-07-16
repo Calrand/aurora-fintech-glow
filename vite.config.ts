@@ -231,7 +231,7 @@ const ROUTE_META: Record<string, RouteMeta> = {
     bodyHtml: homeBody,
     jsonLd: [orgJsonLd, websiteJsonLd, softwareAppJsonLd, faqJsonLd, howToJsonLd],
   },
-  "/what-is-squirrelling": {
+  "/what-is-squirrelll.ing": {
     title: "What is Squirrellling? A Smarter Way to Reach Your Financial Goals, One Small Step at a Time",
     description:
       "Learn how Squirrellling works: automatic round-ups, a community Daily Pool that pays out daily, and goal-based Savings Pods that make saving effortless.",
@@ -242,7 +242,7 @@ const ROUTE_META: Record<string, RouteMeta> = {
       howToJsonLd,
       breadcrumb([
         { name: "Home", path: "/" },
-        { name: "What is Squirrellling", path: "/what-is-squirrelling" },
+        { name: "What is Squirrellling", path: "/what-is-squirrelll.ing" },
       ]),
     ],
   },

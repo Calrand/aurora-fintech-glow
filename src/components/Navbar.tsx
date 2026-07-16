@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop button */}
         {location.pathname === '/' ? (
-          <Link to="/what-is-squirrelling">
+          <Link to="/what-is-squirrelll.ing">
             <Button
               variant="outline"
               className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 hidden md:flex gap-2 h-9 lg:h-10 px-3 lg:px-4 text-sm lg:text-base"
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
           >
             {location.pathname === '/' ? (
               <Link
-                to="/what-is-squirrelling"
+                to="/what-is-squirrelll.ing"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Button
