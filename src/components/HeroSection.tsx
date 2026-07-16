@@ -2,8 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/Container';
 import { Download, ArrowDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation();
   const scrollToDownload = () => {
     document.getElementById('download')?.scrollIntoView({
       behavior: 'smooth',
@@ -19,13 +21,12 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 text-center min-[900px]:text-left max-w-2xl min-[900px]:max-w-none mx-auto min-[900px]:mx-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl min-[900px]:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2 min-[900px]:px-0">
               <span className="gradient-text block mb-1 sm:mb-2">
-                A FinTech Platform
+                {t('hero.titleTop')}
               </span>
-              <span className="block">For Your Micro Finances</span>
+              <span className="block">{t('hero.titleBottom')}</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[480px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
-              Community finance where everyone gives — and everyone gets. Save
-              and grow your money effortlessly.
+              {t('hero.tagline')}
             </p>
 
             <div className="flex justify-center min-[900px]:justify-start px-2 min-[900px]:px-0">
@@ -35,7 +36,7 @@ const HeroSection: React.FC = () => {
                 onClick={scrollToDownload}
               >
                 <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
-                Download Now
+                {t('hero.cta')}
               </Button>
             </div>
 
@@ -52,9 +53,9 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               <p className="text-white/70 text-xs sm:text-sm">
-                Joined by{' '}
+                {t('hero.joinedBy')}{' '}
                 <span className="text-fintech-mint font-medium">10,000+</span>{' '}
-                users
+                {t('hero.users')}
               </p>
             </div>
           </div>
