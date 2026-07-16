@@ -22,8 +22,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
-        title="Squirrelll.ing — Community-Based Micro-Fintech Platform"
-        description="Save and invest in tiny daily steps. Download Squirrelll.ing on Google Play or join the waitlist for the iOS launch."
+        title="Squirrelll.ing — Community Finance Where Everyone Gives — And Everyone Gets"
+        description="Squirrelll.ing is community finance: everyone gives a small daily amount, and one regional member receives the full Daily Pool to accelerate their goal. Save, pool, and grow together."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
