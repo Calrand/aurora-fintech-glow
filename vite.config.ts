@@ -224,10 +224,10 @@ const webAppCalc = (name: string) => ({
 
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Squirrelll.ing - Community Based Micro-Fintech Platform",
+    title: "Squirrelll.ing - Community Finance Where Everyone Gives — And Everyone Gets",
     description:
-      "Squirrelll.ing turns spare change and small daily habits into real savings through round-ups, a community Daily Pool, and goal-based Savings Pods. On Google Play now.",
-    h1: "Squirrelll.ing — Community-Based Micro-Fintech Platform",
+      "Squirrelll.ing is community finance: everyone gives a small daily amount, and one regional member receives the full Daily Pool to accelerate their goal. Save, pool, and grow together.",
+    h1: "Community Finance Where Everyone Gives — And Everyone Gets",
     bodyHtml: homeBody,
     jsonLd: [orgJsonLd, websiteJsonLd, softwareAppJsonLd, faqJsonLd, howToJsonLd],
   },
