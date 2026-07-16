@@ -126,63 +126,34 @@ const EducationalContent: React.FC = () => {
         </p>
       </Section>
 
-      <Section id="further-reading" kicker="Resources" title="Further Reading">
+      <Section id="references" kicker="Resources" title="References &amp; Further Reading">
         <p>
-          The following sources provide additional context on the economics, history, and
-          cultural practices connected to Squirrelling and micro-savings:
+          The concepts referenced in this article draw on established literature in behavioural
+          economics, development finance, and the history of communal savings. Citations will be
+          expanded over time.
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            <a
-              href="https://www.nobelprize.org/prizes/economic-sciences/2017/thaler/facts/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fintech-mint hover:underline"
-            >
-              Richard H. Thaler — Nobel Prize in Economic Sciences 2017
-            </a>
+            Thaler, R. H., &amp; Sunstein, C. R. — Nudge: Improving Decisions About Health, Wealth,
+            and Happiness. [Placeholder citation]
           </li>
           <li>
-            <a
-              href="https://www.worldbank.org/en/topic/financialinclusion"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fintech-mint hover:underline"
-            >
-              World Bank — Financial Inclusion Overview
-            </a>
+            Thaler, R. H. — Mental Accounting Matters, Journal of Behavioral Decision Making.
+            [Placeholder citation]
           </li>
           <li>
-            <a
-              href="https://www.bis.org/publ/work701.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fintech-mint hover:underline"
-            >
-              Bank for International Settlements — ROSCAs and Financial Access
-            </a>
+            Ardener, S. — The Comparative Study of Rotating Credit Associations. [Placeholder citation]
           </li>
           <li>
-            <a
-              href="https://www.investopedia.com/terms/r/rotating-savings-and-credit-association-rosca.asp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fintech-mint hover:underline"
-            >
-              Investopedia — Rotating Savings and Credit Association (ROSCA)
-            </a>
+            Rutherford, S. — The Poor and Their Money. [Placeholder citation]
           </li>
           <li>
-            <a
-              href="https://www.oecd.org/publications/oecd-pisa-financial-literacy-framework-2025_7d8d0123-en.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fintech-mint hover:underline"
-            >
-              OECD — Financial Literacy and Behavioural Insights
-            </a>
+            World Bank — Reports on informal savings groups and financial inclusion. [Placeholder citation]
           </li>
         </ul>
+        <p>
+          This page is intended as an educational resource. It does not constitute financial advice.
+        </p>
       </Section>
 
       <Section id="apply" kicker="Back to the Platform" title="How Squirrelll.ing Applies These Principles">
