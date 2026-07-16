@@ -14,7 +14,7 @@ email waitlist while the mobile apps are being prepared for launch.
 ## Pages
 
 - [Home](/): Product overview, hero, features, how it works, waitlist signup.
-- [What is Squirrellling](/what-is-squirrelling): Long-form explainer of the concept, mechanics, and FAQs.
+- [What is Squirrellling](/what-is-squirrelll.ing): Long-form explainer of the concept, mechanics, and FAQs.
 
 ## Tools
 

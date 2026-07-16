@@ -11,7 +11,7 @@ import DownloadSection from '@/components/what-is-squirrelll/DownloadSection';
 import SEO from '@/components/SEO';
 
 const WhatIsSquirrelll: React.FC = () => {
-  const url = 'https://squirrelll.ing/what-is-squirrelling';
+  const url = 'https://squirrelll.ing/what-is-squirrelll.ing';
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -52,7 +52,7 @@ const WhatIsSquirrelll: React.FC = () => {
       <SEO
         title="What is Squirrelll.ing? Squirrelling, Community Savings & Micro-Finance Explained"
         description="A definitive guide to Squirrelll.ing and Squirrelling — the concept, history, global practices, and behavioural economics behind consistent community micro-savings."
-        path="/what-is-squirrelling"
+        path="/what-is-squirrelll.ing"
         type="article"
         jsonLd={[articleSchema, breadcrumbSchema, orgSchema]}
       />
