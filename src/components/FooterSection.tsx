@@ -46,7 +46,13 @@ const FooterSection: React.FC = () => {
             <h3 className="font-semibold text-base md:text-lg mb-4 md:mb-6 text-white">
               {t('footer.resources')}
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-12 sm:gap-y-4 text-center w-full max-w-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-x-8 sm:gap-y-4 text-center w-full max-w-2xl">
+              <Link
+                to="/about"
+                className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
+              >
+                {t('footer.about')}
+              </Link>
               <Link
                 to="/privacy-policy"
                 className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"

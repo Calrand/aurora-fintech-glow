@@ -13,6 +13,7 @@ import VerifyEmail from './pages/VerifyEmail';
 import DeleteAccount from './pages/DeleteAccount';
 import BudgetCalculator from './pages/BudgetCalculator';
 import RoundUpCalculator from './pages/RoundUpCalculator';
+import About from './pages/About';
 import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="/budget-calculator" element={<BudgetCalculator />} />
           <Route path="/round-up-calculator" element={<RoundUpCalculator />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
