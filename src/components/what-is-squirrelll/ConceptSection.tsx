@@ -165,61 +165,6 @@ const ConceptSection: React.FC = () => {
             </div>
           </div>
 
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">
-              The Ecosystem of Squirrelll.ing
-            </h2>
-            <p className="text-lg text-white/80 mb-8 text-center">
-              How we compare to other micro-saving solutions in the market:
-            </p>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="py-4 px-4 font-medium text-fintech-mint">
-                      Platform
-                    </th>
-                    <th className="py-4 px-4 font-medium text-fintech-mint">
-                      Core Concept
-                    </th>
-                    <th className="py-4 px-4 font-medium text-fintech-mint hidden md:table-cell">
-                      Website
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {platforms.map((platform) => (
-                    <tr
-                      key={platform.key}
-                      className="border-b border-white/5 hover:bg-white/5 transition-colors"
-                    >
-                      <td className="py-4 px-4 font-medium">{platform.name}</td>
-                      <td className="py-4 px-4 text-white/80">
-                        {platform.description}
-                      </td>
-                      <td className="py-4 px-4 hidden md:table-cell">
-                        <a
-                          href={platform.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-fintech-mint hover:underline flex items-center gap-1"
-                        >
-                          Visit <ExternalLink size={14} />
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <p className="text-center text-white/60 text-sm mt-8">
-              Unlike traditional savings apps, Squirrelll.ing platforms blends
-              community engagement, nurture squirrelll.ing habit and help reach
-              your financial goals without any burden.
-            </p>
-          </div>
         </div>
       </div>
     </section>
