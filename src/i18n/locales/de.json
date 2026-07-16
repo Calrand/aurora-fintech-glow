@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "whatIs": "Was ist Squirrelll.ing?",
+    "backHome": "Zurück zur Startseite",
+    "toggleMenu": "Menü öffnen"
+  },
+  "hero": {
+    "titleTop": "Eine FinTech-Plattform",
+    "titleBottom": "Für deine Mikrofinanzen",
+    "tagline": "Community-Finanzen, bei denen alle geben — und alle bekommen. Spare und lass dein Geld mühelos wachsen.",
+    "cta": "Jetzt herunterladen",
+    "joinedBy": "Bereits dabei:",
+    "users": "Nutzer"
+  },
+  "footer": {
+    "description": "Eine FinTech-Plattform, die Mikrofinanzen in deinen Alltag integriert. Wir revolutionieren dein Finanzerlebnis mit smarten, intuitiven Tools für die moderne Welt.",
+    "resources": "Ressourcen",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "manageCookies": "Cookies verwalten",
+    "rights": "Alle Rechte vorbehalten.",
+    "selectLanguage": "Sprache wählen"
+  }
+}
