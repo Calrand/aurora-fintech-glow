@@ -101,7 +101,7 @@ const FAQSection: React.FC = () => {
     <section id="faq" className="py-16 md:py-24 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue/90 border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-fintech-mint">FAQs</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center gradient-text">FAQs</h2>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
               <AccordionItem
