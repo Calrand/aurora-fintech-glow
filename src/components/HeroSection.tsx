@@ -14,20 +14,20 @@ const HeroSection: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-full bg-fintech-mint/10 blur-[60px] sm:blur-[80px] md:blur-[100px] -z-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 py-8 sm:py-12 md:py-16 lg:py-20">
-          <div className="flex-1 text-center md:text-left max-w-2xl mx-auto md:mx-0">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2">
               <span className="gradient-text block mb-1 sm:mb-2">
                 A FinTech Platform
               </span>
               <span className="block">For Your Micro Finances</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl mx-auto md:mx-0 px-2">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 px-2">
               Take control of your finances with our intuitive app that helps
               you save and invest to grow your money effortlessly.
             </p>
 
-            <div className="flex justify-center md:justify-start px-2">
+            <div className="flex justify-center lg:justify-start px-2">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-fintech-mint to-fintech-amber hover:opacity-90 text-fintech-dark font-medium flex gap-2 w-full sm:w-auto h-10 sm:h-12 md:h-14 px-4 sm:px-6 text-sm sm:text-base"
@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
               </Button>
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 md:mt-10 justify-center md:justify-start px-2">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 md:mt-10 justify-center lg:justify-start px-2">
               <div className="flex -space-x-1 sm:-space-x-2">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-fintech-cream flex items-center justify-center text-xs text-fintech-dark font-medium">
                   JD
@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex-1 relative mt-4 sm:mt-6 md:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md md:max-w-none mx-auto md:mx-0">
+          <div className="flex-1 relative mt-4 sm:mt-6 lg:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none mx-auto lg:mx-0">
             <div className="glow-mint animate-float">
               <div className="relative z-10 glass-card p-1 sm:p-2 shadow-xl max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] mx-auto">
                 <img
