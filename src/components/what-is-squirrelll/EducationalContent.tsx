@@ -126,6 +126,65 @@ const EducationalContent: React.FC = () => {
         </p>
       </Section>
 
+      <Section id="further-reading" kicker="Resources" title="Further Reading">
+        <p>
+          The following sources provide additional context on the economics, history, and
+          cultural practices connected to Squirrelling and micro-savings:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <a
+              href="https://www.nobelprize.org/prizes/economic-sciences/2017/thaler/facts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fintech-mint hover:underline"
+            >
+              Richard H. Thaler — Nobel Prize in Economic Sciences 2017
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.worldbank.org/en/topic/financialinclusion"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fintech-mint hover:underline"
+            >
+              World Bank — Financial Inclusion Overview
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.bis.org/publ/work701.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fintech-mint hover:underline"
+            >
+              Bank for International Settlements — ROSCAs and Financial Access
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.investopedia.com/terms/r/rotating-savings-and-credit-association-rosca.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fintech-mint hover:underline"
+            >
+              Investopedia — Rotating Savings and Credit Association (ROSCA)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.oecd.org/publications/oecd-pisa-financial-literacy-framework-2025_7d8d0123-en.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fintech-mint hover:underline"
+            >
+              OECD — Financial Literacy and Behavioural Insights
+            </a>
+          </li>
+        </ul>
+      </Section>
+
       <Section id="apply" kicker="Back to the Platform" title="How Squirrelll.ing Applies These Principles">
         <p>
           Squirrelll.ing translates the concept of Squirrelling into two practical tools:

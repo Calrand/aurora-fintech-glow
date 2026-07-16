@@ -16,9 +16,9 @@ const DownloadSection: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <div className="glass-card p-6 md:p-8">
             <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-text">Start Squirrelll.ing Today</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-text">Ready to start Squirrelll.ing?</h2>
               <p className="text-base md:text-lg mb-6 text-white/80 max-w-xl mx-auto">
-                Make saving a daily habit and build real financial momentum with our simple, social, and satisfying platform.
+                Make micro finance and community engagement your daily habit.
               </p>
             </div>
             
