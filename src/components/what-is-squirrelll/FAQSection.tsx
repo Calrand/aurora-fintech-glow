@@ -1,4 +1,5 @@
 import React from 'react';
+import { Check } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -6,38 +7,92 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const faqs = [
+type FAQ = { q: string; a: React.ReactNode };
+
+const faqs: FAQ[] = [
   {
-    q: 'What is the difference between Squirrelll.ing and Squirrelling?',
-    a: 'Squirrelll.ing is the platform. Squirrelling is the underlying behavioural and micro-financing concept — the practice of setting aside small amounts consistently for future use. The platform is one modern application of the concept.',
+    q: 'What is Squirrelll.ing?',
+    a: 'Squirrelll.ing is a community-based micro-fintech platform built around one simple idea: small amounts pooled together daily become something real — for someone today, and for you another day. Contribute to a shared Daily Pool or you can also save toward your own goals with micro-financed Savings Pods.',
   },
   {
-    q: 'Is Squirrelling investing?',
-    a: 'No. Squirrelling is a savings behaviour, not an investment strategy. It does not involve market exposure, returns, or capital appreciation. It focuses on consistent accumulation.',
+    q: 'What is Squirrelling? (The Concept)',
+    a: (
+      <>
+        <p>
+          Squirrelling is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like how squirrels stash food bit by bit for winter, squirrelll.ing in micro-finance means building stability, habits, and wealth through consistent micro-savings over time.
+        </p>
+        <p className="mt-3">
+          Known as "Susu" in West Africa, people contribute a fixed amounts and receive big sums in rotating basis. In Mexico, they call it "tandas" where they contribute and save small amounts in a routine contribution.
+        </p>
+        <p className="mt-3">
+          In different communities, the name and the goal might be different, but the concept is always the same to gather bigger with small amounts.
+        </p>
+      </>
+    ),
   },
   {
-    q: 'Is Squirrelling budgeting?',
-    a: 'Squirrelling is related to budgeting but distinct from it. Budgeting allocates income across categories, while Squirrelling specifically refers to the habit of consistently setting aside small amounts for future needs.',
+    q: 'What is the Daily Pool?',
+    a: 'The Daily Pool is a shared community pot. Every member contributes a small fixed amount each day. One member per region is randomly selected to receive the full pool — minus a 12% platform fee — to accelerate their financial goals. The more members in your region, the bigger and more impactful the pool becomes for everyone.',
   },
   {
-    q: 'Is Squirrelll.ing a bank?',
-    a: 'No. Squirrelll.ing is a micro-financing platform, not a bank. It does not issue accounts, lend money, or provide banking services.',
+    q: 'What are Savings Pods?',
+    a: 'Savings Pods are goal-based auto-deposit accounts. Set a savings goal, choose a fixed amount, pick a daily or weekly schedule, and Squirrelll.ing handles the deposits automatically until you reach your goal or your set time is up. You can run multiple Pods for different goals. It helps you to integrate micro-finance in your daily life savings strategy.',
   },
   {
-    q: 'Is the Daily Pool required?',
-    a: 'No. Participation in the Daily Pool is optional. Members can use Savings Pods on their own without contributing to the Daily Pool.',
+    q: 'Can I make money with Squirrelll.ing?',
+    a: 'Squirrelll.ing is not an investment platform, but any day could be your day to receive the full Daily Pool from your community. You contribute a small fixed amount daily — less than most people spend on coffee — and one regional member receives the entire pool each day. Set it up once and let it run silently in the background. No effort, no significant cost, and a real daily chance to receive a meaningful amount to help towards your financial goals.',
   },
   {
-    q: 'Can I only use Savings Pods?',
-    a: 'Yes. Savings Pods can be used independently of the Daily Pool if you prefer to focus solely on personal goal-based saving.',
+    q: 'Is Squirrelll.ing a good side hustle?',
+    a: "Squirrelll.ing works best as a silent financial tool running alongside whatever else you do. Contribute a tiny daily amount, stay in the pool, and any day could be your day to receive the community pot. No work required after setup — just a small daily contribution with a real daily chance of return. And the days you don't, you helped someone just like you.",
   },
   {
-    q: 'How is Squirrelll.ing different from traditional savings apps?',
-    a: 'Traditional savings apps typically focus on individual accounts. Squirrelll.ing combines individual Savings Pods with a community-oriented Daily Pool, drawing on long-standing communal savings practices.',
+    q: 'What if I never receive the Daily Pool?',
+    a: "Every day you contribute, you have a real chance of receiving the full community pool. On the days someone else receives it, your contribution helped someone in your community who needed it just as much as you do — someone in the same position you're in. That's not a loss. That's the whole point of Squirrelll.ing.",
   },
   {
-    q: 'Can I stop using the Daily Pool?',
-    a: 'Yes. Daily Pool participation can be paused or stopped at any time without affecting your Savings Pods or account.',
+    q: 'Is Squirrelll.ing crypto or a traditional savings platform?',
+    a: 'Squirrelll.ing is a traditional micro-savings and community engagement platform. It is not a cryptocurrency product. Your money sits in regulated payment rails.',
+  },
+  {
+    q: 'Is the daily pool gambling?',
+    a: "No. There's no betting or risking money. You contribute an amount which is insignificant to you and doesn't bother you. Our platform is designed to ensure that none of its features promote obsessive or addictive behavior in users, nor cause any significant financial loss. The tool works for both gaining and helping others.",
+  },
+  {
+    q: 'Can I withdraw my money?',
+    a: 'Yes. You can withdraw both your savings and pool money whenever it suits you.',
+  },
+  {
+    q: 'What are the fees and charges?',
+    a: (
+      <ul className="space-y-3">
+        {[
+          'A 3% withdrawal fee applies only when withdrawing from your savings.',
+          'A 12% platform fee is taken from the total Daily Pool amount before the amount is added to the users wallet.',
+          'If your Daily Pool gains are added to your savings, they can be withdrawn without the 5% fee.',
+          'No hidden charges.',
+        ].map((item, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-fintech-mint/20 text-fintech-mint flex items-center justify-center">
+              <Check className="w-3 h-3" />
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    ),
+  },
+  {
+    q: 'Is the Daily Pool global or local?',
+    a: 'The Daily Pool is region/country-based, and runs on a 24-hour cycle that resets at 12 PM local time every day.',
+  },
+  {
+    q: 'How can I get help or support?',
+    a: 'We offer live chat and email support directly inside the app, anytime you need assistance.',
+  },
+  {
+    q: 'Where can I download Squirrelll.ing?',
+    a: 'Squirrelll.ing is live on both Google Play Store for Android and App Store for iOS. Search Squirrelll.ing in the stores, or download from the website.',
   },
 ];
 
@@ -46,8 +101,7 @@ const FAQSection: React.FC = () => {
     <section id="faq" className="py-16 md:py-24 bg-gradient-to-b from-fintech-dark to-fintech-darkBlue/90 border-t border-white/5">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-fintech-mint mb-3">FAQ</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white">Common Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-fintech-mint">FAQs</h2>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
               <AccordionItem
