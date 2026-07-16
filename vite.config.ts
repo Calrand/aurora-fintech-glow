@@ -17,27 +17,59 @@ type RouteMeta = {
 const FAQS = [
   {
     q: "What is Squirrelll.ing?",
-    a: "Squirrelll.ing is a community-based micro-fintech platform that helps you save and invest small amounts every day. It combines round-ups on everyday purchases, a shared Daily Pool, and goal-based Savings Pods so building wealth feels effortless.",
+    a: "Squirrelll.ing is a community-based micro-fintech platform built around one simple idea: small amounts pooled together daily become something real — for someone today, and for you another day. Contribute to a shared Daily Pool or you can also save toward your own goals with micro-financed Savings Pods.",
+  },
+  {
+    q: "What is Squirrelling? (The Concept)",
+    a: "Squirrelling is not a modern invention—it's rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like how squirrels stash food bit by bit for winter, squirrelll.ing in micro-finance means building stability, habits, and wealth through consistent micro-savings over time. Known as \"Susu\" in West Africa, people contribute a fixed amounts and receive big sums in rotating basis. In Mexico, they call it \"tandas\" where they contribute and save small amounts in a routine contribution. In different communities, the name and the goal might be different, but the concept is always the same to gather bigger with small amounts.",
   },
   {
     q: "What is the Daily Pool?",
-    a: "The Daily Pool is a shared community pot. You contribute a fixed insignificant small amount (e.g., $0.20-$1) determined by your region's currency. The total pool depends on the number of users. Everyone contributes the same small amount — no more, no less. One person from your region receives the entire pool (minus our 12% platform fee) to help them toward their goals. If you don't receive it today, you are still helping another until your day comes. Every region has its own separate pool.",
-  },
-  {
-    q: "How do round-ups work?",
-    a: "When you make a purchase, Squirrelll.ing rounds the amount up to the nearest whole unit and squirrels away the spare change automatically into your Savings Pod. Small amounts add up quickly without changing how you spend.",
+    a: "The Daily Pool is a shared community pot. Every member contributes a small fixed amount each day. One member per region is randomly selected to receive the full pool — minus a 12% platform fee — to accelerate their financial goals. The more members in your region, the bigger and more impactful the pool becomes for everyone.",
   },
   {
     q: "What are Savings Pods?",
-    a: "Savings Pods are goal-based mini accounts. You set a target and a schedule (daily or weekly) and we auto-deposit the chosen amount like a subscription. You can run multiple Pods for different goals and withdraw once you reach them.",
+    a: "Savings Pods are goal-based auto-deposit accounts. Set a savings goal, choose a fixed amount, pick a daily or weekly schedule, and Squirrelll.ing handles the deposits automatically until you reach your goal or your set time is up. You can run multiple Pods for different goals. It helps you to integrate micro-finance in your daily life savings startegy.",
   },
   {
-    q: "Is Squirrelll.ing crypto or traditional savings?",
+    q: "Can I make money with Squirrelll.ing?",
+    a: "Squirrelll.ing is not an investment platform, but any day could be your day to receive the full Daily Pool from your community. You contribute a small fixed amount daily — less than most people spend on coffee — and one regional member receives the entire pool each day. Set it up once and let it run silently in the background. No effort, no significant cost, and a real daily chance to receive a meaningful amount to help towards your financial goals.",
+  },
+  {
+    q: "Is Squirrelll.ing a good side hustle?",
+    a: "Squirrelll.ing works best as a silent financial tool running alongside whatever else you do. Contribute a tiny daily amount, stay in the pool, and any day could be your day to receive the community pot. No work required after setup — just a small daily contribution with a real daily chance of return. And they days you don't, you helped someone just like you.",
+  },
+  {
+    q: "What if I never receive the Daily Pool?",
+    a: "Every day you contribute, you have a real chance of receiving the full community pool. On the days someone else receives it, your contribution helped someone in your community who needed it just as much as you do — someone in the same position you're in. That's not a loss. That's the whole point of Squirrelll.ing.",
+  },
+  {
+    q: "Is Squirrelll.ing crypto or a traditional savings platform?",
     a: "Squirrelll.ing is a traditional micro-savings and community engagement platform. It is not a cryptocurrency product. Your money sits in regulated payment rails.",
   },
   {
+    q: "Is the daily pool gambling?",
+    a: "No. There's no betting or risking money. You contribute an amount which is insignificant to you and doesn't bother you. Our platform is designed to ensure that none of its features promote obsessive or addictive behavior in users, nor cause any significant financial loss. The tool works for both gaining and helping others.",
+  },
+  {
+    q: "Can I withdraw my money?",
+    a: "Yes. You can withdraw both your savings and pool money whenever it suits you.",
+  },
+  {
+    q: "What are the fees and charges?",
+    a: "A 3% withdrawal fee applies only when withdrawing from your savings. A 12% platform fee is taken from the total Daily Pool amount before the amount is added to the users wallet. If your Daily Pool gains are added to your savings, they can be withdrawn without the 5% fee. No hidden charges.",
+  },
+  {
+    q: "Is the Daily Pool global or local?",
+    a: "The Daily Pool is region/country-based, and runs on a 24-hour cycle that resets at 12 PM local time every day.",
+  },
+  {
+    q: "How can I get help or support?",
+    a: "We offer live chat and email support directly inside the app, anytime you need assistance.",
+  },
+  {
     q: "Where can I download Squirrelll.ing?",
-    a: "Squirrelll.ing is live on the Google Play Store for Android. The iOS App Store version is coming soon — join the waitlist on the site to be notified at launch.",
+    a: "Squirrelll.ing is live on both Google Play Store for Android and App Store for iOS. Search Squirrelll.ing in the stores, or download from the website.",
   },
 ];
 
