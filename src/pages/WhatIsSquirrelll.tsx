@@ -4,7 +4,7 @@ import FooterSection from '@/components/FooterSection';
 import HeroSection from '@/components/what-is-squirrelll/HeroSection';
 import ConceptSection from '@/components/what-is-squirrelll/ConceptSection';
 import EducationalContent from '@/components/what-is-squirrelll/EducationalContent';
-import FAQSection, { faqs } from '@/components/what-is-squirrelll/FAQSection';
+
 
 import EcosystemSection from '@/components/what-is-squirrelll/EcosystemSection';
 import DownloadSection from '@/components/what-is-squirrelll/DownloadSection';
@@ -37,16 +37,6 @@ const WhatIsSquirrelll: React.FC = () => {
     ],
   };
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  };
-
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -64,14 +54,14 @@ const WhatIsSquirrelll: React.FC = () => {
         description="A definitive guide to Squirrelll.ing and Squirrelling — the concept, history, global practices, and behavioural economics behind consistent community micro-savings."
         path="/what-is-squirrelling"
         type="article"
-        jsonLd={[articleSchema, breadcrumbSchema, faqSchema, orgSchema]}
+        jsonLd={[articleSchema, breadcrumbSchema, orgSchema]}
       />
       <Navbar />
       <HeroSection />
       <EducationalContent />
       <ConceptSection />
       <EcosystemSection />
-      <FAQSection />
+      
       <DownloadSection />
       <FooterSection />
     </div>
