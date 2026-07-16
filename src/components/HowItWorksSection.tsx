@@ -12,7 +12,7 @@ const steps = [
     number: '01',
     title: 'Download the App',
     description:
-      'Get started by downloading the Squirrelll.ing app from Google Play (Android) or joining the waitlist for the App Store (iOS).',
+      'Get started by downloading the Squirrelll.ing app from Google Play (Android) or the App Store (iOS).',
   },
   {
     number: '02',

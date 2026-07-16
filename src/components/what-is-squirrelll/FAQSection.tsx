@@ -92,7 +92,7 @@ const faqs: FAQ[] = [
   },
   {
     q: 'Where can I download Squirrelll.ing?',
-    a: 'Squirrelll.ing is live on both Google Play Store for Android and App Store for iOS. Search Squirrelll.ing in the stores, or download from the website.',
+    a: 'Squirrelll.ing is live on both Google Play Store for Android and App Store for iOS. Search Squirrelll.ing in the stores, or download from the website. The App Store link will be added shortly.',
   },
 ];
 

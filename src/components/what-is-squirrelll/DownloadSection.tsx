@@ -23,10 +23,11 @@ const DownloadSection: React.FC = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-              <Button disabled size="lg" className="bg-white/10 text-white/50 font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base cursor-not-allowed">
-                <Download size={18} />
-                Download for iOS
-                <span className="text-[10px] ml-1 opacity-70">(Coming Soon)</span>
+              <Button asChild size="lg" className="bg-white/10 hover:bg-white/15 text-white font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base border border-white/10">
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Download for iOS (link coming soon)">
+                  <Download size={18} />
+                  Download for iOS
+                </a>
               </Button>
               
               <Button asChild size="lg" className="bg-gradient-to-r from-fintech-amber to-fintech-gold hover:opacity-90 text-fintech-darkBlue font-medium flex gap-2 shadow-sm px-6 py-5 h-auto text-base">
