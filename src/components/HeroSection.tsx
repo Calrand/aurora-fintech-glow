@@ -16,14 +16,14 @@ const HeroSection: React.FC = () => {
 
       <Container>
         <div className="flex flex-col min-[900px]:flex-row items-center justify-between gap-8 sm:gap-10 md:gap-12 min-[900px]:gap-6 lg:gap-12 xl:gap-16 py-8 sm:py-12 md:py-16 min-[900px]:py-20">
-          <div className="flex-1 text-center min-[900px]:text-left max-w-2xl min-[900px]:max-w-none lg:max-w-[360px] mx-auto min-[900px]:mx-0">
+          <div className="flex-1 text-center min-[900px]:text-left max-w-2xl min-[900px]:max-w-none lg:max-w-[420px] mx-auto min-[900px]:mx-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl min-[900px]:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2 min-[900px]:px-0">
               <span className="gradient-text block mb-1 sm:mb-2">
                 A FinTech Platform
               </span>
               <span className="block">For Your Micro Finances</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[380px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[480px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
               Take control of your finances with our intuitive app that helps
               you save and invest to grow your money effortlessly.
             </p>
@@ -59,16 +59,16 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative mt-4 sm:mt-6 min-[900px]:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md min-[900px]:max-w-none mx-auto min-[900px]:mx-0 min-[900px]:w-[260px] lg:w-[200px] min-[900px]:shrink-0 min-[900px]:flex min-[900px]:justify-center">
+          <div className="relative mt-4 sm:mt-6 min-[900px]:mt-0 w-full max-w-xs sm:max-w-sm md:max-w-md min-[900px]:max-w-none mx-auto min-[900px]:mx-0 min-[900px]:w-[298px] lg:w-[232px] min-[900px]:shrink-0 min-[900px]:flex min-[900px]:justify-center">
             <div className="glow-mint animate-float">
-              <div className="relative z-10 glass-card p-1 sm:p-2 shadow-xl max-w-[280px] sm:max-w-[320px] md:max-w-[360px] min-[900px]:max-w-none mx-auto min-[900px]:w-[260px] min-[900px]:h-[168px] min-[900px]:p-1.5 lg:w-[200px] lg:h-[172px] lg:p-1.5">
+              <div className="relative z-10 glass-card p-1 sm:p-2 shadow-xl max-w-[280px] sm:max-w-[320px] md:max-w-[360px] min-[900px]:max-w-none mx-auto min-[900px]:w-[298px] min-[900px]:h-[193px] min-[900px]:p-1.5 lg:w-[232px] lg:h-[200px] lg:p-2">
                 <img
                   alt="Squirrelll.ing app interface"
-                  className="rounded-lg w-full aspect-[1024/576] object-cover min-[900px]:w-[250px] min-[900px]:h-[158px] min-[900px]:aspect-auto lg:w-[184px] lg:h-[156px]"
+                  className="rounded-lg w-full aspect-[1024/576] object-cover min-[900px]:w-[286px] min-[900px]:h-[181px] min-[900px]:aspect-auto lg:w-[216px] lg:h-[184px]"
                   src="/uploads/889a0e04-84e2-4ed8-84b5-094e6f3fd17e.png"
                   loading="eager"
-                  width="184"
-                  height="156"
+                  width="216"
+                  height="184"
                 />
               </div>
             </div>
