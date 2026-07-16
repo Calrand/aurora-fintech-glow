@@ -90,8 +90,8 @@ const HOW_IT_WORKS_STEPS = [
 
 const homeBody = `
   <header>
-    <h1>Squirrelll.ing — Community-Based Micro-Fintech Platform</h1>
-    <p>Squirrelll.ing helps you save and invest without thinking about it. We turn spare change from everyday purchases into real savings through automatic round-ups, a shared community <strong>Daily Pool</strong>, and goal-based <strong>Savings Pods</strong>. Available now on Google Play for Android, with iOS coming soon.</p>
+    <h1>Squirrelll.ing — Community Finance Where Everyone Gives — And Everyone Gets</h1>
+    <p>Squirrelll.ing is community finance: everyone gives a small daily amount, and one regional member receives the full community <strong>Daily Pool</strong> to accelerate their goal. Save alongside friends, build habits with <strong>Savings Pods</strong>, and let tiny contributions become something real.</p>
   </header>
   <section>
     <h2>How Squirrellling works</h2>
@@ -224,10 +224,10 @@ const webAppCalc = (name: string) => ({
 
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Squirrelll.ing - Community Based Micro-Fintech Platform",
+    title: "Squirrelll.ing - Community Finance Where Everyone Gives — And Everyone Gets",
     description:
-      "Squirrelll.ing turns spare change and small daily habits into real savings through round-ups, a community Daily Pool, and goal-based Savings Pods. On Google Play now.",
-    h1: "Squirrelll.ing — Community-Based Micro-Fintech Platform",
+      "Squirrelll.ing is community finance: everyone gives a small daily amount, and one regional member receives the full Daily Pool to accelerate their goal. Save, pool, and grow together.",
+    h1: "Community Finance Where Everyone Gives — And Everyone Gets",
     bodyHtml: homeBody,
     jsonLd: [orgJsonLd, websiteJsonLd, softwareAppJsonLd, faqJsonLd, howToJsonLd],
   },
