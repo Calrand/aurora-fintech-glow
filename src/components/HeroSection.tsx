@@ -16,14 +16,14 @@ const HeroSection: React.FC = () => {
 
       <Container>
         <div className="flex flex-col min-[900px]:flex-row items-center justify-between gap-8 sm:gap-10 md:gap-12 min-[900px]:gap-6 lg:gap-12 xl:gap-16 py-8 sm:py-12 md:py-16 min-[900px]:py-20">
-          <div className="flex-1 text-center min-[900px]:text-left max-w-2xl min-[900px]:max-w-none lg:max-w-[420px] mx-auto min-[900px]:mx-0">
+          <div className="flex-1 text-center min-[900px]:text-left max-w-2xl min-[900px]:max-w-none lg:max-w-[360px] mx-auto min-[900px]:mx-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl min-[900px]:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2 min-[900px]:px-0">
               <span className="gradient-text block mb-1 sm:mb-2">
                 A FinTech Platform
               </span>
               <span className="block">For Your Micro Finances</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[480px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[380px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
               Take control of your finances with our intuitive app that helps
               you save and invest to grow your money effortlessly.
             </p>
