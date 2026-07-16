@@ -43,8 +43,8 @@ const ConceptSection: React.FC = () => {
               The Platform
             </h2>
             <p className="text-lg text-white/80 mb-8 text-center">
-              Squirrelll.ing is a savings and micro-engagement platform that
-              brings this timeless concept into the digital age.
+              Squirrelll.ing is a savings and community engagement platform
+              that brings this timeless concept into the digital age.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -216,7 +216,7 @@ const ConceptSection: React.FC = () => {
 
             <p className="text-center text-white/60 text-sm mt-8">
               Unlike traditional savings apps, Squirrelll.ing platforms blends
-              community engagement, nurture squirrelll.ing habit and helps reach
+              community engagement, nurture squirrelll.ing habit and help reach
               your financial goals without any burden.
             </p>
           </div>

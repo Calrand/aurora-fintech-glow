@@ -12,7 +12,7 @@ const WhatIsSquirrelll: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
-        title="What is Squirrelll.ing? A Smarter Way to Save, One Step at a Time"
+        title="What is Squirrelll.ing? A Smarter Way to Reach Your Financial Goals, One Small Step at a Time"
         description="Learn how Squirrelll.ing turns spare change and small daily habits into real savings through round-ups, a community Daily Pool, and smart goal tools."
         path="/what-is-squirrelling"
       />
