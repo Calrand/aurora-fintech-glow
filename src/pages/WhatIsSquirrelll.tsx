@@ -4,7 +4,7 @@ import FooterSection from '@/components/FooterSection';
 import HeroSection from '@/components/what-is-squirrelll/HeroSection';
 import ConceptSection from '@/components/what-is-squirrelll/ConceptSection';
 import EducationalContent from '@/components/what-is-squirrelll/EducationalContent';
-import FAQSection, { faqs } from '@/components/what-is-squirrelll/FAQSection';
+
 
 import EcosystemSection from '@/components/what-is-squirrelll/EcosystemSection';
 import DownloadSection from '@/components/what-is-squirrelll/DownloadSection';
