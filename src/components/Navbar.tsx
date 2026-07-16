@@ -70,8 +70,7 @@ const Navbar: React.FC = () => {
               aria-label="Learn what is Squirrelll.ing"
             >
               <HelpCircle size={16} className="lg:w-[18px] lg:h-[18px]" />
-              <span className="hidden lg:inline">What is Squirrelll.ing?</span>
-              <span className="lg:hidden">What is Squirrelll.ing?</span>
+              <span>{t('nav.whatIs')}</span>
             </Button>
           </Link>
         ) : (
@@ -84,7 +83,7 @@ const Navbar: React.FC = () => {
                   : 'border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 hidden md:flex gap-2 h-9 lg:h-10 px-3 lg:px-4 text-sm lg:text-base'
               }
             >
-              Back to Home
+              {t('nav.backHome')}
             </Button>
           </Link>
         )}
@@ -108,7 +107,7 @@ const Navbar: React.FC = () => {
                   className="border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 w-full flex justify-center gap-2 h-10 sm:h-12 text-sm sm:text-base"
                 >
                   <HelpCircle size={16} className="sm:w-[18px] sm:h-[18px]" />
-                  What is Squirrelll.ing?
+                  {t('nav.whatIs')}
                 </Button>
               </Link>
             ) : (
@@ -121,7 +120,7 @@ const Navbar: React.FC = () => {
                       : 'border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10 w-full flex justify-center gap-2 h-10 sm:h-12 text-sm sm:text-base'
                   }
                 >
-                  Back to Home
+                  {t('nav.backHome')}
                 </Button>
               </Link>
             )}
