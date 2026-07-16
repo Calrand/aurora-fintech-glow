@@ -15,18 +15,77 @@ const About: React.FC = () => {
     name: 'About Squirrelll.ing — Our Mission & Story',
     isPartOf: { '@id': 'https://squirrelll.ing/#website' },
     about: { '@id': 'https://squirrelll.ing/#organization' },
+    mainEntity: { '@id': 'https://squirrelll.ing/#organization' },
+    breadcrumb: { '@id': `${url}#breadcrumb` },
+    primaryImageOfPage: 'https://squirrelll.ing/uploads/og-image.jpg',
     description:
       'Squirrelll.ing was built to bring people together through community-based micro-finance — a place where small contributions create real financial support for those who need it most.',
     publisher: { '@id': 'https://squirrelll.ing/#organization' },
     inLanguage: 'en',
+    datePublished: '2025-06-26',
+    dateModified: '2026-07-16',
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://squirrelll.ing/#organization',
+    name: 'Aurora Fintech Glow LLC',
+    legalName: 'Aurora Fintech Glow LLC',
+    url: 'https://squirrelll.ing',
+    logo: 'https://squirrelll.ing/logo.svg',
+    foundingDate: '2025-06-26',
+    founder: { '@type': 'Organization', name: 'Aurora Fintech Glow LLC' },
+    description:
+      'Aurora Fintech Glow LLC operates Squirrelll.ing, a community-based micro-fintech platform that helps everyday people earn extra income and support one another through small, consistent contributions.',
+    brand: { '@id': 'https://squirrelll.ing/#brand' },
+    knowsAbout: [
+      'Community micro-finance',
+      'Rotating savings and credit associations',
+      'Micro-savings',
+      'Susu',
+      'Tandas',
+      'Daily Pool',
+    ],
+    slogan: 'Nobody loses. Many can gain a lot.',
   };
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
       { '@type': 'ListItem', position: 2, name: 'About', item: url },
+    ],
+  };
+
+  const howItHelpsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    '@id': `${url}#howto`,
+    name: 'How Squirrelll.ing helps its community',
+    description:
+      'A simple three-step model showing how community members contribute a tiny amount, join a shared regional pool, and take turns receiving meaningful financial support.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Contribute a Tiny Amount',
+        text: 'Set a small daily contribution — less than the cost of a snack — once, and forget it. No pressure and no large commitments.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Stay in the Daily Pool',
+        text: 'Your contribution joins a regional community pot. Every day, one member of that region receives the full pool.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Give and Receive',
+        text: 'On your day the community supports you. On other days your small contribution supports someone else. Everyone wins over time.',
+      },
     ],
   };
 
