@@ -1,8 +1,7 @@
 # Squirrelll.ing
 
 > Community-based micro-fintech platform that helps people earn, save, and
-> grow money in small daily steps — through the Daily Pool, Savings Pods,
-> and gamified financial tools.
+> grow money in small daily steps — through the Daily Pool and Savings Pods.
 
 Squirrelll.ing (pronounced "squirrel-ing") is a micro-fintech app built for people with small investment goals or abilities who are looking to earn money online, find a side hustle, build passive income, invest small or large amounts, or use a simple budgeting and savings app. The platform turns tiny daily contributions into real outcomes: automated savings, community rewards, and a real chance to receive the full Daily Pool in your region.
 
