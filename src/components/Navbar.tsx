@@ -4,11 +4,13 @@ import Container from '@/components/Container';
 import { HelpCircle, Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
+  const { t } = useTranslation();
 
   // Check if we're on a light-themed page
   const isLightTheme = [
