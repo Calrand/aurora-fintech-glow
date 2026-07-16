@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: "What is the Daily Pool?",
-    a: "The Daily Pool is a shared community pot. Every user contributes a tiny fixed amount (for example $0.20-$1) each day. One member from your region receives the total pool (minus a 12% platform fee) to push them toward their savings goal. Each region has its own separate pool.",
+    a: "The Daily Pool is a shared community pot. You contribute a fixed insignificant small amount (e.g., $0.20-$1) determined by your region's currency. The total pool depends on the number of users. Everyone contributes the same small amount — no more, no less. One person from your region receives the entire pool (minus our 12% platform fee) to help them toward their goals. If you don't receive it today, you are still helping another until your day comes. Every region has its own separate pool.",
   },
   {
     q: "How do round-ups work?",
@@ -73,7 +73,7 @@ const homeBody = `
     <h2>Why people Squirrellll</h2>
     <ul>
       <li><strong>Round-ups:</strong> spare change from every purchase quietly saved.</li>
-      <li><strong>Daily Pool:</strong> a tiny daily contribution gives one regional member the full pot (minus a 12% platform fee) to accelerate their goal.</li>
+      <li><strong>Daily Pool:</strong> a tiny, region-determined daily contribution gives one regional member the full pot (minus a 12% platform fee) to accelerate their goal.</li>
       <li><strong>Savings Pods:</strong> goal-based auto-deposits on a daily or weekly schedule.</li>
       <li><strong>Region-based:</strong> each region runs its own Daily Pool so wins stay local.</li>
     </ul>
@@ -95,7 +95,7 @@ const whatIsBody = `
   </section>
   <section>
     <h2>The Daily Pool</h2>
-    <p>Every participating user contributes a fixed, insignificant amount (for example $0.20-$1) into the Daily Pool. The pool's size scales with the community. One member from your region wins the entire pool that day, minus our 12% platform fee, and can withdraw it or roll it into their Savings Pod. Every region runs its own separate pool, so wins stay close to home.</p>
+    <p>You contribute a fixed insignificant small amount (e.g., $0.20-$1) into the Daily Pool. The amount is determined by your region's currency, so it's insignificant to all. The total pool depends on the amount of users in total. Everyone has to contribute only the small insignificant amount. No more, no less. One person from your region will receive the entire pool (minus our 12% platform fee) to help them towards their goals. If you don't receive it today, you are still helping another until your day comes. Every region has its own separate pool.</p>
   </section>
   <section>
     <h2>Savings Pods</h2>

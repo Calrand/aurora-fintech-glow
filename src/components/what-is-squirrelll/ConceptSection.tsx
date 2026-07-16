@@ -59,7 +59,8 @@ const ConceptSection: React.FC = () => {
                     </div>
                     <span className="text-white/80">
                       You contribute a fixed insignificant small amount (e.g.,
-                      $0.20-$1) into the Daily Pool
+                      $0.20-$1) into the Daily Pool. The amount is determined by
+                      your region's currency, so it's insignificant to all.
                     </span>
                   </li>
                   <li className="flex gap-3 items-start">
@@ -68,8 +69,8 @@ const ConceptSection: React.FC = () => {
                     </div>
                     <span className="text-white/80">
                       The total pool depends on the amount of users in total.
-                      Everyone has to contribute only the small insigficant
-                      amount. No more no less.
+                      Everyone has to contribute only the small insignificant
+                      amount. No more, no less.
                     </span>
                   </li>
                   <li className="flex gap-3 items-start">
@@ -77,8 +78,9 @@ const ConceptSection: React.FC = () => {
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
                     <span className="text-white/80">
-                      One person from your region will receive the total amount
-                      to help them towards their squirrelll.ing savings goal
+                      One person from your region will receive the entire pool
+                      (minus our 12% platform fee) to help them towards their
+                      goals.
                     </span>
                   </li>
                   <li className="flex gap-3 items-start">
@@ -86,7 +88,8 @@ const ConceptSection: React.FC = () => {
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
                     <span className="text-white/80">
-                      They receive the entire pool (minus our 12% platform fee)
+                      If you don't receive it today, you are still helping
+                      another until your day comes.
                     </span>
                   </li>
                   <li className="flex gap-3 items-start">
@@ -94,7 +97,7 @@ const ConceptSection: React.FC = () => {
                       <div className="w-2 h-2 bg-fintech-mint rounded-full"></div>
                     </div>
                     <span className="text-white/80">
-                      Every region has it's own separate pool
+                      Every region has its own separate pool.
                     </span>
                   </li>
                 </ul>
