@@ -1,39 +1,5 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
 const ConceptSection: React.FC = () => {
-  const platforms = [
-    {
-      name: 'Squirrelll.ing',
-      description: 'Global Micro FinTech Platform for savings and investment',
-      website: 'https://squirrelll.ing/',
-      key: 'squirrelll',
-    },
-    {
-      name: 'Acorns',
-      description: 'Rounds up your purchases and invests the spare change',
-      website: 'https://www.acorns.com/',
-      key: 'acorns',
-    },
-    {
-      name: 'Stash',
-      description: 'Offers fractional shares of stocks and ETFs',
-      website: 'https://www.stash.com/',
-      key: 'stash',
-    },
-    {
-      name: 'Qapital',
-      description: 'Uses rules to trigger saving based on daily behavior',
-      website: 'https://www.qapital.com/',
-      key: 'qapital',
-    },
-    {
-      name: 'Raiz',
-      description: 'Australian-based micro-investment app',
-      website: 'https://raizinvest.com.au/',
-      key: 'raiz',
-    },
-  ];
   return (
     <section className="py-16 md:py-24 bg-fintech-darkBlue relative">
       <div className="container mx-auto px-4">
