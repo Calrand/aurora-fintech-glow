@@ -6,6 +6,7 @@ import ConceptSection from '@/components/what-is-squirrelll/ConceptSection';
 import EducationalContent from '@/components/what-is-squirrelll/EducationalContent';
 import FAQSection, { faqs } from '@/components/what-is-squirrelll/FAQSection';
 import ReferencesSection from '@/components/what-is-squirrelll/ReferencesSection';
+import EcosystemSection from '@/components/what-is-squirrelll/EcosystemSection';
 import DownloadSection from '@/components/what-is-squirrelll/DownloadSection';
 import SEO from '@/components/SEO';
 
@@ -69,6 +70,7 @@ const WhatIsSquirrelll: React.FC = () => {
       <HeroSection />
       <EducationalContent />
       <ConceptSection />
+      <EcosystemSection />
       <FAQSection />
       <ReferencesSection />
       <DownloadSection />
