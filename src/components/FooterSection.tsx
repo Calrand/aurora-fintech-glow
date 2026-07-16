@@ -75,17 +75,6 @@ const FooterSection: React.FC = () => {
             © {new Date().getFullYear()} Squirrelll.ing. All rights reserved.
           </p>
 
-          <div className="mt-4">
-            <select
-              className="bg-white/5 border border-white/10 rounded px-3 py-1 text-white/60 text-sm"
-              aria-label="Select language"
-            >
-              <option>English</option>
-              <option>Spanish</option>
-              <option>French</option>
-              <option>German</option>
-            </select>
-          </div>
         </div>
       </div>
     </footer>
