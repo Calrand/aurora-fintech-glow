@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import Container from '@/components/Container';
 import { Download, ArrowDown } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
