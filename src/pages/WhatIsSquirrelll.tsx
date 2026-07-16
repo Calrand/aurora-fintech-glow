@@ -54,14 +54,14 @@ const WhatIsSquirrelll: React.FC = () => {
         description="A definitive guide to Squirrelll.ing and Squirrelling — the concept, history, global practices, and behavioural economics behind consistent community micro-savings."
         path="/what-is-squirrelling"
         type="article"
-        jsonLd={[articleSchema, breadcrumbSchema, faqSchema, orgSchema]}
+        jsonLd={[articleSchema, breadcrumbSchema, orgSchema]}
       />
       <Navbar />
       <HeroSection />
       <EducationalContent />
       <ConceptSection />
       <EcosystemSection />
-      <FAQSection />
+      
       <DownloadSection />
       <FooterSection />
     </div>
