@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 lg:px-10 backdrop-blur-lg ${
+      className={`fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-6 sm:px-10 lg:px-16 xl:px-24 backdrop-blur-lg ${
         isLightTheme
           ? 'bg-white/90 border-b border-fintech-mint/10'
           : 'bg-fintech-dark/90 border-b border-white/10'
