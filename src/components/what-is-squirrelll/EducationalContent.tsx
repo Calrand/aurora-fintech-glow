@@ -151,7 +151,7 @@ const EducationalContent: React.FC = () => {
             World Bank — Reports on informal savings groups and financial inclusion. [Placeholder citation]
           </li>
         </ul>
-        <p>
+        <p className="text-white/50 text-sm mt-8 italic">
           This page is intended as an educational resource. It does not constitute financial advice.
         </p>
       </Section>
