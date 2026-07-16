@@ -135,7 +135,7 @@ const About: React.FC = () => {
         description="Learn why Squirrelll.ing was created: a community micro-fintech platform designed to help people earn extra money, support each other, and grow together without anyone losing."
         path="/about"
         type="website"
-        jsonLd={[aboutSchema, breadcrumbSchema]}
+        jsonLd={[aboutSchema, organizationSchema, breadcrumbSchema, howItHelpsSchema]}
       />
       <Navbar />
 
