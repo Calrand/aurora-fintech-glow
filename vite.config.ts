@@ -200,7 +200,7 @@ const ROUTE_META: Record<string, RouteMeta> = {
     jsonLd: [orgJsonLd, websiteJsonLd, softwareAppJsonLd, faqJsonLd, howToJsonLd],
   },
   "/what-is-squirrelling": {
-    title: "What is Squirrellling? A Smarter Way to Save, One Step at a Time",
+    title: "What is Squirrellling? A Smarter Way to Reach Your Financial Goals, One Small Step at a Time",
     description:
       "Learn how Squirrellling works: automatic round-ups, a community Daily Pool that pays out daily, and goal-based Savings Pods that make saving effortless.",
     h1: "What is Squirrellling?",

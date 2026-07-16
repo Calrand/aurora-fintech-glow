@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
             <span className="gradient-text">What is Squirrelll.ing?</span>
           </h1>
           <p className="text-xl md:text-2xl font-medium text-white/80 mb-8 md:mb-10 max-w-2xl mx-auto">
-            A Smarter Way to Save, One Small Step at a Time
+            A Smarter Way to Reach Your Financial Goals, One Small Step at a Time
           </p>
           
         </div>
