@@ -1,15 +1,27 @@
 # Squirrelll.ing
 
-> Community-based micro-fintech platform that helps people save and
-> invest spare change through round-ups, daily savings pools, and
-> gamified financial tools.
+> Community-based micro-fintech platform that helps people earn, save, and
+> grow money in small daily steps — through the Daily Pool, Savings Pods,
+> round-ups, and gamified financial tools.
 
-Squirrelll.ing (pronounced "squirrel-ing") is a pre-launch fintech
-app that turns small, everyday spending into automated savings and
-micro-investments. The platform combines round-up savings, a
-community Daily Pool gamification mechanic, and budgeting tools to
-make consistent saving feel effortless. The site currently runs an
-email waitlist while the mobile apps are being prepared for launch.
+Squirrelll.ing (pronounced "squirrel-ing") is a pre-launch fintech app
+built for anyone looking to earn money online, find a side hustle, build
+passive income, invest small or large amounts, or use a simple budgeting
+and savings app. The platform turns everyday spending and tiny
+contributions into automated savings, micro-investments, and community
+rewards through the Daily Pool. It combines round-up savings, goal-based
+Savings Pods, a community Daily Pool gamification mechanic, and budgeting
+tools to make consistent saving and earning feel effortless. The site
+currently runs an email waitlist while the mobile apps are being prepared
+for launch.
+
+## Who Squirrelll.ing is for
+
+- People looking to earn money online or through a side hustle.
+- People interested in passive income and micro-reward opportunities.
+- People who want to invest small amounts or start with bigger investments.
+- People searching for a budgeting app or savings app to manage daily money.
+- Anyone who wants to save spare change automatically and grow it over time.
 
 ## Pages
 
@@ -20,6 +32,20 @@ email waitlist while the mobile apps are being prepared for launch.
 
 - [Round-Up Savings Calculator](/round-up-calculator): Estimate how much you can save by rounding up everyday purchases.
 - [Budget Calculator](/budget-calculator): Plan monthly budgets across income, expenses, and savings goals.
+
+## Core Features
+
+- Daily Pool: Contribute a small fixed amount (e.g., $0.20–$1, set by your
+  region's currency) into a regional community pool. One participant from
+  your region receives the entire pool each day, minus a 12% platform fee.
+  Every region has its own separate pool. Participation is optional.
+- Savings Pods: Set personal savings goals and schedules (daily or weekly).
+  Automatic deposits work like a subscription. Track progress, celebrate
+  milestones, and withdraw once you reach your goal. Multiple pods are
+  supported.
+- Round-Up Savings: Save spare change by rounding up everyday purchases.
+- Waitlist: Join the Squirrelll-Byt waitlist for early access to
+  crypto-powered savings and DeFi tools.
 
 ## Legal & Trust
 
