@@ -18,9 +18,9 @@ const HeroSection: React.FC = () => {
           <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2">
               <span className="gradient-text block mb-1 sm:mb-2">
-                Community Finance
+                A FinTech Platform
               </span>
-              <span className="block">Where Everyone Gives — And Everyone Gets.</span>
+              <span className="block">For Your Micro Finances</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 px-2">
               Take control of your finances with our intuitive app that helps
