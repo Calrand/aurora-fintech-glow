@@ -55,14 +55,35 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Brand",
+          "@id": "https://squirrelll.ing/#brand",
+          "name": "Squirrelll.ing",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://squirrelll.ing/uploads/og-image.jpg"
+          }
+        },
+        {
           "@type": "Organization",
           "@id": "https://squirrelll.ing/#organization",
-          "name": "Squirrelll.ing",
+          "name": "Aurora Fintech Glow LLC",
+          "alternateName": [
+            "Squirrelling",
+            "Squirrellling",
+            "SquirrelWallet",
+            "Squirrel"
+          ],
           "url": "https://squirrelll.ing",
+          "brand": { "@id": "https://squirrelll.ing/#brand" },
           "logo": {
             "@type": "ImageObject",
             "url": "https://squirrelll.ing/uploads/og-image.jpg"
           },
+          "founder": {
+            "@type": "Organization",
+            "name": "Aurora Fintech Glow LLC"
+          },
+          "foundingDate": "2025-06-26",
           "description": "Community-based micro-fintech platform that helps people earn, save, and grow money in small daily steps through the Daily Pool and Savings Pods."
         },
         {
