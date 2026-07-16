@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import Container from '@/components/Container';
 import { HelpCircle, Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Link, useLocation } from 'react-router-dom';
@@ -22,13 +23,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-6 sm:px-10 lg:px-16 xl:px-24 backdrop-blur-lg ${
+      className={`fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 backdrop-blur-lg ${
         isLightTheme
           ? 'bg-white/90 border-b border-fintech-mint/10'
           : 'bg-fintech-dark/90 border-b border-white/10'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <Container className="flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img
             alt="Squirrell.ing Logo"
@@ -124,7 +125,7 @@ const Navbar: React.FC = () => {
             )}
           </div>
         )}
-      </div>
+      </Container>
     </nav>
   );
 };
