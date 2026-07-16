@@ -73,7 +73,7 @@ const homeBody = `
     <h2>Why people Squirrellll</h2>
     <ul>
       <li><strong>Round-ups:</strong> spare change from every purchase quietly saved.</li>
-      <li><strong>Daily Pool:</strong> a tiny daily contribution gives one regional member the full pot (minus a 12% platform fee) to accelerate their goal.</li>
+      <li><strong>Daily Pool:</strong> a tiny, region-determined daily contribution gives one regional member the full pot (minus a 12% platform fee) to accelerate their goal.</li>
       <li><strong>Savings Pods:</strong> goal-based auto-deposits on a daily or weekly schedule.</li>
       <li><strong>Region-based:</strong> each region runs its own Daily Pool so wins stay local.</li>
     </ul>
