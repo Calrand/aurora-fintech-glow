@@ -24,8 +24,8 @@ const HeroSection: React.FC = () => {
               <span className="block">For Your Micro Finances</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 md:mb-8 max-w-xl min-[900px]:max-w-[480px] mx-auto min-[900px]:mx-0 px-2 min-[900px]:px-0">
-              Take control of your finances with our intuitive app that helps
-              you save and invest to grow your money effortlessly.
+              Community finance where everyone gives — and everyone gets. Save
+              and grow your money effortlessly.
             </p>
 
             <div className="flex justify-center min-[900px]:justify-start px-2 min-[900px]:px-0">
