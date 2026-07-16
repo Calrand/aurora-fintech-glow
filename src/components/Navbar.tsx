@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
             )}
           </div>
         )}
-      </div>
+      </Container>
     </nav>
   );
 };

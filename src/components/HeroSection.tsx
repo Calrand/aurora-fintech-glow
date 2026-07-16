@@ -152,7 +152,7 @@ const HeroSection: React.FC = () => {
             <ArrowDown size={14} className="sm:w-4 sm:h-4" />
           </Button>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
