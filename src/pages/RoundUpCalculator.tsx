@@ -244,9 +244,9 @@ const RoundUpCalculator: React.FC = () => {
                   <Share2 size={16} />
                   Share my results
                 </Button>
-                <Link to="/#waitlist" className="block">
+                <Link to="/#download" className="block">
                   <Button variant="outline" className="w-full border-fintech-mint text-fintech-mint hover:bg-fintech-mint/10">
-                    Join the Squirrelll.ing waitlist
+                    Download Squirrelll.ing
                   </Button>
                 </Link>
               </div>
