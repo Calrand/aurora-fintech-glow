@@ -20,6 +20,8 @@ The core idea is simple: small amounts pooled together daily become something re
 
 - [Home](/): Product overview, hero, features, how it works, FAQs, waitlist signup, and download links.
 - [What is Squirrellling](/what-is-squirrelll.ing): Long-form explainer of the Squirrellling concept, mechanics, and FAQs.
+- [About](/about): Why Squirrelll.ing exists, our mission, and the community-first values behind the platform.
+- [Download](/download): Get the Squirrelll.ing app on Google Play (Android) or the App Store (iOS), with device requirements and highlights.
 
 ## Tools
 
