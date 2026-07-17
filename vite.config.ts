@@ -12,7 +12,13 @@ type RouteMeta = {
   h1: string;
   bodyHtml: string;
   jsonLd?: Record<string, unknown>[];
+  keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  image?: string;
 };
+
+const DEFAULT_OG_IMAGE = "https://squirrelll.ing/uploads/og-image.jpg";
 
 const FAQS = [
   {
@@ -437,8 +443,314 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
+  "/about": {
+    title: "About Squirrelll.ing — Community Funding Platform",
+    description:
+      "Learn everything about Squirrelll.ing — how it works, who it's for, and why community funding through the Daily Pool and Savings Pods is changing how people save and help each other financially.",
+    h1: "About Squirrelll.ing",
+    keywords:
+      "about squirrelll.ing, what is squirrelll.ing, squirrelll.ing platform, community funding app, daily pool, savings pods",
+    ogDescription:
+      "Learn everything about Squirrelll.ing — how the Daily Pool works, what Savings Pods are, and how community funding helps everyone.",
+    bodyHtml: `
+      <header><h1>About Squirrelll.ing</h1><p>Squirrelll.ing is a community-based micro-fintech platform. Members contribute small daily amounts into a shared regional Daily Pool — one member receives the full pool each day — and save toward personal goals with Savings Pods.</p></header>
+      <section><h2>Our mission</h2><p>Make saving effortless for everyone, especially people who feel like they can't afford to save. Small daily amounts, pooled together, become something real — for someone today, and for you another day.</p></section>
+      <section><h2>How it works</h2><ul><li><strong>Daily Pool:</strong> tiny fixed daily contribution, one regional winner per day.</li><li><strong>Savings Pods:</strong> goal-based auto-deposits on your schedule.</li><li><strong>Region-based:</strong> each region runs its own pool.</li></ul></section>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+      ]),
+    ],
+  },
+  "/download": {
+    title: "Download Squirrelll.ing — Android & iOS Micro-Fintech App",
+    description:
+      "Download the Squirrelll.ing app on Google Play (Android) or the App Store (iOS). Join the Daily Pool, start Savings Pods, and build small daily money habits.",
+    h1: "Download Squirrelll.ing",
+    bodyHtml: `
+      <header><h1>Download Squirrelll.ing</h1><p>Squirrelll.ing is live on Google Play and the App Store. Install the app, link a payment method, and start Squirrellling in minutes.</p></header>
+      <section><h2>Available on</h2><ul><li><strong>Google Play</strong> — Android devices.</li><li><strong>App Store</strong> — iOS devices.</li></ul></section>
+      <section><h2>What you can do inside</h2><ul><li>Join the community Daily Pool for your region.</li><li>Create Savings Pods for personal goals.</li><li>Track daily contributions and progress.</li></ul></section>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Download", path: "/download" },
+      ]),
+      softwareAppJsonLd,
+    ],
+  },
+  "/ask": {
+    title: "Ask Squirrelll.ing — Answers to Real Financial Questions",
+    description:
+      "Get clear, simple answers to real financial questions. From micro-savings to community finance, the Daily Pool, Savings Pods, and building better money habits — answered simply.",
+    h1: "Ask Squirrelll.ing",
+    keywords:
+      "financial questions answered, how to save money, what is microfinance, community savings questions, daily pool explained, savings pods explained",
+    ogDescription:
+      "Clear answers to real financial questions — micro-savings, community finance, Daily Pool, Savings Pods, and money habits explained simply.",
+    bodyHtml: `
+      <header><h1>Ask Squirrelll.ing</h1><p>Straight answers to real financial questions — micro-savings, community finance, budgeting, and how the Squirrelll.ing platform works.</p></header>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Ask", path: "/ask" },
+      ]),
+    ],
+  },
+  "/money-guides": {
+    title: "Money Guides — Practical Help for Real Financial Challenges",
+    description:
+      "Practical money guides for real life situations. From living paycheck to paycheck to building emergency savings and passive financial habits — honest guidance for people who need it.",
+    h1: "Money Guides",
+    keywords:
+      "money guides, how to save money, living paycheck to paycheck, emergency savings, passive income, financial habits, money help",
+    ogTitle: "Money Guides by Squirrelll.ing — Real Help for Real Money Problems",
+    ogDescription:
+      "Practical guidance for real financial challenges — living paycheck to paycheck, emergency savings, passive income habits, and more.",
+    bodyHtml: `
+      <header><h1>Money Guides</h1><p>Situation-based guides for real money challenges — what to do when you're broke, how to build an emergency fund, and how to make saving feel effortless.</p></header>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Money Guides", path: "/money-guides" },
+      ]),
+    ],
+  },
+  "/research": {
+    title: "Financial Research — What Science Says About Saving & Community Finance",
+    description:
+      "What academic and behavioral research actually says about saving habits, money psychology, community finance, and micro-savings. Evidence-based insights, explained simply.",
+    h1: "Research",
+    keywords:
+      "financial research, savings psychology, behavioral economics research, community finance research, micro savings research, money habits science",
+    ogTitle: "Financial Research — Science Behind Saving & Community Finance",
+    ogDescription:
+      "Academic and behavioral research on saving habits, money psychology, community finance, and micro-savings — explained simply.",
+    bodyHtml: `
+      <header><h1>Research</h1><p>Plain-language summaries of academic and behavioral research on saving habits, money psychology, and community finance.</p></header>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Research", path: "/research" },
+      ]),
+    ],
+  },
+  "/concepts": {
+    title: "Financial Concepts — Squirrelll.ing Knowledge Hub",
+    description:
+      "Clear explanations of financial concepts that matter — microfinance, community savings, ROSCAs, Susu, tandas, behavioral economics, and the psychology of saving small amounts daily.",
+    h1: "Financial Concepts",
+    keywords:
+      "financial concepts, what is microfinance, what is a ROSCA, susu savings, tandas, community finance, behavioral economics, micro savings explained",
+    ogTitle: "Financial Concepts Explained — Squirrelll.ing",
+    ogDescription:
+      "Clear explanations of microfinance, community savings, ROSCAs, Susu, tandas, behavioral economics, and the psychology of daily micro-savings.",
+    bodyHtml: `
+      <header><h1>Financial Concepts</h1><p>Evergreen definitions of the ideas behind Squirrelll.ing — microfinance, ROSCAs, Susu, tandas, behavioral economics, and more.</p></header>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Concepts", path: "/concepts" },
+      ]),
+    ],
+  },
+  "/about-squirrelll.ing": {
+    title: "About Squirrelll.ing — Full Platform Knowledge Hub",
+    description:
+      "Everything about the Squirrelll.ing platform — features, Daily Pool mechanics, Savings Pods, fees, security, regional pools, and how community funding works in practice.",
+    h1: "Squirrelll.ing Platform",
+    keywords:
+      "squirrelll.ing how it works, daily pool mechanics, savings pods details, squirrelll.ing fees, squirrelll.ing security, community funding platform",
+    ogTitle: "Squirrelll.ing Platform Knowledge Hub",
+    ogDescription:
+      "Full details on Squirrelll.ing — Daily Pool, Savings Pods, fees, regional pools, security, and how community funding works.",
+    bodyHtml: `
+      <header><h1>About Squirrelll.ing</h1><p>Full platform documentation — how the Daily Pool works, how Savings Pods work, fees, regional pool logic, and trust &amp; security.</p></header>
+    `,
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "About Squirrelll.ing", path: "/about-squirrelll.ing" },
+      ]),
+    ],
+  },
 };
 
+// -----------------------------------------------------------------------------
+// Programmatic prerender entries for the knowledge platform (articles + categories).
+// Titles/descriptions mirror what src/components/SEO.tsx renders at runtime so
+// crawlers see the same metadata on their first fetch.
+// -----------------------------------------------------------------------------
+import {
+  ASK_ARTICLES,
+  GUIDES,
+  RESEARCH,
+  CONCEPTS,
+  PLATFORM_DOCS,
+  CATEGORIES,
+} from "./src/data/knowledge";
+
+const truncate = (s: string, n = 158) =>
+  s.length <= n ? s : `${s.slice(0, n - 1).trimEnd()}…`;
+
+const sectionPaths: Record<string, string> = {
+  ask: "/ask",
+  guide: "/money-guides",
+  research: "/research",
+  concept: "/concepts",
+  platform: "/about-squirrelll.ing",
+};
+
+const sectionLabel: Record<string, string> = {
+  ask: "Ask",
+  guide: "Money Guides",
+  research: "Research",
+  concept: "Concepts",
+  platform: "About Squirrelll.ing",
+};
+
+const articleBody = (h1: string, lead: string, extras: string[] = []) => `
+  <header><h1>${h1}</h1><p>${lead}</p></header>
+  ${extras.map((e) => `<section>${e}</section>`).join("")}
+`;
+
+for (const a of ASK_ARTICLES) {
+  const url = `/ask/${a.slug}`;
+  ROUTE_META[url] = {
+    title: `${a.title} — Squirrelll.ing`,
+    description: truncate(a.quickAnswer || a.question),
+    h1: a.title,
+    bodyHtml: articleBody(
+      a.title,
+      a.quickAnswer,
+      a.sections.slice(0, 3).map((s) => `<h2>${s.heading}</h2><p>${s.body}</p>`),
+    ),
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Ask", path: "/ask" },
+        { name: a.title, path: url },
+      ]),
+    ],
+  };
+}
+
+for (const g of GUIDES) {
+  const url = `/money-guides/${g.slug}`;
+  ROUTE_META[url] = {
+    title: `${g.title} — Money Guides | Squirrelll.ing`,
+    description: truncate(g.problem),
+    h1: g.title,
+    bodyHtml: articleBody(g.title, g.problem, [
+      `<h2>Why it happens</h2><p>${g.whyItHappens}</p>`,
+    ]),
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Money Guides", path: "/money-guides" },
+        { name: g.title, path: url },
+      ]),
+    ],
+  };
+}
+
+for (const r of RESEARCH) {
+  const url = `/research/${r.slug}`;
+  ROUTE_META[url] = {
+    title: `${r.title} — Research | Squirrelll.ing`,
+    description: truncate(r.summary),
+    h1: r.title,
+    bodyHtml: articleBody(r.title, r.summary),
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Research", path: "/research" },
+        { name: r.title, path: url },
+      ]),
+    ],
+  };
+}
+
+for (const c of CONCEPTS) {
+  const url = `/concepts/${c.slug}`;
+  ROUTE_META[url] = {
+    title: `${c.title} — Concepts | Squirrelll.ing`,
+    description: truncate(c.shortDefinition),
+    h1: c.title,
+    bodyHtml: articleBody(c.title, c.shortDefinition, [
+      `<p>${c.longDefinition}</p>`,
+    ]),
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Concepts", path: "/concepts" },
+        { name: c.title, path: url },
+      ]),
+    ],
+  };
+}
+
+for (const p of PLATFORM_DOCS) {
+  const url = `/about-squirrelll.ing/${p.slug}`;
+  ROUTE_META[url] = {
+    title: `${p.title} — About Squirrelll.ing`,
+    description: truncate(p.quickAnswer),
+    h1: p.title,
+    bodyHtml: articleBody(p.title, p.quickAnswer),
+    jsonLd: [
+      breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "About Squirrelll.ing", path: "/about-squirrelll.ing" },
+        { name: p.title, path: url },
+      ]),
+    ],
+  };
+}
+
+// Category landings per section (mirrors scripts/generate-sitemap.ts)
+const catSectionKeys: { key: "ask" | "guide" | "research" | "concept" | "platform"; base: string }[] = [
+  { key: "ask", base: "/ask" },
+  { key: "guide", base: "/money-guides" },
+  { key: "research", base: "/research" },
+  { key: "concept", base: "/concepts" },
+  { key: "platform", base: "/about-squirrelll.ing" },
+];
+
+for (const cat of CATEGORIES) {
+  for (const s of catSectionKeys) {
+    if (!cat.scopes.includes(s.key)) continue;
+    const url = `${s.base}/category/${cat.slug}`;
+    ROUTE_META[url] = {
+      title: `${cat.name} — ${sectionLabel[s.key]} | Squirrelll.ing`,
+      description: truncate(cat.description),
+      h1: `${cat.name} — ${sectionLabel[s.key]}`,
+      bodyHtml: articleBody(`${cat.name}`, cat.description),
+      jsonLd: [
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: sectionLabel[s.key], path: s.base },
+          { name: cat.name, path: url },
+        ]),
+      ],
+    };
+  }
+}
+
+
+const esc = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// Replace the first tag matching `regex`; if none exists, insert `tag` before </head>.
+function upsertHeadTag(html: string, regex: RegExp, tag: string): string {
+  return regex.test(html) ? html.replace(regex, tag) : html.replace("</head>", `${tag}\n  </head>`);
+}
 
 function staticSeoPlugin(): Plugin {
   return {
@@ -452,32 +764,74 @@ function staticSeoPlugin(): Plugin {
 
       for (const [route, meta] of Object.entries(ROUTE_META)) {
         const canonical = `${SITE}${route === "/" ? "/" : route}`;
-        let html = baseHtml
-          .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
-          .replace(
-            /<meta\s+name="description"[^>]*>/,
-            `<meta name="description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+property="og:title"[^>]*>/,
-            `<meta property="og:title" content="${meta.title}">`,
-          )
-          .replace(
-            /<meta\s+name="twitter:title"[^>]*>/,
-            `<meta name="twitter:title" content="${meta.title}">`,
-          )
-          .replace(
-            /<meta\s+property="og:description"[^>]*>/,
-            `<meta property="og:description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+name="twitter:description"[^>]*>/,
-            `<meta name="twitter:description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+property="og:url"[^>]*>/,
-            `<meta property="og:url" content="${canonical}">`,
+        const title = esc(meta.title);
+        const desc = esc(meta.description);
+        const ogTitle = esc(meta.ogTitle ?? meta.title);
+        const ogDesc = esc(meta.ogDescription ?? meta.description);
+        const image = meta.image ?? DEFAULT_OG_IMAGE;
+
+        let html = baseHtml;
+
+        // Strip any pre-existing JSON-LD script blocks written to the base index.html
+        // so per-route JSON-LD isn't duplicated on top of the sitewide graph.
+        html = html.replace(
+          /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+          "",
+        );
+
+        html = upsertHeadTag(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="description"[^>]*>/,
+          `<meta name="description" content="${desc}" />`,
+        );
+        if (meta.keywords) {
+          html = upsertHeadTag(
+            html,
+            /<meta\s+name="keywords"[^>]*>/,
+            `<meta name="keywords" content="${esc(meta.keywords)}" />`,
           );
+        }
+        html = upsertHeadTag(
+          html,
+          /<link\s+rel="canonical"[^>]*>/,
+          `<link rel="canonical" href="${canonical}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:title"[^>]*>/,
+          `<meta property="og:title" content="${ogTitle}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:description"[^>]*>/,
+          `<meta property="og:description" content="${ogDesc}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:url"[^>]*>/,
+          `<meta property="og:url" content="${canonical}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:image"[^>]*>/,
+          `<meta property="og:image" content="${image}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:title"[^>]*>/,
+          `<meta name="twitter:title" content="${ogTitle}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:description"[^>]*>/,
+          `<meta name="twitter:description" content="${ogDesc}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:image"[^>]*>/,
+          `<meta name="twitter:image" content="${image}" />`,
+        );
 
         const jsonLdTags = (meta.jsonLd ?? [])
           .map(
@@ -485,15 +839,13 @@ function staticSeoPlugin(): Plugin {
               `<script type="application/ld+json">${JSON.stringify(data)}</script>`,
           )
           .join("");
+        if (jsonLdTags) {
+          html = html.replace("</head>", `${jsonLdTags}</head>`);
+        }
 
-        html = html.replace(
-          "</head>",
-          `<link rel="canonical" href="${canonical}" />${jsonLdTags}</head>`,
-        );
-
-        // Crawler-visible content inside #root. React replaces this on mount
-        // for real users. Kept on-screen (not off-screen with -9999px) so
-        // search engines and AI crawlers don't treat it as cloaked/hidden text.
+        // Crawler-visible content inside #root. React discards this on mount
+        // for real users (see src/main.tsx). Kept on-screen (not off-screen)
+        // so search engines and AI crawlers don't treat it as cloaked.
         html = html.replace(
           '<div id="root"></div>',
           `<div id="root"><div data-prerender="true">${meta.bodyHtml}</div></div>`,

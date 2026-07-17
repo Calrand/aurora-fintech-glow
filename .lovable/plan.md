@@ -1,110 +1,48 @@
+## Why GSC still sees old metas
 
-# AI-First Knowledge Platform — Framework Build
+Two compounding bugs in the build. Crawlers (Googlebot's initial fetch, GSC's URL Inspection "crawled page" view, ChatGPT, social scrapers) only see the static HTML the server returns. `react-helmet-async` updates the DOM client-side, so it does **not** affect what these crawlers ingest on first fetch.
 
-Goal: keep the current UI, expand the information architecture, internal linking, metadata, and scalability so the site becomes a semantic knowledge graph across five sections. No mass content generation — I build the framework and seed each section with a few high-quality anchor articles, ready for you to grow in topical clusters.
+**Bug 1 — prerender regex silently no-ops.**
+`vite.config.ts` → `staticSeoPlugin` builds each route's HTML by regex-replacing `<title>`, `<meta name="description">`, `<meta property="og:title">`, `og:description`, `og:url`, `twitter:title`, `twitter:description` in `dist/index.html`. In the previous cleanup we removed those placeholder tags from `index.html`, so every `.replace()` matches nothing and writes the file unchanged. The prerendered per-route pages ship with **no title and no description** — GSC keeps showing whatever it previously cached.
 
-## Sections
+**Bug 2 — only 4 routes are prerendered.**
+`ROUTE_META` only covers `/`, `/what-is-squirrelll.ing`, `/privacy-policy`, `/terms-of-service` (plus a few similar). Every other route (`/about`, `/download`, `/ask`, `/money-guides`, `/research`, `/concepts`, `/about-squirrelll.ing`, all article + category pages) falls through `.htaccess` to the root `index.html`, which also has no per-route tags. Crawlers see the homepage meta (or nothing) for those URLs.
 
-1. `/ask` — one question per page (exists, keep)
-2. `/money-guides` — life-situation action plans (exists, keep)
-3. `/research` — new. Academic + behavioral finance summaries with citations
-4. `/concepts` — new. Neutral evergreen definitions (Microfinance, ROSCA, Susu, Compound Interest, etc.)
-5. `/squirrelll` — new. Platform knowledge hub (Daily Pool, Pods, Round-Ups, Fees, Security, Trust)
+## Fix
 
-Each section: index page + article template + category landing pages.
+Restore placeholder tags in `index.html` so the regex replacement lands, then also make the plugin insert-if-missing so future removals don't silently break SEO again. Then extend the prerender to cover every real route — reusing the same SEO copy that `src/components/SEO.tsx` renders — so GSC's next crawl gets correct static metas for every URL.
 
-## Unified data model (`src/data/knowledge.ts`)
+### Technical steps
 
-Add three new content types alongside `AskArticle` and `Guide`:
+1. **`index.html`** — add fallback tags inside `<head>` (kept generic; the plugin overwrites them per route):
+   - `<title>Squirrelll.ing</title>`
+   - `<meta name="description" content="…">`
+   - `<link rel="canonical" href="https://squirrelll.ing/">`
+   - `<meta property="og:title">`, `og:description`, `og:url`, `og:image` (points at `/uploads/og-image.jpg`)
+   - `<meta name="twitter:title">`, `twitter:description`, `twitter:image`
 
-```text
-ResearchSummary  { slug, title, summary, sections[], citations[], categories[], relatedAsk[], relatedGuides[], relatedConcepts[] }
-Concept          { slug, term, shortDefinition, longDefinition, examples[], alsoKnownAs[], categories[], relatedAsk[], relatedGuides[], relatedResearch[] }
-PlatformDoc      { slug, title, quickAnswer, sections[], faqs[], categories[], relatedAsk[], relatedConcepts[] }
-```
+2. **`vite.config.ts` — `staticSeoPlugin`**
+   - Change each `.replace(regex, tag)` to: if the regex matches → replace, else → insert before `</head>`. Prevents another silent breakage.
+   - Add `keywords`, `twitter:image`, `og:image` handling to the writer (mirrors what `SEO.tsx` outputs).
+   - Emit a proper `<link rel="canonical">` by replacing the existing one instead of appending a second one (currently a duplicate can slip in).
 
-Shared fields on every node: `slug, title, quickAnswer/summary, updated, difficulty, categories[], relatedIds[]`. This is what enables the cross-linking.
+3. **`vite.config.ts` — extend `ROUTE_META`** with static entries for all main routes so each gets its own prerendered HTML. Titles/descriptions/keywords copied verbatim from the `<SEO>` props already set in each page:
+   - `/about`, `/download`, `/payment-security`, `/delete-account`
+   - `/ask`, `/money-guides`, `/research`, `/concepts`, `/about-squirrelll.ing`
+   - `/budget-calculator`, `/round-up-calculator`
+   - Article + category routes: generate entries programmatically from `src/data/knowledge.ts` (`ASK_ARTICLES`, `GUIDES`, `RESEARCH`, `CONCEPTS`, `PLATFORM_DOCS`, `CATEGORIES`) — same source `generate-sitemap.ts` already uses.
+   - Each entry provides `title`, `description`, minimal `bodyHtml` (h1 + summary + quick answer where available), and article/breadcrumb JSON-LD.
 
-Expand `CATEGORIES` with the taxonomy you listed (Saving Money, Budgeting, Investing, Microfinance, Behavioral Economics, Financial Psychology, Community Finance, Passive Income, Emergency Funds, Apps, Financial Wellness, Money Habits, Side Hustles, Financial Education). Each category gets a `scope: ('ask'|'guide'|'research'|'concept'|'platform')[]` so it can appear in multiple section indexes.
+4. **Verify after build** — spot-check `dist/index.html`, `dist/ask/index.html`, `dist/money-guides/index.html`, and a couple article pages for correct `<title>`, `<meta name="description">`, `<link rel="canonical">`, and `og:*` tags before publishing.
 
-Add a graph helper:
+### After deploy
 
-```text
-getRelated(nodeId): { ask[], guides[], concepts[], research[], platform[] }
-```
+- Publish, then in GSC use **URL Inspection → Test live URL → View crawled page** on `/`, `/about`, and one article — confirm the new `<title>` and description appear in the rendered HTML.
+- Click **Request Indexing** on the key URLs to speed recrawl. GSC's normal cache refresh otherwise takes days to weeks.
+- Social scrapers (LinkedIn, Facebook, Slack) cache aggressively — use each platform's debugger to force a refresh if previews look stale.
 
-It resolves manual `relatedIds` first, then fills remaining slots by shared categories. Every article page uses this — no page is ever isolated.
+### Not changing
 
-## Shared article template
-
-Extract the current AskArticle layout into `<KnowledgeArticle>` so all five sections render identically:
-
-- Breadcrumb: Home → Section → Category → Article
-- H1 + Quick Answer card (50–100 words)
-- At-a-glance strip: reading time, difficulty, category, last reviewed
-- Auto-generated TOC from sections
-- Body sections
-- Key Takeaways (new — bullet list block)
-- FAQs
-- References / Citations
-- Continue Learning: **Related Questions · Related Guides · Related Concepts · Related Research · Related Platform Features** (grouped, not one flat list)
-- Related Searches (Ask only)
-
-Reused by Ask, Guide, Research, Concept, Platform pages.
-
-## Category landing pages
-
-New route `/:section/category/:slug` renders every node in that category across all five types, grouped by type. Header shows category description + node count. Linked from every article's category chip.
-
-## Search
-
-Upgrade the current `/ask` search into a global `/search?q=` page that indexes all five content types and groups results:
-
-```text
-Questions (Ask) · Guides · Concepts · Research · Platform · Categories
-```
-
-Filters: type, category, difficulty. Client-side (all content is static data) — supports 5k+ nodes fine with a prebuilt index.
-
-## Routes added
-
-```text
-/research                       index
-/research/:slug                 article
-/concepts                       index (A–Z + by category)
-/concepts/:slug                 article
-/squirrelll                     platform hub
-/squirrelll/:slug               platform article
-/:section/category/:slug        category landing (ask|money-guides|research|concepts|squirrelll)
-/search                         global search
-```
-
-## SEO / AI optimization
-
-Every article auto-emits: title, description, canonical, og/twitter, Article + BreadcrumbList + FAQPage schema, plus DefinedTerm on Concept pages and ScholarlyArticle citations on Research pages. Semantic HTML (`<article>`, `<section>`, proper h1/h2/h3). Sitemap generator + `llms.txt` updated to list every node.
-
-## Seed content (framework proof, not bulk)
-
-I'll ship 2–3 anchor articles per new section so linking works end-to-end and you have templates to copy:
-
-- Research: "Save More Tomorrow (Thaler & Benartzi)", "Mental Accounting Matters"
-- Concepts: Microfinance, ROSCA, Susu, Daily Pool, Compound Interest, Emergency Fund
-- Platform: Daily Pool, Savings Pods, Fees, Security
-
-Existing Ask + Guide articles get `relatedResearch` / `relatedConcepts` / `relatedPlatform` links wired up.
-
-## Out of scope
-
-- No visual redesign — reuse existing tokens, components, spacing
-- No auto-generated bulk articles
-- No CMS backend — content stays in `src/data/knowledge.ts` (splittable per section later)
-
-## Technical details
-
-- Types + graph helpers live in `src/data/knowledge.ts`; may split into `src/data/knowledge/{ask,guides,research,concepts,platform,categories,graph}.ts` if the file grows past ~1k lines
-- `KnowledgeArticle` in `src/components/knowledge/KnowledgeArticle.tsx`; existing `AskArticle` / `GuideArticle` pages become thin wrappers
-- Category landing = one shared `CategoryPage` component keyed by section
-- Global search = one `SearchPage` component + `buildSearchIndex()` in `knowledge.ts`
-- Sitemap script iterates all node arrays; no manual URL lists
-
-Confirm and I'll build it.
+- `SEO.tsx` and per-page `<SEO>` usage stay as-is (still useful for in-app tab titles + JS-executing crawlers).
+- No layout, styling, or component changes.
+- No new dependencies; no move to Next.js.
