@@ -43,7 +43,7 @@ const Index = () => {
       />
       <Navbar />
       <HeroSection />
-
+      <HeroHighlightSection />
 
       <Suspense fallback={<SectionLoader />}>
         <ConceptSection />
