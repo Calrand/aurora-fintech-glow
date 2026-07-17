@@ -8,18 +8,24 @@ export type Category = {
   scope: 'ask' | 'guide' | 'both';
 };
 
+export type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced';
+
 export type AskArticle = {
   slug: string;
   title: string;
   question: string;
   category: string; // category slug
+  difficulty?: Difficulty;
   quickAnswer: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
   references?: { title: string; url?: string }[];
   definedTerm?: { name: string; description: string };
-  updated: string; // ISO
+  /** Optional curated "People also search for" prompts. Falls back to related question titles. */
+  relatedSearches?: string[];
+  updated: string; // ISO — kept internal only, not surfaced in UI
 };
+
 
 export type Guide = {
   slug: string;
@@ -429,7 +435,7 @@ export const getCategory = (slug: string) => CATEGORIES.find((c) => c.slug === s
 export const getAsk = (slug: string) => ASK_ARTICLES.find((a) => a.slug === slug);
 export const getGuide = (slug: string) => GUIDES.find((g) => g.slug === slug);
 
-export function relatedAsk(exceptSlug: string, category?: string, limit = 4): AskArticle[] {
+export function relatedAsk(exceptSlug: string, category?: string, limit = 6): AskArticle[] {
   const sameCat = ASK_ARTICLES.filter((a) => a.slug !== exceptSlug && (!category || a.category === category));
   const rest = ASK_ARTICLES.filter((a) => a.slug !== exceptSlug && a.category !== category);
   return [...sameCat, ...rest].slice(0, limit);
@@ -447,3 +453,39 @@ export function askByCategory(cat: string) {
 export function guidesByCategory(cat: string) {
   return GUIDES.filter((g) => g.category === cat);
 }
+
+/** Estimate reading time in minutes for arbitrary text (200 wpm). Minimum 1 min. */
+export function estimateReadingTime(text: string): number {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+export function askReadingTime(a: AskArticle): number {
+  const text = [a.quickAnswer, ...a.sections.map((s) => s.body), ...a.faqs.map((f) => f.q + ' ' + f.a)].join(' ');
+  return estimateReadingTime(text);
+}
+
+export function guideReadingTime(g: Guide): number {
+  const text = [
+    g.problem,
+    g.whyItHappens,
+    ...g.practicalSteps,
+    ...g.longTermHabits,
+    ...g.helpfulTools,
+    g.whereSquirrelllHelps ?? '',
+    ...g.faqs.map((f) => f.q + ' ' + f.a),
+  ].join(' ');
+  return estimateReadingTime(text);
+}
+
+/** "People also search for" — curated list if provided, else related article questions. */
+export function relatedSearches(a: AskArticle, limit = 5): string[] {
+  if (a.relatedSearches?.length) return a.relatedSearches.slice(0, limit);
+  return relatedAsk(a.slug, a.category, limit).map((r) => r.question || r.title);
+}
+
+/** Suggested Ask questions related to a Guide, for "Continue Learning". */
+export function guideContinueLearning(g: Guide, limit = 6): AskArticle[] {
+  return relatedAsk(g.slug, g.category, limit);
+}
+
