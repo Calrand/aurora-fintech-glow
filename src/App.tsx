@@ -15,6 +15,10 @@ import BudgetCalculator from './pages/BudgetCalculator';
 import RoundUpCalculator from './pages/RoundUpCalculator';
 import About from './pages/About';
 import Download from './pages/Download';
+import Ask from './pages/Ask';
+import AskArticle from './pages/AskArticle';
+import Guides from './pages/Guides';
+import GuideArticle from './pages/GuideArticle';
 import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
@@ -37,6 +41,10 @@ const App = () => (
           <Route path="/round-up-calculator" element={<RoundUpCalculator />} />
           <Route path="/about" element={<About />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/ask" element={<Ask />} />
+          <Route path="/ask/:slug" element={<AskArticle />} />
+          <Route path="/guides" element={<Guides />} />
+          <Route path="/guides/:slug" element={<GuideArticle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />

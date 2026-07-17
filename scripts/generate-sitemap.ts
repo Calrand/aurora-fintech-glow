@@ -1,6 +1,7 @@
 // Runs before `vite dev` and `vite build` (predev/prebuild hooks); writes public/sitemap.xml.
 import { writeFileSync } from "fs";
 import { resolve } from "path";
+import { ASK_ARTICLES, GUIDES } from "../src/data/knowledge";
 
 const BASE_URL = "https://squirrelll.ing";
 
@@ -22,6 +23,10 @@ const entries: SitemapEntry[] = [
   { path: "/what-is-squirrelll.ing", changefreq: "monthly", priority: "0.9" },
   { path: "/about", changefreq: "monthly", priority: "0.7" },
   { path: "/download", changefreq: "monthly", priority: "0.9" },
+  { path: "/ask", changefreq: "weekly", priority: "0.9" },
+  { path: "/guides", changefreq: "weekly", priority: "0.9" },
+  ...ASK_ARTICLES.map((a) => ({ path: `/ask/${a.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
+  ...GUIDES.map((g) => ({ path: `/guides/${g.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
   { path: "/budget-calculator", changefreq: "monthly", priority: "0.8" },
   { path: "/round-up-calculator", changefreq: "monthly", priority: "0.8" },
   { path: "/payment-security", changefreq: "yearly", priority: "0.5" },
