@@ -46,35 +46,42 @@ const Concepts: React.FC = () => {
                 Clear, evergreen definitions of the ideas that shape how money works.
               </p>
               <div className="mt-8">
-                <KSearch value={q} onChange={setQ} placeholder="Search concepts..." />
+                <KSearch
+                  value={q}
+                  onChange={setQ}
+                  placeholder="Search concepts..."
+                  suggestions={sorted.slice(0, 6).map((c) => ({
+                    label: c.term,
+                    sublabel: c.shortDefinition,
+                    to: `/concepts/${c.slug}`,
+                  }))}
+                />
               </div>
             </div>
           </Container>
         </section>
 
-        {!q.trim() && (
-          <section className="py-6 md:py-8">
-            <Container>
-              <h2 className="text-lg md:text-xl font-semibold text-white/80 mb-3">Browse by Category</h2>
-              <div className="flex flex-wrap gap-2">
-                {cats.map((c) => {
-                  const count = conceptsByCategory(c.slug).length;
-                  if (count === 0) return null;
-                  return (
-                    <a
-                      key={c.slug}
-                      href={`/concepts/category/${c.slug}`}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-sm text-white/80"
-                    >
-                      <span>{c.name}</span>
-                      <span className="text-xs text-white/40">{count}</span>
-                    </a>
-                  );
-                })}
-              </div>
-            </Container>
-          </section>
-        )}
+        <section className="py-4 md:py-6">
+          <Container>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
+              {cats.map((c) => {
+                const count = conceptsByCategory(c.slug).length;
+                if (count === 0) return null;
+                return (
+                  <a
+                    key={c.slug}
+                    href={`/concepts/category/${c.slug}`}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
+                  >
+                    <span>{c.name}</span>
+                    <span className="text-[10px] text-white/40">{count}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
 
         <section className="py-8 md:py-12">
           <Container>
