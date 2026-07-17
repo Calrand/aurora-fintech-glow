@@ -223,19 +223,59 @@ const GuideArticle: React.FC = () => {
             )}
 
             <section className="mt-12">
-              <h2 className="text-2xl font-bold text-white mb-4">Continue Learning</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">Continue Learning</h2>
+              <p className="text-sm text-white/50 mb-6">Related content from across the Squirrelll.ing knowledge base.</p>
+
+              <h3 className="text-lg font-semibold text-white/90 mt-6 mb-3">Related Questions</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {continueLearning.map((a) => (
                   <KCard key={a.slug} to={`/ask/${a.slug}`} title={a.title} eyebrow="Ask" />
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-4 mt-10">Related Money Guides</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {rGuides.map((g) => (
-                  <KCard key={g.slug} to={`/money-guides/${g.slug}`} title={g.title} eyebrow="Guide" />
-                ))}
-              </div>
+              {rGuides.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Money Guides</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rGuides.map((g) => (
+                      <KCard key={g.slug} to={`/money-guides/${g.slug}`} title={g.title} eyebrow="Guide" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rConcepts.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Concepts</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rConcepts.map((c) => (
+                      <KCard key={c.slug} to={`/concepts/${c.slug}`} title={c.title} eyebrow="Concept" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rResearch.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Research</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rResearch.map((r) => (
+                      <KCard key={r.slug} to={`/research/${r.slug}`} title={r.title} eyebrow="Research" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rPlatform.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Platform Features</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rPlatform.map((p) => (
+                      <KCard key={p.slug} to={`/squirrelll/${p.slug}`} title={p.title} eyebrow="Platform" />
+                    ))}
+                  </div>
+                </>
+              )}
             </section>
 
             <KPrevNext
