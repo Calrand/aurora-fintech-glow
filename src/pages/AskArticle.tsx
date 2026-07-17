@@ -35,8 +35,12 @@ const AskArticle: React.FC = () => {
   const prev = idx > 0 ? ASK_ARTICLES[idx - 1] : undefined;
   const next = idx < ASK_ARTICLES.length - 1 ? ASK_ARTICLES[idx + 1] : undefined;
 
-  const continueLearning = relatedAsk(article.slug, article.category, 8);
-  const rGuides = relatedGuides(article.slug, article.category, 4);
+  const graph = getRelated(article as any, 'ask');
+  const continueLearning = graph.ask.length ? graph.ask : relatedAsk(article.slug, article.category, 8);
+  const rGuides = graph.guides.length ? graph.guides : relatedGuides(article.slug, article.category, 4);
+  const rConcepts = graph.concepts;
+  const rResearch = graph.research;
+  const rPlatform = graph.platform;
   const paa = relatedSearches(article, 5);
   const readMin = askReadingTime(article);
   const difficulty = article.difficulty ?? 'Beginner';
