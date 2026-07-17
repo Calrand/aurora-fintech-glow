@@ -12,7 +12,13 @@ type RouteMeta = {
   h1: string;
   bodyHtml: string;
   jsonLd?: Record<string, unknown>[];
+  keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  image?: string;
 };
+
+const DEFAULT_OG_IMAGE = "https://squirrelll.ing/uploads/og-image.jpg";
 
 const FAQS = [
   {
