@@ -35,9 +35,12 @@ const Research: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Research — Behavioral & Financial Research Summaries"
-        description="Evergreen summaries of the academic and behavioral finance research behind saving, community finance, and money habits."
+        title="Financial Research — What Science Says About Saving & Community Finance"
+        description="What academic and behavioral research actually says about saving habits, money psychology, community finance, and micro-savings. Evidence-based insights, explained simply."
         path="/research"
+        keywords="financial research, savings psychology, behavioral economics research, community finance research, micro savings research, money habits science"
+        ogTitle="Financial Research — Science Behind Saving & Community Finance"
+        ogDescription="Academic and behavioral research on saving habits, money psychology, community finance, and micro-savings — explained simply."
         jsonLd={schema}
       />
       <Navbar />
