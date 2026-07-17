@@ -91,8 +91,11 @@ const HOW_IT_WORKS_STEPS = [
 const homeBody = `
   <header>
     <h1>Squirrelll.ing — Community-Based Micro-Fintech Platform</h1>
-    <p>Your spare change doesn't feel like much. But pooled daily with your community, it becomes something real — for someone today, and for you another day. Set it up once. Contribute a small amount daily. Any day could be your day to receive the full community pool. And on the days it's not? You just helped someone who needed it as much as you do. No regrets.</p>
+    <p>Community finance where everyone gives — and everyone gets. Save and grow your money effortlessly.</p>
   </header>
+  <section>
+    <p>Your spare change doesn't feel like much. But pooled daily with your community, it becomes something real — for someone today, and for you another day. Set it up once. Contribute a small amount daily. Any day could be your day to receive the full community pool. And on the days it's not? You just helped someone who needed it as much as you do. No regrets.</p>
+  </section>
   <section>
     <h2>How Squirrellling works</h2>
     <ol>
