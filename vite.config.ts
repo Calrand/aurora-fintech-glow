@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: "What are Savings Pods?",
-    a: "Savings Pods are goal-based auto-deposit accounts. Set a savings goal, choose a fixed amount, pick a daily or weekly schedule, and Squirrelll.ing handles the deposits automatically until you reach your goal or your set time is up. You can run multiple Pods for different goals. It helps you to integrate micro-finance in your daily life savings startegy.",
+    a: "Savings Pods are goal-based auto-deposit accounts. Set a savings goal, choose a fixed amount, pick a daily or weekly schedule, and Squirrelll.ing handles the deposits automatically until you reach your goal or your set time is up. You can run multiple Pods for different goals. It helps you to integrate micro-finance in your daily life savings strategy.",
   },
   {
     q: "Can I make money with Squirrelll.ing?",
@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: "Is Squirrelll.ing a good side hustle?",
-    a: "Squirrelll.ing works best as a silent financial tool running alongside whatever else you do. Contribute a tiny daily amount, stay in the pool, and any day could be your day to receive the community pot. No work required after setup — just a small daily contribution with a real daily chance of return. And they days you don't, you helped someone just like you.",
+    a: "Squirrelll.ing works best as a silent financial tool running alongside whatever else you do. Contribute a tiny daily amount, stay in the pool, and any day could be your day to receive the community pot. No work required after setup — just a small daily contribution with a real daily chance of return. And the days you don't, you helped someone just like you.",
   },
   {
     q: "What if I never receive the Daily Pool?",
@@ -57,7 +57,7 @@ const FAQS = [
   },
   {
     q: "What are the fees and charges?",
-    a: "A 3% withdrawal fee applies only when withdrawing from your savings. A 12% platform fee is taken from the total Daily Pool amount before the amount is added to the users wallet. If your Daily Pool gains are added to your savings, they can be withdrawn without the 5% fee. No hidden charges.",
+    a: "A 3% withdrawal fee applies only when withdrawing from your Savings Pod. A 12% platform fee is deducted from the total Daily Pool amount before it is added to the recipient's wallet. No hidden charges.",
   },
   {
     q: "Is the Daily Pool global or local?",
@@ -91,7 +91,7 @@ const HOW_IT_WORKS_STEPS = [
 const homeBody = `
   <header>
     <h1>Squirrelll.ing — Community-Based Micro-Fintech Platform</h1>
-    <p>Squirrelll.ing helps you save and invest without thinking about it. We turn spare change from everyday purchases into real savings through automatic round-ups, a shared community <strong>Daily Pool</strong>, and goal-based <strong>Savings Pods</strong>. Available now on Google Play for Android, with iOS coming soon.</p>
+    <p>Your spare change doesn't feel like much. But pooled daily with your community, it becomes something real — for someone today, and for you another day. Set it up once. Contribute a small amount daily. Any day could be your day to receive the full community pool. And on the days it's not? You just helped someone who needed it as much as you do. No regrets.</p>
   </header>
   <section>
     <h2>How Squirrellling works</h2>
@@ -104,10 +104,9 @@ const homeBody = `
   <section>
     <h2>Why people Squirrellll</h2>
     <ul>
-      <li><strong>Round-ups:</strong> spare change from every purchase quietly saved.</li>
-      <li><strong>Daily Pool:</strong> a tiny, region-determined daily contribution gives one regional member the full pot (minus a 12% platform fee) to accelerate their goal.</li>
-      <li><strong>Savings Pods:</strong> goal-based auto-deposits on a daily or weekly schedule.</li>
-      <li><strong>Region-based:</strong> each region runs its own Daily Pool so wins stay local.</li>
+      <li><strong>Daily Pool:</strong> contribute a small fixed amount daily into a shared regional pot. One member receives the full community pool each day — any day could be yours. More members means a bigger, more impactful pool for everyone.</li>
+      <li><strong>Savings Pods:</strong> set a savings goal, choose a fixed amount and schedule (daily or weekly), and auto-deposits run until you get there.</li>
+      <li><strong>Region-based:</strong> each region runs its own Daily Pool so the community stays local.</li>
     </ul>
   </section>
   <section>
