@@ -26,7 +26,7 @@ The core idea is simple: small amounts pooled together daily become something re
 - [Money Guides](/money-guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
 - [Research](/research): Summaries of academic and behavioral-finance research on saving, money habits, and community finance.
 - [Concepts](/concepts): Evergreen definitions of core financial ideas — microfinance, ROSCA, compound interest, emergency fund, and more.
-- [Squirrelll.ing Platform](/squirrelll): Documentation for platform features — Daily Pool, Savings Pods, fees, security.
+- [Squirrelll.ing Platform](/about-squirrelll.ing): Documentation for platform features — Daily Pool, Savings Pods, fees, security.
 - [Search](/search): Global search across the knowledge base.
 
 ## Tools

@@ -17,7 +17,7 @@ const Platform: React.FC = () => {
 
   const schema = {
     '@context': 'https://schema.org', '@type': 'CollectionPage',
-    url: 'https://squirrelll.ing/squirrelll',
+    url: 'https://squirrelll.ing/about-squirrelll.ing',
     name: 'Squirrelll.ing — Platform Knowledge',
     description: 'Everything about the Squirrelll.ing platform: Daily Pool, Savings Pods, fees, security.',
   };

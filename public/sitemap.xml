@@ -49,7 +49,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -229,19 +229,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/daily-pool</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/daily-pool</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/savings-pods</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/savings-pods</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/fees</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/fees</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -379,7 +379,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/community-finance</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/community-finance</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -421,7 +421,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/apps</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/apps</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -499,7 +499,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/savings-pods</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/savings-pods</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -517,7 +517,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/daily-pool</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/daily-pool</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -529,7 +529,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/round-up-savings</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/round-up-savings</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -541,7 +541,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://squirrelll.ing/squirrelll/category/trust-and-security</loc>
+    <loc>https://squirrelll.ing/about-squirrelll.ing/category/trust-and-security</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
