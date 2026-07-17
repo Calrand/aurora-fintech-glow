@@ -43,8 +43,8 @@ const App = () => (
           <Route path="/download" element={<Download />} />
           <Route path="/ask" element={<Ask />} />
           <Route path="/ask/:slug" element={<AskArticle />} />
-          <Route path="/guides" element={<Guides />} />
-          <Route path="/guides/:slug" element={<GuideArticle />} />
+          <Route path="/money-guides" element={<Guides />} />
+          <Route path="/money-guides/:slug" element={<GuideArticle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />

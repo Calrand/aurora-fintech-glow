@@ -60,7 +60,7 @@ const FooterSection: React.FC = () => {
                 Ask
               </Link>
               <Link
-                to="/guides"
+                to="/money-guides"
                 className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
               >
                 Money Guides

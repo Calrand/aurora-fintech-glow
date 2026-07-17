@@ -1,5 +1,5 @@
-// Data-driven knowledge library for /ask and /guides.
-// Adding new articles/guides = append an entry here. Related links are auto-computed by category.
+// Data-driven knowledge library for /ask and /money-guides.
+// Adding new articles/money-guides = append an entry here. Related links are auto-computed by category.
 
 export type Category = {
   slug: string;
