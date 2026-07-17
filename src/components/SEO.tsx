@@ -11,6 +11,7 @@ export interface SEOProps {
   image?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
+  keywords?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
