@@ -96,7 +96,7 @@ const GuideArticle: React.FC = () => {
             items={[
               { label: 'Home', to: '/' },
               { label: 'Money Guides', to: '/money-guides' },
-              ...(category ? [{ label: category.name, to: `/money-guides?c=${category.slug}` }] : []),
+              ...(category ? [{ label: category.name, to: `/money-guides/category/${category.slug}` }] : []),
               { label: guide.title },
             ]}
           />
