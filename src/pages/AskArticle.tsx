@@ -123,7 +123,7 @@ const AskArticle: React.FC = () => {
             items={[
               { label: 'Home', to: '/' },
               { label: 'Ask Squirrelll.ing', to: '/ask' },
-              ...(category ? [{ label: category.name, to: `/ask?c=${category.slug}` }] : []),
+              ...(category ? [{ label: category.name, to: `/ask/category/${category.slug}` }] : []),
               { label: article.title },
             ]}
           />
