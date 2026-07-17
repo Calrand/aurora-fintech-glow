@@ -856,7 +856,7 @@ export const SECTIONS: Record<SectionKey, { key: SectionKey; label: string; path
   guide: { key: 'guide', label: 'Money Guides', path: '/money-guides', description: 'Action plans for real-life financial situations.' },
   research: { key: 'research', label: 'Research', path: '/research', description: 'Summaries of academic and behavioral finance research.' },
   concept: { key: 'concept', label: 'Concepts', path: '/concepts', description: 'Evergreen definitions of financial ideas.' },
-  platform: { key: 'platform', label: 'Squirrelll.ing', path: '/squirrelll', description: 'Everything about the Squirrelll.ing platform.' },
+  platform: { key: 'platform', label: 'Squirrelll.ing', path: '/about-squirrelll.ing', description: 'Everything about the Squirrelll.ing platform.' },
 };
 
 export const sectionPath = (section: SectionKey, slug?: string) =>

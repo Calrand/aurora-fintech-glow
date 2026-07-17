@@ -70,9 +70,9 @@ The core idea is simple: small amounts pooled together daily become something re
 
 ## Platform Documentation
 
-- [Daily Pool — How it works](/squirrelll/daily-pool)
-- [Savings Pods — How they work](/squirrelll/savings-pods)
-- [Fees & Charges](/squirrelll/fees)
+- [Daily Pool — How it works](/about-squirrelll.ing/daily-pool)
+- [Savings Pods — How they work](/about-squirrelll.ing/savings-pods)
+- [Fees & Charges](/about-squirrelll.ing/fees)
 
 
 

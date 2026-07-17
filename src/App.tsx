@@ -63,9 +63,9 @@ const App = () => (
           <Route path="/concepts" element={<Concepts />} />
           <Route path="/concepts/category/:slug" element={<CategoryLanding sectionPathSegment="concepts" />} />
           <Route path="/concepts/:slug" element={<ConceptArticle />} />
-          <Route path="/squirrelll" element={<Platform />} />
-          <Route path="/squirrelll/category/:slug" element={<CategoryLanding sectionPathSegment="squirrelll" />} />
-          <Route path="/squirrelll/:slug" element={<PlatformArticle />} />
+          <Route path="/about-squirrelll.ing" element={<Platform />} />
+          <Route path="/about-squirrelll.ing/category/:slug" element={<CategoryLanding sectionPathSegment="about-squirrelll.ing" />} />
+          <Route path="/about-squirrelll.ing/:slug" element={<PlatformArticle />} />
           <Route path="/search" element={<SearchPage />} />
 
 

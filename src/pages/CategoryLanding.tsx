@@ -12,7 +12,7 @@ const SECTION_BY_PATH: Record<string, SectionKey> = {
   'money-guides': 'guide',
   research: 'research',
   concepts: 'concept',
-  squirrelll: 'platform',
+  'about-squirrelll.ing': 'platform',
 };
 
 const CategoryLanding: React.FC<{ sectionPathSegment: string }> = ({ sectionPathSegment }) => {
@@ -105,7 +105,7 @@ const CategoryLanding: React.FC<{ sectionPathSegment: string }> = ({ sectionPath
           {section !== 'guide' && renderGroup('Related Money Guides', '/money-guides', nodes.guides)}
           {section !== 'concept' && renderGroup('Related Concepts', '/concepts', nodes.concepts as any)}
           {section !== 'research' && renderGroup('Related Research', '/research', nodes.research)}
-          {section !== 'platform' && renderGroup('Related Platform Features', '/squirrelll', nodes.platform)}
+          {section !== 'platform' && renderGroup('Related Platform Features', '/about-squirrelll.ing', nodes.platform)}
 
           <div className="mt-12 text-center">
             <Link to={secPath} className="text-fintech-mint hover:underline">← Back to {secLabel}</Link>
