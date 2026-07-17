@@ -19,6 +19,14 @@ import Ask from './pages/Ask';
 import AskArticle from './pages/AskArticle';
 import Guides from './pages/Guides';
 import GuideArticle from './pages/GuideArticle';
+import Research from './pages/Research';
+import ResearchArticle from './pages/ResearchArticle';
+import Concepts from './pages/Concepts';
+import ConceptArticle from './pages/ConceptArticle';
+import Platform from './pages/Platform';
+import PlatformArticle from './pages/PlatformArticle';
+import CategoryLanding from './pages/CategoryLanding';
+import SearchPage from './pages/SearchPage';
 import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
