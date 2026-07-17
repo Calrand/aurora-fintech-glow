@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, Search, Share2, Twitter, Facebook, Link2 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
