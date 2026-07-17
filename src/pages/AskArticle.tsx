@@ -19,8 +19,10 @@ import {
   relatedGuides,
   relatedSearches,
   askReadingTime,
+  getRelated,
   ASK_ARTICLES,
 } from '@/data/knowledge';
+import { CheckCircle2 } from 'lucide-react';
 
 const AskArticle: React.FC = () => {
   const { slug = '' } = useParams();
