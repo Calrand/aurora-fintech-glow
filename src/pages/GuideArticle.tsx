@@ -180,6 +180,19 @@ const GuideArticle: React.FC = () => {
               </KSection>
             )}
 
+            {guide.keyTakeaways && guide.keyTakeaways.length > 0 && (
+              <KSection title="Key Takeaways">
+                <ul className="space-y-2">
+                  {guide.keyTakeaways.map((t, i) => (
+                    <li key={i} className="flex items-start gap-2 text-white/85">
+                      <CheckCircle2 size={16} className="text-fintech-mint mt-1 flex-shrink-0" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </KSection>
+            )}
+
             <KSection title="Frequently Asked Questions">
               <div className="space-y-4">
                 {guide.faqs.map((f, i) => (
