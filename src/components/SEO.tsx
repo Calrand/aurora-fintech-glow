@@ -12,6 +12,8 @@ export interface SEOProps {
   type?: 'website' | 'article';
   noindex?: boolean;
   keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -23,10 +25,14 @@ const SEO: React.FC<SEOProps> = ({
   type = 'website',
   noindex = false,
   keywords,
+  ogTitle,
+  ogDescription,
   jsonLd,
 }) => {
   const url = `${SITE}${path}`;
   const jsonArr = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+  const ogT = ogTitle ?? title;
+  const ogD = ogDescription ?? description;
 
   return (
     <Helmet>
@@ -36,17 +42,18 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="canonical" href={url} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={ogT} />
+      <meta property="og:description" content={ogD} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="Squirrelll.ing" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={ogT} />
+      <meta name="twitter:description" content={ogD} />
       <meta name="twitter:image" content={image} />
+
 
       {jsonArr.map((data, i) => (
         <script key={i} type="application/ld+json">
