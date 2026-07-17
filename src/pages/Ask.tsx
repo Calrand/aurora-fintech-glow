@@ -61,9 +61,11 @@ const Ask: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Ask Squirrelll.ing — Financial Questions Answered Simply"
-        description="A searchable library of clear, evergreen answers to real financial questions — from saving and budgeting to community finance and the Daily Pool."
+        title="Ask Squirrelll.ing — Answers to Real Financial Questions"
+        description="Get clear, simple answers to real financial questions. From micro-savings to community finance, the Daily Pool, Savings Pods, and building better money habits — answered simply."
         path="/ask"
+        keywords="financial questions answered, how to save money, what is microfinance, community savings questions, daily pool explained, savings pods explained"
+        ogDescription="Clear answers to real financial questions — micro-savings, community finance, Daily Pool, Savings Pods, and money habits explained simply."
         jsonLd={collectionSchema}
       />
       <Navbar />

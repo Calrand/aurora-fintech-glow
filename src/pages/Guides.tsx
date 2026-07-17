@@ -49,9 +49,12 @@ const Guides: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Money Guides — Practical Help for Real Money Problems"
-        description="Evergreen, practical guidance for real-life financial challenges: broke, paycheck-to-paycheck, emergency savings, and better money habits."
+        title="Money Guides — Practical Help for Real Financial Challenges"
+        description="Practical money guides for real life situations. From living paycheck to paycheck to building emergency savings and passive financial habits — honest guidance for people who need it."
         path="/money-guides"
+        keywords="money guides, how to save money, living paycheck to paycheck, emergency savings, passive income, financial habits, money help"
+        ogTitle="Money Guides by Squirrelll.ing — Real Help for Real Money Problems"
+        ogDescription="Practical guidance for real financial challenges — living paycheck to paycheck, emergency savings, passive income habits, and more."
         jsonLd={schema}
       />
       <Navbar />

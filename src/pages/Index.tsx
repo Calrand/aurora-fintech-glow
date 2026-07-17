@@ -24,9 +24,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
-        title="Squirrelll.ing — Community-Based Micro-Fintech Platform"
-        description="Save and invest in tiny daily steps. Download Squirrelll.ing on Google Play or the App Store."
+        title="Squirrelll.ing — Community Funding Where Everyone Gives & Everyone Gets"
+        description="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day. Available on Google Play and App Store."
         path="/"
+        ogDescription="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day."
+        keywords="squirrelling, squirreling, make money online, passive income app, daily savings pool, earn money daily, side hustle app, community funding, micro savings, savings pool, set and forget savings, daily pool, savings pods, micro-fintech, fintech"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'SoftwareApplication',
