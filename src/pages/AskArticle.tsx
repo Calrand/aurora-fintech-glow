@@ -100,6 +100,7 @@ const AskArticle: React.FC = () => {
   const tocItems = [
     { id: 'quick-answer', label: 'Quick Answer' },
     ...article.sections.map((s, i) => ({ id: `s-${i}`, label: s.heading })),
+    ...(article.keyTakeaways?.length ? [{ id: 'takeaways', label: 'Key Takeaways' }] : []),
     { id: 'faqs', label: 'FAQs' },
     ...(article.references?.length ? [{ id: 'refs', label: 'References' }] : []),
     { id: 'continue-learning', label: 'Continue Learning' },
