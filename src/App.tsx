@@ -14,6 +14,7 @@ import DeleteAccount from './pages/DeleteAccount';
 import BudgetCalculator from './pages/BudgetCalculator';
 import RoundUpCalculator from './pages/RoundUpCalculator';
 import About from './pages/About';
+import Download from './pages/Download';
 import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/budget-calculator" element={<BudgetCalculator />} />
           <Route path="/round-up-calculator" element={<RoundUpCalculator />} />
           <Route path="/about" element={<About />} />
+          <Route path="/download" element={<Download />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
