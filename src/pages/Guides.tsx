@@ -61,16 +61,16 @@ const Guides: React.FC = () => {
             <KBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Money Guides' }]} />
             <div className="mt-6 text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold text-white">
-                <span className="gradient-text">Money</span> Guides
+                How can we <span className="gradient-text">help today?</span>
               </h1>
-
               <p className="mt-4 text-lg text-white/70">
-                Practical guidance for real-life financial challenges.
+                Practical solutions to common money situations — pick the one that sounds like you.
               </p>
               <div className="mt-8">
-                <KSearch value={q} onChange={setQ} placeholder="Search guides..." />
+                <KSearch value={q} onChange={setQ} placeholder="Describe your situation..." />
               </div>
             </div>
+
           </Container>
         </section>
 
