@@ -131,10 +131,12 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
-        title="About Squirrelll.ing — Our Mission, Story & Community Purpose"
-        description="Learn why Squirrelll.ing was created: a community micro-fintech platform designed to help people earn extra money, support each other, and grow together without anyone losing."
+        title="About Squirrelll.ing — Community Funding Platform"
+        description="Learn everything about Squirrelll.ing — how it works, who it's for, and why community funding through the Daily Pool and Savings Pods is changing how people save and help each other financially."
         path="/about"
         type="website"
+        keywords="about squirrelll.ing, what is squirrelll.ing, squirrelll.ing platform, community funding app, daily pool, savings pods"
+        ogDescription="Learn everything about Squirrelll.ing — how the Daily Pool works, what Savings Pods are, and how community funding helps everyone."
         jsonLd={[aboutSchema, organizationSchema, breadcrumbSchema, howItHelpsSchema]}
       />
       <Navbar />
