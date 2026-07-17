@@ -70,7 +70,7 @@ const Ask: React.FC = () => {
       <main>
         <section className="pt-28 pb-12 md:pt-36 md:pb-16">
           <Container>
-            <KBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Ask' }]} />
+            <KBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Ask Squirrelll.ing' }]} />
             <div className="mt-6 text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold text-white">
                 <span className="gradient-text">Ask</span> Squirrelll.ing
