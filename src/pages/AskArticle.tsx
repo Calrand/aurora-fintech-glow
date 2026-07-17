@@ -200,6 +200,19 @@ const AskArticle: React.FC = () => {
               </KSection>
             ))}
 
+            {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+              <KSection id="takeaways" title="Key Takeaways">
+                <ul className="space-y-2">
+                  {article.keyTakeaways.map((t, i) => (
+                    <li key={i} className="flex items-start gap-2 text-white/85">
+                      <CheckCircle2 size={16} className="text-fintech-mint mt-1 flex-shrink-0" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </KSection>
+            )}
+
             <KSection id="faqs" title="Frequently Asked Questions">
               <div className="space-y-4">
                 {article.faqs.map((f, i) => (
