@@ -1,7 +1,7 @@
 import React from 'react';
 const ConceptSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-fintech-darkBlue relative">
+    <section id="platform" className="py-16 md:py-24 bg-fintech-darkBlue relative">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">
