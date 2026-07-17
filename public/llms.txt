@@ -47,6 +47,9 @@ The core idea is simple: small amounts pooled together daily become something re
 - [I don't have time for another job](/money-guides/no-time-for-second-job)
 - [I want better financial habits](/money-guides/better-financial-habits)
 - [Passive ways to improve my finances](/money-guides/passive-financial-improvement)
+- [I need extra money](/money-guides/need-extra-money)
+- [I'm saving for my first home](/money-guides/saving-for-first-home)
+
 
 ## Core Features
 
