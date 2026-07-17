@@ -66,7 +66,23 @@ const Guides: React.FC = () => {
               <p className="mt-4 text-lg text-white/70">
                 Practical solutions to common money situations — pick the one that sounds like you.
               </p>
-              <div className="mt-8">
+              <div className="mt-6 flex flex-wrap justify-center items-center gap-2">
+                <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
+                {guideCats.map((c) => {
+                  const count = guidesByCategory(c.slug).length;
+                  return (
+                    <button
+                      key={c.slug}
+                      onClick={() => setQ(c.name)}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
+                    >
+                      <span>{c.name}</span>
+                      <span className="text-[10px] text-white/40">{count}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-6">
                 <KSearch
                   value={q}
                   onChange={setQ}
@@ -83,26 +99,6 @@ const Guides: React.FC = () => {
           </Container>
         </section>
 
-        <section className="py-4 md:py-6">
-          <Container>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
-              {guideCats.map((c) => {
-                const count = guidesByCategory(c.slug).length;
-                return (
-                  <button
-                    key={c.slug}
-                    onClick={() => setQ(c.name)}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
-                  >
-                    <span>{c.name}</span>
-                    <span className="text-[10px] text-white/40">{count}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
 
         <section className="py-8 md:py-12">
           <Container>
