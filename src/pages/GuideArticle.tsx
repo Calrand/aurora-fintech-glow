@@ -18,8 +18,10 @@ import {
   relatedGuides,
   guideContinueLearning,
   guideReadingTime,
+  getRelated,
   GUIDES,
 } from '@/data/knowledge';
+import { CheckCircle2 } from 'lucide-react';
 
 const GuideArticle: React.FC = () => {
   const { slug = '' } = useParams();
