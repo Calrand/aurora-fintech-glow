@@ -22,10 +22,31 @@ The core idea is simple: small amounts pooled together daily become something re
 - [What is Squirrellling](/what-is-squirrelll.ing): Long-form explainer of the Squirrellling concept, mechanics, and FAQs.
 - [About](/about): Why Squirrelll.ing exists, our mission, and the community-first values behind the platform.
 - [Download](/download): Get the Squirrelll.ing app on Google Play (Android) or the App Store (iOS), with device requirements and highlights.
+- [Ask Squirrelll.ing](/ask): Searchable, evergreen answers to real financial questions — saving, budgeting, community finance, microfinance, and the Daily Pool.
+- [Financial Guides](/guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
 
 ## Tools
 
 - [Budget Calculator](/budget-calculator): Plan monthly budgets across income, expenses, and savings goals.
+
+## Ask Squirrelll.ing (selected articles)
+
+- [What is Squirrellling?](/ask/what-is-squirrellling)
+- [How can I save money?](/ask/how-can-i-save-money)
+- [Can saving $1 a day make a difference?](/ask/can-saving-small-amounts-grow)
+- [What is a ROSCA (Susu, Tanda)?](/ask/what-is-a-rosca)
+- [How do Savings Pods work?](/ask/how-do-savings-pods-work)
+- [Is the Daily Pool gambling?](/ask/is-the-daily-pool-gambling)
+
+## Financial Guides (selected)
+
+- [I'm broke — what should I do?](/guides/im-broke)
+- [Living paycheck to paycheck](/guides/paycheck-to-paycheck)
+- [I can't save money](/guides/cant-save-money)
+- [I need emergency savings](/guides/emergency-fund)
+- [I don't have time for another job](/guides/no-time-for-second-job)
+- [I want better financial habits](/guides/better-financial-habits)
+- [Passive ways to improve my finances](/guides/passive-financial-improvement)
 
 ## Core Features
 
