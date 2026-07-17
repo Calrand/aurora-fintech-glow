@@ -67,9 +67,8 @@ const faqs: FAQ[] = [
     a: (
       <ul className="space-y-3">
         {[
-          'A 3% withdrawal fee applies only when withdrawing from your savings.',
-          'A 12% platform fee is taken from the total Daily Pool amount before the amount is added to the users wallet.',
-          'If your Daily Pool gains are added to your savings, they can be withdrawn without the 5% fee.',
+          'A 3% withdrawal fee applies only when withdrawing from your Savings Pod.',
+          'A 12% platform fee is deducted from the total Daily Pool amount before it is added to the recipient\'s wallet.',
           'No hidden charges.',
         ].map((item, i) => (
           <li key={i} className="flex items-start gap-3">
