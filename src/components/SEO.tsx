@@ -22,6 +22,7 @@ const SEO: React.FC<SEOProps> = ({
   image = DEFAULT_OG,
   type = 'website',
   noindex = false,
+  keywords,
   jsonLd,
 }) => {
   const url = `${SITE}${path}`;
