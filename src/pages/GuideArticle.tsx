@@ -139,7 +139,7 @@ const GuideArticle: React.FC = () => {
               <div className="p-3 rounded-lg bg-white/[0.03] border border-white/10">
                 <div className="text-[10px] uppercase tracking-wider text-white/40 mb-1 flex items-center gap-1"><Tag size={11} /> Category</div>
                 {category ? (
-                  <Link to={`/money-guides?c=${category.slug}`} className="text-sm text-fintech-mint hover:underline">{category.name}</Link>
+                  <Link to={`/money-guides/category/${category.slug}`} className="text-sm text-fintech-mint hover:underline">{category.name}</Link>
                 ) : (
                   <div className="text-sm text-white/90">—</div>
                 )}
