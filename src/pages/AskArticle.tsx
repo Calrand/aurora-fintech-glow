@@ -185,7 +185,7 @@ const AskArticle: React.FC = () => {
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-4 mt-10">Related Guides</h2>
+              <h2 className="text-2xl font-bold text-white mb-4 mt-10">Related Money Guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {rGuides.map((g) => (
                   <KCard key={g.slug} to={`/guides/${g.slug}`} title={g.title} eyebrow="Guide" />

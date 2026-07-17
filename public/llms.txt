@@ -23,7 +23,7 @@ The core idea is simple: small amounts pooled together daily become something re
 - [About](/about): Why Squirrelll.ing exists, our mission, and the community-first values behind the platform.
 - [Download](/download): Get the Squirrelll.ing app on Google Play (Android) or the App Store (iOS), with device requirements and highlights.
 - [Ask Squirrelll.ing](/ask): Searchable, evergreen answers to real financial questions — saving, budgeting, community finance, microfinance, and the Daily Pool.
-- [Financial Guides](/guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
+- [Money Guides](/guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
 
 ## Tools
 
@@ -38,7 +38,7 @@ The core idea is simple: small amounts pooled together daily become something re
 - [How do Savings Pods work?](/ask/how-do-savings-pods-work)
 - [Is the Daily Pool gambling?](/ask/is-the-daily-pool-gambling)
 
-## Financial Guides (selected)
+## Money Guides (selected)
 
 - [I'm broke — what should I do?](/guides/im-broke)
 - [Living paycheck to paycheck](/guides/paycheck-to-paycheck)
