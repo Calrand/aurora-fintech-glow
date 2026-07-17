@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, Search, Share2, Twitter, Facebook, Link2 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -22,24 +22,75 @@ export const KBreadcrumbs: React.FC<{ items: { label: string; to?: string }[] }>
   </nav>
 );
 
+export type KSuggestion = { label: string; sublabel?: string; to?: string; onSelect?: () => void };
+
 export const KSearch: React.FC<{
   value: string;
   onChange: (v: string) => void;
   placeholder?: string;
-}> = ({ value, onChange, placeholder = 'Ask a financial question...' }) => (
-  <div className="relative w-full max-w-2xl mx-auto">
-    <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
-    <input
-      type="search"
-      role="searchbox"
-      aria-label="Search knowledge base"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
-      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-fintech-mint/60 focus:outline-none focus:ring-2 focus:ring-fintech-mint/20 text-white placeholder:text-white/40 text-base transition-all"
-    />
-  </div>
-);
+  suggestions?: KSuggestion[];
+  maxSuggestions?: number;
+}> = ({ value, onChange, placeholder = 'Ask a financial question...', suggestions = [], maxSuggestions = 6 }) => {
+  const [focused, setFocused] = React.useState(false);
+  const [active, setActive] = React.useState(0);
+  const navigate = useNavigate();
+  const items = value.trim() ? suggestions.slice(0, maxSuggestions) : [];
+  const open = focused && items.length > 0;
+
+  React.useEffect(() => setActive(0), [value]);
+
+  const pick = (s: KSuggestion) => {
+    if (s.onSelect) s.onSelect();
+    else if (s.to) navigate(s.to);
+    setFocused(false);
+  };
+
+  return (
+    <div className="relative w-full max-w-2xl mx-auto">
+      <Search size={20} className="absolute left-4 top-[26px] -translate-y-1/2 text-white/40 z-10" />
+      <input
+        type="search"
+        role="searchbox"
+        aria-label="Search knowledge base"
+        aria-autocomplete="list"
+        aria-expanded={open}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setTimeout(() => setFocused(false), 150)}
+        onKeyDown={(e) => {
+          if (!open) return;
+          if (e.key === 'ArrowDown') { e.preventDefault(); setActive((a) => (a + 1) % items.length); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); setActive((a) => (a - 1 + items.length) % items.length); }
+          else if (e.key === 'Enter') { e.preventDefault(); pick(items[active]); }
+          else if (e.key === 'Escape') { setFocused(false); }
+        }}
+        placeholder={placeholder}
+        className="relative w-full pl-12 pr-4 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-fintech-mint/60 focus:outline-none focus:ring-2 focus:ring-fintech-mint/20 text-white placeholder:text-white/40 text-base transition-all"
+      />
+      {open && (
+        <ul
+          role="listbox"
+          className="absolute left-0 right-0 top-full mt-2 z-20 max-h-80 overflow-auto rounded-xl bg-fintech-dark/95 backdrop-blur border border-white/10 shadow-xl text-left"
+        >
+          {items.map((s, i) => (
+            <li
+              key={i}
+              role="option"
+              aria-selected={i === active}
+              onMouseDown={(e) => { e.preventDefault(); pick(s); }}
+              onMouseEnter={() => setActive(i)}
+              className={`px-4 py-2.5 cursor-pointer flex flex-col gap-0.5 ${i === active ? 'bg-fintech-mint/10 text-fintech-mint' : 'text-white/80 hover:bg-white/5'}`}
+            >
+              <span className="text-sm font-medium truncate">{s.label}</span>
+              {s.sublabel && <span className="text-xs text-white/50 truncate">{s.sublabel}</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export const KCard: React.FC<{
   to: string;

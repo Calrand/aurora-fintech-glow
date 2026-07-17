@@ -79,7 +79,15 @@ const Ask: React.FC = () => {
                 Answers to real financial questions, explained simply.
               </p>
               <div className="mt-8">
-                <KSearch value={q} onChange={setQ} />
+                <KSearch
+                  value={q}
+                  onChange={setQ}
+                  suggestions={filtered.slice(0, 6).map((a) => ({
+                    label: a.title,
+                    sublabel: CATEGORIES.find((c) => c.slug === a.category)?.name,
+                    to: `/ask/${a.slug}`,
+                  }))}
+                />
               </div>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
                 {EXAMPLES.map((ex) => (
@@ -96,28 +104,26 @@ const Ask: React.FC = () => {
           </Container>
         </section>
 
-        {!q.trim() && (
-          <section className="py-6 md:py-8">
-            <Container>
-              <h2 className="text-lg md:text-xl font-semibold text-white/80 mb-3">Browse Categories</h2>
-              <div className="flex flex-wrap gap-2">
-                {askCategories.map((c) => {
-                  const count = askByCategory(c.slug).length;
-                  return (
-                    <Link
-                      key={c.slug}
-                      to={`/ask/category/${c.slug}`}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-sm text-white/80"
-                    >
-                      <span>{c.name}</span>
-                      <span className="text-xs text-white/40">{count}</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </Container>
-          </section>
-        )}
+        <section className="py-4 md:py-6">
+          <Container>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
+              {askCategories.map((c) => {
+                const count = askByCategory(c.slug).length;
+                return (
+                  <Link
+                    key={c.slug}
+                    to={`/ask/category/${c.slug}`}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
+                  >
+                    <span>{c.name}</span>
+                    <span className="text-[10px] text-white/40">{count}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
 
         <section className="py-8 md:py-12">
           <Container>
