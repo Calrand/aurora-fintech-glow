@@ -34,7 +34,7 @@ const staticEntries: SitemapEntry[] = [
   { path: "/money-guides", changefreq: "weekly", priority: "0.9" },
   { path: "/research", changefreq: "monthly", priority: "0.8" },
   { path: "/concepts", changefreq: "monthly", priority: "0.8" },
-  { path: "/squirrelll", changefreq: "monthly", priority: "0.8" },
+  { path: "/about-squirrelll.ing", changefreq: "monthly", priority: "0.8" },
   { path: "/budget-calculator", changefreq: "monthly", priority: "0.8" },
   { path: "/round-up-calculator", changefreq: "monthly", priority: "0.8" },
   { path: "/payment-security", changefreq: "yearly", priority: "0.5" },
@@ -48,7 +48,7 @@ const articleEntries: SitemapEntry[] = [
   ...GUIDES.map((g) => ({ path: `/money-guides/${g.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...RESEARCH.map((r) => ({ path: `/research/${r.slug}`, changefreq: "yearly" as const, priority: "0.7" })),
   ...CONCEPTS.map((c) => ({ path: `/concepts/${c.slug}`, changefreq: "yearly" as const, priority: "0.7" })),
-  ...PLATFORM_DOCS.map((p) => ({ path: `/squirrelll/${p.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
+  ...PLATFORM_DOCS.map((p) => ({ path: `/about-squirrelll.ing/${p.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
 ];
 
 // Category landings — one per section per category with content
@@ -57,7 +57,7 @@ const sectionPaths = [
   { key: "guide", path: "/money-guides" },
   { key: "research", path: "/research" },
   { key: "concept", path: "/concepts" },
-  { key: "platform", path: "/squirrelll" },
+  { key: "platform", path: "/about-squirrelll.ing" },
 ] as const;
 
 const categoryEntries: SitemapEntry[] = [];

@@ -17,7 +17,7 @@ const Platform: React.FC = () => {
 
   const schema = {
     '@context': 'https://schema.org', '@type': 'CollectionPage',
-    url: 'https://squirrelll.ing/squirrelll',
+    url: 'https://squirrelll.ing/about-squirrelll.ing',
     name: 'Squirrelll.ing — Platform Knowledge',
     description: 'Everything about the Squirrelll.ing platform: Daily Pool, Savings Pods, fees, security.',
   };
@@ -27,7 +27,7 @@ const Platform: React.FC = () => {
       <SEO
         title="Squirrelll.ing Platform — How Everything Works"
         description="Platform documentation: Daily Pool, Savings Pods, fees, and security — explained clearly."
-        path="/squirrelll"
+        path="/about-squirrelll.ing"
         jsonLd={schema}
       />
       <Navbar />
@@ -59,7 +59,7 @@ const Platform: React.FC = () => {
                 return (
                   <a
                     key={c.slug}
-                    href={`/squirrelll/category/${c.slug}`}
+                    href={`/about-squirrelll.ing/category/${c.slug}`}
                     className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 transition-all"
                   >
                     <div className="text-white font-semibold">{c.name}</div>
@@ -83,7 +83,7 @@ const Platform: React.FC = () => {
                 {filtered.map((p) => (
                   <KCard
                     key={p.slug}
-                    to={`/squirrelll/${p.slug}`}
+                    to={`/about-squirrelll.ing/${p.slug}`}
                     title={p.title}
                     description={p.quickAnswer.slice(0, 140) + '…'}
                     eyebrow={CATEGORIES.find((c) => c.slug === p.category)?.name}

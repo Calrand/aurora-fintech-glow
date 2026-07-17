@@ -273,7 +273,7 @@ const KnowledgeArticle: React.FC<KnowledgeArticleProps> = ({
                 <>
                   <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Platform Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {related.platform.map((p) => <KCard key={p.slug} to={`/squirrelll/${p.slug}`} title={p.title} eyebrow="Platform" />)}
+                    {related.platform.map((p) => <KCard key={p.slug} to={`/about-squirrelll.ing/${p.slug}`} title={p.title} eyebrow="Platform" />)}
                   </div>
                 </>
               )}
