@@ -45,7 +45,24 @@ const Concepts: React.FC = () => {
               <p className="mt-4 text-lg text-white/70">
                 Clear, evergreen definitions of the ideas that shape how money works.
               </p>
-              <div className="mt-8">
+              <div className="mt-6 flex flex-wrap justify-center items-center gap-2">
+                <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
+                {cats.map((c) => {
+                  const count = conceptsByCategory(c.slug).length;
+                  if (count === 0) return null;
+                  return (
+                    <a
+                      key={c.slug}
+                      href={`/concepts/category/${c.slug}`}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
+                    >
+                      <span>{c.name}</span>
+                      <span className="text-[10px] text-white/40">{count}</span>
+                    </a>
+                  );
+                })}
+              </div>
+              <div className="mt-6">
                 <KSearch
                   value={q}
                   onChange={setQ}
@@ -61,27 +78,6 @@ const Concepts: React.FC = () => {
           </Container>
         </section>
 
-        <section className="py-4 md:py-6">
-          <Container>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs uppercase tracking-wider text-white/40 mr-1">Browse</span>
-              {cats.map((c) => {
-                const count = conceptsByCategory(c.slug).length;
-                if (count === 0) return null;
-                return (
-                  <a
-                    key={c.slug}
-                    href={`/concepts/category/${c.slug}`}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-xs text-white/75"
-                  >
-                    <span>{c.name}</span>
-                    <span className="text-[10px] text-white/40">{count}</span>
-                  </a>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
 
         <section className="py-8 md:py-12">
           <Container>
