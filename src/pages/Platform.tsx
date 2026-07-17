@@ -25,9 +25,12 @@ const Platform: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Squirrelll.ing Platform — How Everything Works"
-        description="Platform documentation: Daily Pool, Savings Pods, fees, and security — explained clearly."
+        title="About Squirrelll.ing — Full Platform Knowledge Hub"
+        description="Everything about the Squirrelll.ing platform — features, Daily Pool mechanics, Savings Pods, fees, security, regional pools, and how community funding works in practice."
         path="/about-squirrelll.ing"
+        keywords="squirrelll.ing how it works, daily pool mechanics, savings pods details, squirrelll.ing fees, squirrelll.ing security, community funding platform"
+        ogTitle="Squirrelll.ing Platform Knowledge Hub"
+        ogDescription="Full details on Squirrelll.ing — Daily Pool, Savings Pods, fees, regional pools, security, and how community funding works."
         jsonLd={schema}
       />
       <Navbar />
