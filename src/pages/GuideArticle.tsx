@@ -34,8 +34,12 @@ const GuideArticle: React.FC = () => {
   const prev = idx > 0 ? GUIDES[idx - 1] : undefined;
   const next = idx < GUIDES.length - 1 ? GUIDES[idx + 1] : undefined;
 
-  const rGuides = relatedGuides(guide.slug, guide.category, 4);
-  const continueLearning = guideContinueLearning(guide, 6);
+  const graph = getRelated(guide as any, 'guide');
+  const rGuides = graph.guides.length ? graph.guides : relatedGuides(guide.slug, guide.category, 4);
+  const continueLearning = graph.ask.length ? graph.ask : guideContinueLearning(guide, 6);
+  const rConcepts = graph.concepts;
+  const rResearch = graph.research;
+  const rPlatform = graph.platform;
   const readMin = guideReadingTime(guide);
 
   const articleSchema = {
