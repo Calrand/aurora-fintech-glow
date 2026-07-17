@@ -24,6 +24,10 @@ The core idea is simple: small amounts pooled together daily become something re
 - [Download](/download): Get the Squirrelll.ing app on Google Play (Android) or the App Store (iOS), with device requirements and highlights.
 - [Ask Squirrelll.ing](/ask): Searchable, evergreen answers to real financial questions — saving, budgeting, community finance, microfinance, and the Daily Pool.
 - [Money Guides](/money-guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
+- [Research](/research): Summaries of academic and behavioral-finance research on saving, money habits, and community finance.
+- [Concepts](/concepts): Evergreen definitions of core financial ideas — microfinance, ROSCA, compound interest, emergency fund, and more.
+- [Squirrelll.ing Platform](/squirrelll): Documentation for platform features — Daily Pool, Savings Pods, fees, security.
+- [Search](/search): Global search across the knowledge base.
 
 ## Tools
 
@@ -49,6 +53,27 @@ The core idea is simple: small amounts pooled together daily become something re
 - [Passive ways to improve my finances](/money-guides/passive-financial-improvement)
 - [I need extra money](/money-guides/need-extra-money)
 - [I'm saving for my first home](/money-guides/saving-for-first-home)
+
+## Concepts
+
+- [Microfinance](/concepts/microfinance)
+- [ROSCA](/concepts/rosca)
+- [Compound Interest](/concepts/compound-interest)
+- [Emergency Fund](/concepts/emergency-fund)
+- [Pay Yourself First](/concepts/pay-yourself-first)
+- [Daily Pool](/concepts/daily-pool)
+
+## Research
+
+- [Save More Tomorrow (Thaler & Benartzi, 2004)](/research/save-more-tomorrow)
+- [Mental Accounting Matters (Thaler, 1999)](/research/mental-accounting)
+
+## Platform Documentation
+
+- [Daily Pool — How it works](/squirrelll/daily-pool)
+- [Savings Pods — How they work](/squirrelll/savings-pods)
+- [Fees & Charges](/squirrelll/fees)
+
 
 
 ## Core Features

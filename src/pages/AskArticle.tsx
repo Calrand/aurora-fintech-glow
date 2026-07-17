@@ -19,8 +19,10 @@ import {
   relatedGuides,
   relatedSearches,
   askReadingTime,
+  getRelated,
   ASK_ARTICLES,
 } from '@/data/knowledge';
+import { CheckCircle2 } from 'lucide-react';
 
 const AskArticle: React.FC = () => {
   const { slug = '' } = useParams();
@@ -33,8 +35,12 @@ const AskArticle: React.FC = () => {
   const prev = idx > 0 ? ASK_ARTICLES[idx - 1] : undefined;
   const next = idx < ASK_ARTICLES.length - 1 ? ASK_ARTICLES[idx + 1] : undefined;
 
-  const continueLearning = relatedAsk(article.slug, article.category, 8);
-  const rGuides = relatedGuides(article.slug, article.category, 4);
+  const graph = getRelated(article as any, 'ask');
+  const continueLearning = graph.ask.length ? graph.ask : relatedAsk(article.slug, article.category, 8);
+  const rGuides = graph.guides.length ? graph.guides : relatedGuides(article.slug, article.category, 4);
+  const rConcepts = graph.concepts;
+  const rResearch = graph.research;
+  const rPlatform = graph.platform;
   const paa = relatedSearches(article, 5);
   const readMin = askReadingTime(article);
   const difficulty = article.difficulty ?? 'Beginner';
@@ -73,7 +79,7 @@ const AskArticle: React.FC = () => {
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
       { '@type': 'ListItem', position: 2, name: 'Ask Squirrelll.ing', item: 'https://squirrelll.ing/ask' },
       ...(category
-        ? [{ '@type': 'ListItem', position: 3, name: category.name, item: `https://squirrelll.ing/ask?c=${category.slug}` }]
+        ? [{ '@type': 'ListItem', position: 3, name: category.name, item: `https://squirrelll.ing/ask/category/${category.slug}` }]
         : []),
       { '@type': 'ListItem', position: category ? 4 : 3, name: article.title, item: url },
     ],
@@ -94,6 +100,7 @@ const AskArticle: React.FC = () => {
   const tocItems = [
     { id: 'quick-answer', label: 'Quick Answer' },
     ...article.sections.map((s, i) => ({ id: `s-${i}`, label: s.heading })),
+    ...(article.keyTakeaways?.length ? [{ id: 'takeaways', label: 'Key Takeaways' }] : []),
     { id: 'faqs', label: 'FAQs' },
     ...(article.references?.length ? [{ id: 'refs', label: 'References' }] : []),
     { id: 'continue-learning', label: 'Continue Learning' },
@@ -116,7 +123,7 @@ const AskArticle: React.FC = () => {
             items={[
               { label: 'Home', to: '/' },
               { label: 'Ask Squirrelll.ing', to: '/ask' },
-              ...(category ? [{ label: category.name, to: `/ask?c=${category.slug}` }] : []),
+              ...(category ? [{ label: category.name, to: `/ask/category/${category.slug}` }] : []),
               { label: article.title },
             ]}
           />
@@ -159,7 +166,7 @@ const AskArticle: React.FC = () => {
               <div className="p-3 rounded-lg bg-white/[0.03] border border-white/10">
                 <div className="text-[10px] uppercase tracking-wider text-white/40 mb-1 flex items-center gap-1"><Tag size={11} /> Category</div>
                 {category ? (
-                  <Link to={`/ask?c=${category.slug}`} className="text-sm text-fintech-mint hover:underline">{category.name}</Link>
+                  <Link to={`/ask/category/${category.slug}`} className="text-sm text-fintech-mint hover:underline">{category.name}</Link>
                 ) : (
                   <div className="text-sm text-white/90">—</div>
                 )}
@@ -193,6 +200,19 @@ const AskArticle: React.FC = () => {
               </KSection>
             ))}
 
+            {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+              <KSection id="takeaways" title="Key Takeaways">
+                <ul className="space-y-2">
+                  {article.keyTakeaways.map((t, i) => (
+                    <li key={i} className="flex items-start gap-2 text-white/85">
+                      <CheckCircle2 size={16} className="text-fintech-mint mt-1 flex-shrink-0" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </KSection>
+            )}
+
             <KSection id="faqs" title="Frequently Asked Questions">
               <div className="space-y-4">
                 {article.faqs.map((f, i) => (
@@ -223,19 +243,59 @@ const AskArticle: React.FC = () => {
             )}
 
             <section id="continue-learning" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold text-white mb-4">Continue Learning</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">Continue Learning</h2>
+              <p className="text-sm text-white/50 mb-6">Related content from across the Squirrelll.ing knowledge base.</p>
+
+              <h3 className="text-lg font-semibold text-white/90 mt-6 mb-3">Related Questions</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {continueLearning.map((a) => (
                   <KCard key={a.slug} to={`/ask/${a.slug}`} title={a.title} eyebrow="Ask" />
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-4 mt-10">Related Money Guides</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {rGuides.map((g) => (
-                  <KCard key={g.slug} to={`/money-guides/${g.slug}`} title={g.title} eyebrow="Guide" />
-                ))}
-              </div>
+              {rGuides.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Money Guides</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rGuides.map((g) => (
+                      <KCard key={g.slug} to={`/money-guides/${g.slug}`} title={g.title} eyebrow="Guide" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rConcepts.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Concepts</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rConcepts.map((c) => (
+                      <KCard key={c.slug} to={`/concepts/${c.slug}`} title={c.title} eyebrow="Concept" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rResearch.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Research</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rResearch.map((r) => (
+                      <KCard key={r.slug} to={`/research/${r.slug}`} title={r.title} eyebrow="Research" />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {rPlatform.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold text-white/90 mt-8 mb-3">Related Platform Features</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {rPlatform.map((p) => (
+                      <KCard key={p.slug} to={`/squirrelll/${p.slug}`} title={p.title} eyebrow="Platform" />
+                    ))}
+                  </div>
+                </>
+              )}
             </section>
 
             <section id="related-searches" className="mt-12 scroll-mt-24">

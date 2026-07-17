@@ -19,6 +19,14 @@ import Ask from './pages/Ask';
 import AskArticle from './pages/AskArticle';
 import Guides from './pages/Guides';
 import GuideArticle from './pages/GuideArticle';
+import Research from './pages/Research';
+import ResearchArticle from './pages/ResearchArticle';
+import Concepts from './pages/Concepts';
+import ConceptArticle from './pages/ConceptArticle';
+import Platform from './pages/Platform';
+import PlatformArticle from './pages/PlatformArticle';
+import CategoryLanding from './pages/CategoryLanding';
+import SearchPage from './pages/SearchPage';
 import CookieConsent from './components/CookieConsent';
 
 const queryClient = new QueryClient();
@@ -44,9 +52,21 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/download" element={<Download />} />
           <Route path="/ask" element={<Ask />} />
+          <Route path="/ask/category/:slug" element={<CategoryLanding sectionPathSegment="ask" />} />
           <Route path="/ask/:slug" element={<AskArticle />} />
           <Route path="/money-guides" element={<Guides />} />
+          <Route path="/money-guides/category/:slug" element={<CategoryLanding sectionPathSegment="money-guides" />} />
           <Route path="/money-guides/:slug" element={<GuideArticle />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/research/category/:slug" element={<CategoryLanding sectionPathSegment="research" />} />
+          <Route path="/research/:slug" element={<ResearchArticle />} />
+          <Route path="/concepts" element={<Concepts />} />
+          <Route path="/concepts/category/:slug" element={<CategoryLanding sectionPathSegment="concepts" />} />
+          <Route path="/concepts/:slug" element={<ConceptArticle />} />
+          <Route path="/squirrelll" element={<Platform />} />
+          <Route path="/squirrelll/category/:slug" element={<CategoryLanding sectionPathSegment="squirrelll" />} />
+          <Route path="/squirrelll/:slug" element={<PlatformArticle />} />
+          <Route path="/search" element={<SearchPage />} />
 
 
           <Route path="*" element={<NotFound />} />

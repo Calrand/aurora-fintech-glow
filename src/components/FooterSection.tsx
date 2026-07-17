@@ -46,7 +46,7 @@ const FooterSection: React.FC = () => {
             <h3 className="font-semibold text-base md:text-lg mb-4 md:mb-6 text-white">
               {t('footer.resources')}
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-x-6 sm:gap-y-4 text-center w-full max-w-3xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-6 sm:gap-y-4 text-center w-full max-w-4xl">
               <Link
                 to="/about"
                 className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
@@ -64,6 +64,24 @@ const FooterSection: React.FC = () => {
                 className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
               >
                 Money Guides
+              </Link>
+              <Link
+                to="/concepts"
+                className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
+              >
+                Concepts
+              </Link>
+              <Link
+                to="/research"
+                className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
+              >
+                Research
+              </Link>
+              <Link
+                to="/squirrelll"
+                className="py-2 px-4 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-white transition-colors"
+              >
+                Platform
               </Link>
               <Link
                 to="/privacy-policy"
