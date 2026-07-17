@@ -105,11 +105,7 @@ const Ask: React.FC = () => {
                 return (
                   <Link
                     key={c.slug}
-                    to={`/ask?c=${c.slug}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setQ(c.name);
-                    }}
+                    to={`/ask/category/${c.slug}`}
                     className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 transition-all"
                   >
                     <div className="text-white font-semibold">{c.name}</div>
