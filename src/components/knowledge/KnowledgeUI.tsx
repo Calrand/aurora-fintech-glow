@@ -33,7 +33,7 @@ export const KSearch: React.FC<{
 }> = ({ value, onChange, placeholder = 'Ask a financial question...', suggestions = [], maxSuggestions = 6 }) => {
   const [focused, setFocused] = React.useState(false);
   const [active, setActive] = React.useState(0);
-  const navigate = require('react-router-dom').useNavigate();
+  const navigate = useNavigate();
   const items = value.trim() ? suggestions.slice(0, maxSuggestions) : [];
   const open = focused && items.length > 0;
 
