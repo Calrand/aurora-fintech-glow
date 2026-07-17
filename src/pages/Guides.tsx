@@ -98,7 +98,7 @@ const Guides: React.FC = () => {
         <section className="py-8 md:py-12">
           <Container>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              {q.trim() ? `Results (${filtered.length})` : 'All Money Guides'}
+              {q.trim() ? `Results (${filtered.length})` : 'All Situations'}
             </h2>
             {filtered.length === 0 ? (
               <p className="text-white/60">No matches. Try a broader term.</p>
