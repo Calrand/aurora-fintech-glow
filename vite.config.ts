@@ -446,6 +446,14 @@ const ROUTE_META: Record<string, RouteMeta> = {
 };
 
 
+const esc = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// Replace the first tag matching `regex`; if none exists, insert `tag` before </head>.
+function upsertHeadTag(html: string, regex: RegExp, tag: string): string {
+  return regex.test(html) ? html.replace(regex, tag) : html.replace("</head>", `${tag}\n  </head>`);
+}
+
 function staticSeoPlugin(): Plugin {
   return {
     name: "static-seo-routes",
@@ -458,32 +466,74 @@ function staticSeoPlugin(): Plugin {
 
       for (const [route, meta] of Object.entries(ROUTE_META)) {
         const canonical = `${SITE}${route === "/" ? "/" : route}`;
-        let html = baseHtml
-          .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
-          .replace(
-            /<meta\s+name="description"[^>]*>/,
-            `<meta name="description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+property="og:title"[^>]*>/,
-            `<meta property="og:title" content="${meta.title}">`,
-          )
-          .replace(
-            /<meta\s+name="twitter:title"[^>]*>/,
-            `<meta name="twitter:title" content="${meta.title}">`,
-          )
-          .replace(
-            /<meta\s+property="og:description"[^>]*>/,
-            `<meta property="og:description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+name="twitter:description"[^>]*>/,
-            `<meta name="twitter:description" content="${meta.description}">`,
-          )
-          .replace(
-            /<meta\s+property="og:url"[^>]*>/,
-            `<meta property="og:url" content="${canonical}">`,
+        const title = esc(meta.title);
+        const desc = esc(meta.description);
+        const ogTitle = esc(meta.ogTitle ?? meta.title);
+        const ogDesc = esc(meta.ogDescription ?? meta.description);
+        const image = meta.image ?? DEFAULT_OG_IMAGE;
+
+        let html = baseHtml;
+
+        // Strip any pre-existing JSON-LD script blocks written to the base index.html
+        // so per-route JSON-LD isn't duplicated on top of the sitewide graph.
+        html = html.replace(
+          /<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+          "",
+        );
+
+        html = upsertHeadTag(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="description"[^>]*>/,
+          `<meta name="description" content="${desc}" />`,
+        );
+        if (meta.keywords) {
+          html = upsertHeadTag(
+            html,
+            /<meta\s+name="keywords"[^>]*>/,
+            `<meta name="keywords" content="${esc(meta.keywords)}" />`,
           );
+        }
+        html = upsertHeadTag(
+          html,
+          /<link\s+rel="canonical"[^>]*>/,
+          `<link rel="canonical" href="${canonical}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:title"[^>]*>/,
+          `<meta property="og:title" content="${ogTitle}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:description"[^>]*>/,
+          `<meta property="og:description" content="${ogDesc}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:url"[^>]*>/,
+          `<meta property="og:url" content="${canonical}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+property="og:image"[^>]*>/,
+          `<meta property="og:image" content="${image}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:title"[^>]*>/,
+          `<meta name="twitter:title" content="${ogTitle}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:description"[^>]*>/,
+          `<meta name="twitter:description" content="${ogDesc}" />`,
+        );
+        html = upsertHeadTag(
+          html,
+          /<meta\s+name="twitter:image"[^>]*>/,
+          `<meta name="twitter:image" content="${image}" />`,
+        );
 
         const jsonLdTags = (meta.jsonLd ?? [])
           .map(
@@ -491,15 +541,13 @@ function staticSeoPlugin(): Plugin {
               `<script type="application/ld+json">${JSON.stringify(data)}</script>`,
           )
           .join("");
+        if (jsonLdTags) {
+          html = html.replace("</head>", `${jsonLdTags}</head>`);
+        }
 
-        html = html.replace(
-          "</head>",
-          `<link rel="canonical" href="${canonical}" />${jsonLdTags}</head>`,
-        );
-
-        // Crawler-visible content inside #root. React replaces this on mount
-        // for real users. Kept on-screen (not off-screen with -9999px) so
-        // search engines and AI crawlers don't treat it as cloaked/hidden text.
+        // Crawler-visible content inside #root. React discards this on mount
+        // for real users (see src/main.tsx). Kept on-screen (not off-screen)
+        // so search engines and AI crawlers don't treat it as cloaked.
         html = html.replace(
           '<div id="root"></div>',
           `<div id="root"><div data-prerender="true">${meta.bodyHtml}</div></div>`,
