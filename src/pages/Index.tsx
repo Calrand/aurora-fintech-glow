@@ -1,7 +1,7 @@
-
 import React, { Suspense, lazy } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import HeroHighlightSection from '@/components/HeroHighlightSection';
 import SEO from '@/components/SEO';
 
 // Lazy load non-critical components
