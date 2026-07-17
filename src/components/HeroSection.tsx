@@ -144,7 +144,7 @@ const HeroSection: React.FC = () => {
             className="text-white/50 hover:text-white flex items-center gap-2 animate-bounce text-xs sm:text-sm"
             onClick={() =>
               document
-                .getElementById('how-it-works')
+                .getElementById('platform')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
             aria-label="Scroll to explore"
