@@ -45,6 +45,9 @@ const App = () => (
           <Route path="/ask/:slug" element={<AskArticle />} />
           <Route path="/money-guides" element={<Guides />} />
           <Route path="/money-guides/:slug" element={<GuideArticle />} />
+          <Route path="/guides" element={<Navigate to="/money-guides" replace />} />
+          <Route path="/guides/:slug" element={<RedirectGuide />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
