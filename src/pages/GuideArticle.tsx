@@ -74,7 +74,7 @@ const GuideArticle: React.FC = () => {
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
       { '@type': 'ListItem', position: 2, name: 'Money Guides', item: 'https://squirrelll.ing/money-guides' },
       ...(category
-        ? [{ '@type': 'ListItem', position: 3, name: category.name, item: `https://squirrelll.ing/money-guides?c=${category.slug}` }]
+        ? [{ '@type': 'ListItem', position: 3, name: category.name, item: `https://squirrelll.ing/money-guides/category/${category.slug}` }]
         : []),
       { '@type': 'ListItem', position: category ? 4 : 3, name: guide.title, item: url },
     ],
