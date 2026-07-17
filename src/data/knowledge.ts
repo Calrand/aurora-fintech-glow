@@ -429,7 +429,70 @@ export const GUIDES: Guide[] = [
     ],
     updated: '2026-07-17',
   },
+  {
+    slug: 'need-extra-money',
+    title: 'I Need Extra Money',
+    category: 'building-wealth',
+    problem:
+      'Your income covers the basics but nothing more. You need realistic ways to increase what comes in without burning out.',
+    whyItHappens:
+      'Wages have not kept pace with the cost of essentials for most households. "Just work harder" is not a plan — the real levers are small, stackable income sources plus recovering money you\'re already losing to fees, unused subscriptions, and missed benefits.',
+    practicalSteps: [
+      'Recover money first: cancel one unused subscription and negotiate one recurring bill this week.',
+      'Claim every benefit or match you qualify for (employer match, tax credits, transit, HSA).',
+      'Pick one low-friction income lever: a weekend gig, selling unused items, or a paid skill you already have.',
+      'Automate any new income directly into a Pod so lifestyle doesn\'t absorb it.',
+    ],
+    longTermHabits: [
+      'Treat any raise, bonus, or windfall as "already saved" — automate before it hits your spending account.',
+      'Build one repeatable income skill (writing, design, tutoring, a trade) rather than chasing new hustles.',
+    ],
+    helpfulTools: [
+      'A dedicated Savings Pod that captures side income automatically.',
+      'A weekly 15-minute review to track new income and recovered costs.',
+    ],
+    whereSquirrelllHelps:
+      'Routing every side-income deposit into a Pod means the extra money actually accumulates instead of quietly disappearing into daily spending. If your regional Daily Pool contribution is genuinely insignificant, it also gives you a daily chance at a meaningful lump sum.',
+    faqs: [
+      { q: 'Do I have to start a second job?', a: 'No. Recovering money you\'re already losing (subscriptions, fees, unclaimed benefits) usually beats a second job in the first month.' },
+    ],
+    updated: '2026-07-17',
+  },
+  {
+    slug: 'saving-for-first-home',
+    title: "I'm Saving for My First Home",
+    category: 'building-wealth',
+    problem:
+      'A first home feels years away and the down-payment number keeps moving. You need a repeatable system that turns a huge goal into something you can act on this month.',
+    whyItHappens:
+      'Big goals fail when they stay abstract. "Save for a house" is not a plan; "$200/week into a Home Pod for 36 months" is. The path is boring, automated, and measured in months — not motivation.',
+    practicalSteps: [
+      'Set a target down-payment number (region-specific) and divide by your realistic monthly saving to get an honest timeline.',
+      'Open a dedicated "Home" Savings Pod, separate from your emergency fund and everyday spending.',
+      'Automate the transfer on payday, before any discretionary spending.',
+      'Redirect windfalls (tax refund, bonus, gift) 100% to the Home Pod for at least the first year.',
+      'Protect your credit: pay every bill on time, keep card utilization low, avoid opening new credit lines close to applying.',
+    ],
+    longTermHabits: [
+      'Raise the auto-transfer amount every time your income increases, before lifestyle adjusts.',
+      'Review the target every 6 months against local prices and interest rates — adjust the plan, not the goal.',
+      'Keep the emergency fund fully funded in parallel — buying a home with $0 buffer is the fastest way to lose it.',
+    ],
+    helpfulTools: [
+      'A dedicated Home Savings Pod with a fixed weekly or bi-weekly deposit.',
+      'A separate high-yield account for the down payment (kept out of daily view).',
+      'A first-time buyer assistance program in your region — most people leave grants on the table.',
+    ],
+    whereSquirrelllHelps:
+      'A named Home Pod keeps the down payment separate from spending money and makes the progress visible every week — which is the single strongest predictor of sticking with a long-horizon goal.',
+    faqs: [
+      { q: 'Should I invest the down payment in stocks to grow it faster?', a: 'Generally no if you plan to buy within ~3 years. Short-horizon money belongs in a high-yield savings or money-market account, not the stock market.' },
+      { q: 'How big should the down payment be?', a: 'It depends on region and loan type, but a larger down payment lowers monthly costs and often removes mortgage insurance. Even 3–5% is enough to start for many first-time buyer programs.' },
+    ],
+    updated: '2026-07-17',
+  },
 ];
+
 
 export const getCategory = (slug: string) => CATEGORIES.find((c) => c.slug === slug);
 export const getAsk = (slug: string) => ASK_ARTICLES.find((a) => a.slug === slug);
