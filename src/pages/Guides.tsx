@@ -17,7 +17,7 @@ const Guides: React.FC = () => {
   }, [q]);
 
   const guideCats = CATEGORIES.filter((c) => c.scope === 'guide' || c.scope === 'both');
-  const url = 'https://squirrelll.ing/guides';
+  const url = 'https://squirrelll.ing/money-guides';
 
   const schema = {
     '@context': 'https://schema.org',
@@ -40,7 +40,7 @@ const Guides: React.FC = () => {
       itemListElement: GUIDES.map((g, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://squirrelll.ing/guides/${g.slug}`,
+        url: `https://squirrelll.ing/money-guides/${g.slug}`,
         name: g.title,
       })),
     },
@@ -51,7 +51,7 @@ const Guides: React.FC = () => {
       <SEO
         title="Money Guides — Practical Help for Real Money Problems"
         description="Evergreen, practical guidance for real-life financial challenges: broke, paycheck-to-paycheck, emergency savings, and better money habits."
-        path="/guides"
+        path="/money-guides"
         jsonLd={schema}
       />
       <Navbar />
@@ -107,7 +107,7 @@ const Guides: React.FC = () => {
                 {filtered.map((g) => (
                   <KCard
                     key={g.slug}
-                    to={`/guides/${g.slug}`}
+                    to={`/money-guides/${g.slug}`}
                     title={g.title}
                     description={g.problem.slice(0, 140) + '…'}
                     eyebrow={CATEGORIES.find((c) => c.slug === g.category)?.name}

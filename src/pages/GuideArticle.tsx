@@ -22,10 +22,10 @@ import {
 const GuideArticle: React.FC = () => {
   const { slug = '' } = useParams();
   const guide = getGuide(slug);
-  if (!guide) return <Navigate to="/guides" replace />;
+  if (!guide) return <Navigate to="/money-guides" replace />;
 
   const category = getCategory(guide.category);
-  const url = `https://squirrelll.ing/guides/${guide.slug}`;
+  const url = `https://squirrelll.ing/money-guides/${guide.slug}`;
   const idx = GUIDES.findIndex((g) => g.slug === guide.slug);
   const prev = idx > 0 ? GUIDES[idx - 1] : undefined;
   const next = idx < GUIDES.length - 1 ? GUIDES[idx + 1] : undefined;
@@ -62,7 +62,7 @@ const GuideArticle: React.FC = () => {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
-      { '@type': 'ListItem', position: 2, name: 'Money Guides', item: 'https://squirrelll.ing/guides' },
+      { '@type': 'ListItem', position: 2, name: 'Money Guides', item: 'https://squirrelll.ing/money-guides' },
       { '@type': 'ListItem', position: 3, name: guide.title, item: url },
     ],
   };
@@ -72,7 +72,7 @@ const GuideArticle: React.FC = () => {
       <SEO
         title={`${guide.title} — Squirrelll.ing Money Guides`}
         description={guide.problem.slice(0, 155)}
-        path={`/guides/${guide.slug}`}
+        path={`/money-guides/${guide.slug}`}
         type="article"
         jsonLd={[articleSchema, faqSchema, breadcrumb]}
       />
@@ -82,7 +82,7 @@ const GuideArticle: React.FC = () => {
           <KBreadcrumbs
             items={[
               { label: 'Home', to: '/' },
-              { label: 'Money Guides', to: '/guides' },
+              { label: 'Money Guides', to: '/money-guides' },
               { label: guide.title },
 
             ]}
@@ -177,7 +177,7 @@ const GuideArticle: React.FC = () => {
               <h2 className="text-2xl font-bold text-white mb-4">Related Money Guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {rGuides.map((g) => (
-                  <KCard key={g.slug} to={`/guides/${g.slug}`} title={g.title} eyebrow="Guide" />
+                  <KCard key={g.slug} to={`/money-guides/${g.slug}`} title={g.title} eyebrow="Guide" />
                 ))}
               </div>
 
@@ -190,12 +190,12 @@ const GuideArticle: React.FC = () => {
             </section>
 
             <KPrevNext
-              prev={prev && { to: `/guides/${prev.slug}`, title: prev.title }}
-              next={next && { to: `/guides/${next.slug}`, title: next.title }}
+              prev={prev && { to: `/money-guides/${prev.slug}`, title: prev.title }}
+              next={next && { to: `/money-guides/${next.slug}`, title: next.title }}
             />
 
             <div className="mt-10 text-center">
-              <Link to="/guides" className="text-fintech-mint hover:underline">
+              <Link to="/money-guides" className="text-fintech-mint hover:underline">
                 ← Back to all guides
               </Link>
             </div>

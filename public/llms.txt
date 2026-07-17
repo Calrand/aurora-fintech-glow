@@ -23,7 +23,7 @@ The core idea is simple: small amounts pooled together daily become something re
 - [About](/about): Why Squirrelll.ing exists, our mission, and the community-first values behind the platform.
 - [Download](/download): Get the Squirrelll.ing app on Google Play (Android) or the App Store (iOS), with device requirements and highlights.
 - [Ask Squirrelll.ing](/ask): Searchable, evergreen answers to real financial questions — saving, budgeting, community finance, microfinance, and the Daily Pool.
-- [Money Guides](/guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
+- [Money Guides](/money-guides): Practical, problem-first guides for real-life money challenges (broke, paycheck-to-paycheck, emergency savings, better habits).
 
 ## Tools
 
@@ -40,13 +40,13 @@ The core idea is simple: small amounts pooled together daily become something re
 
 ## Money Guides (selected)
 
-- [I'm broke — what should I do?](/guides/im-broke)
-- [Living paycheck to paycheck](/guides/paycheck-to-paycheck)
-- [I can't save money](/guides/cant-save-money)
-- [I need emergency savings](/guides/emergency-fund)
-- [I don't have time for another job](/guides/no-time-for-second-job)
-- [I want better financial habits](/guides/better-financial-habits)
-- [Passive ways to improve my finances](/guides/passive-financial-improvement)
+- [I'm broke — what should I do?](/money-guides/im-broke)
+- [Living paycheck to paycheck](/money-guides/paycheck-to-paycheck)
+- [I can't save money](/money-guides/cant-save-money)
+- [I need emergency savings](/money-guides/emergency-fund)
+- [I don't have time for another job](/money-guides/no-time-for-second-job)
+- [I want better financial habits](/money-guides/better-financial-habits)
+- [Passive ways to improve my finances](/money-guides/passive-financial-improvement)
 
 ## Core Features
 
