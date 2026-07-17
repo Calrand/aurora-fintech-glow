@@ -28,9 +28,12 @@ const Concepts: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Financial Concepts — Evergreen Definitions"
-        description="Neutral, evergreen definitions of core financial concepts: microfinance, ROSCA, compound interest, emergency fund, and more."
+        title="Financial Concepts — Squirrelll.ing Knowledge Hub"
+        description="Clear explanations of financial concepts that matter — microfinance, community savings, ROSCAs, Susu, tandas, behavioral economics, and the psychology of saving small amounts daily."
         path="/concepts"
+        keywords="financial concepts, what is microfinance, what is a ROSCA, susu savings, tandas, community finance, behavioral economics, micro savings explained"
+        ogTitle="Financial Concepts Explained — Squirrelll.ing"
+        ogDescription="Clear explanations of microfinance, community savings, ROSCAs, Susu, tandas, behavioral economics, and the psychology of daily micro-savings."
         jsonLd={schema}
       />
       <Navbar />
