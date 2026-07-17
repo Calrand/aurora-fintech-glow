@@ -24,14 +24,15 @@ const Guides: React.FC = () => {
     '@type': 'CollectionPage',
     '@id': `${url}#collection`,
     url,
-    name: 'Financial Guides — Squirrelll.ing',
+    name: 'Money Guides — Squirrelll.ing',
     description: 'Practical, evergreen guides for real-life financial challenges.',
     isPartOf: { '@id': 'https://squirrelll.ing/#website' },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
-        { '@type': 'ListItem', position: 2, name: 'Guides', item: url },
+        { '@type': 'ListItem', position: 2, name: 'Money Guides', item: url },
+
       ],
     },
     mainEntity: {
@@ -48,7 +49,7 @@ const Guides: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title="Financial Guides — Practical Help for Real Money Problems"
+        title="Money Guides — Practical Help for Real Money Problems"
         description="Evergreen, practical guidance for real-life financial challenges: broke, paycheck-to-paycheck, emergency savings, and better money habits."
         path="/guides"
         jsonLd={schema}
@@ -57,11 +58,12 @@ const Guides: React.FC = () => {
       <main>
         <section className="pt-28 pb-12 md:pt-36 md:pb-16">
           <Container>
-            <KBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Guides' }]} />
+            <KBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Money Guides' }]} />
             <div className="mt-6 text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold text-white">
-                <span className="gradient-text">Financial</span> Guides
+                <span className="gradient-text">Money</span> Guides
               </h1>
+
               <p className="mt-4 text-lg text-white/70">
                 Practical guidance for real-life financial challenges.
               </p>
@@ -96,7 +98,7 @@ const Guides: React.FC = () => {
         <section className="py-8 md:py-12">
           <Container>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              {q.trim() ? `Results (${filtered.length})` : 'All Guides'}
+              {q.trim() ? `Results (${filtered.length})` : 'All Money Guides'}
             </h2>
             {filtered.length === 0 ? (
               <p className="text-white/60">No matches. Try a broader term.</p>

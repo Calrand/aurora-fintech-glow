@@ -62,7 +62,7 @@ const GuideArticle: React.FC = () => {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squirrelll.ing/' },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://squirrelll.ing/guides' },
+      { '@type': 'ListItem', position: 2, name: 'Money Guides', item: 'https://squirrelll.ing/guides' },
       { '@type': 'ListItem', position: 3, name: guide.title, item: url },
     ],
   };
@@ -70,7 +70,7 @@ const GuideArticle: React.FC = () => {
   return (
     <div className="min-h-screen bg-fintech-dark">
       <SEO
-        title={`${guide.title} — Squirrelll.ing Guides`}
+        title={`${guide.title} — Squirrelll.ing Money Guides`}
         description={guide.problem.slice(0, 155)}
         path={`/guides/${guide.slug}`}
         type="article"
@@ -82,8 +82,9 @@ const GuideArticle: React.FC = () => {
           <KBreadcrumbs
             items={[
               { label: 'Home', to: '/' },
-              { label: 'Guides', to: '/guides' },
+              { label: 'Money Guides', to: '/guides' },
               { label: guide.title },
+
             ]}
           />
 
@@ -173,7 +174,7 @@ const GuideArticle: React.FC = () => {
             )}
 
             <section className="mt-12">
-              <h2 className="text-2xl font-bold text-white mb-4">Related Guides</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Related Money Guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {rGuides.map((g) => (
                   <KCard key={g.slug} to={`/guides/${g.slug}`} title={g.title} eyebrow="Guide" />
