@@ -27,6 +27,7 @@ const Index = () => {
         title="Squirrelll.ing — Community Funding Where Everyone Gives & Everyone Gets"
         description="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day. Available on Google Play and App Store."
         path="/"
+        ogDescription="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day."
         keywords="squirrelling, squirreling, make money online, passive income app, daily savings pool, earn money daily, side hustle app, community funding, micro savings, savings pool, set and forget savings, daily pool, savings pods, micro-fintech, fintech"
         jsonLd={{
           '@context': 'https://schema.org',
