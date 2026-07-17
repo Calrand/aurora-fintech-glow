@@ -74,26 +74,28 @@ const Guides: React.FC = () => {
           </Container>
         </section>
 
-        <section className="py-8 md:py-12">
-          <Container>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Browse Categories</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {guideCats.map((c) => {
-                const count = guidesByCategory(c.slug).length;
-                return (
-                  <button
-                    key={c.slug}
-                    onClick={() => setQ(c.name)}
-                    className="text-left p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 transition-all"
-                  >
-                    <div className="text-white font-semibold">{c.name}</div>
-                    <div className="text-xs text-white/50 mt-1">{count} guide{count === 1 ? '' : 's'}</div>
-                  </button>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
+        {!q.trim() && (
+          <section className="py-6 md:py-8">
+            <Container>
+              <h2 className="text-lg md:text-xl font-semibold text-white/80 mb-3">Browse Categories</h2>
+              <div className="flex flex-wrap gap-2">
+                {guideCats.map((c) => {
+                  const count = guidesByCategory(c.slug).length;
+                  return (
+                    <button
+                      key={c.slug}
+                      onClick={() => setQ(c.name)}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-fintech-mint/40 hover:text-fintech-mint transition-all text-sm text-white/80"
+                    >
+                      <span>{c.name}</span>
+                      <span className="text-xs text-white/40">{count}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </Container>
+          </section>
+        )}
 
         <section className="py-8 md:py-12">
           <Container>
