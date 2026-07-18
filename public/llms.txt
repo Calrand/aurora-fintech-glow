@@ -32,32 +32,33 @@ The core idea is simple: small amounts pooled together daily become something re
 ## Tools
 
 - [Budget Calculator](/budget-calculator): Plan monthly budgets across income, expenses, and savings goals.
+- [Round-Up Calculator](/round-up-calculator): Estimate how spare-change round-ups add up over time.
 
-## Ask Squirrelll.ing (selected articles)
+## Ask Squirrelll.ing
 
-- [What is Squirrellling?](/ask/what-is-squirrellling)
-- [How can I save money?](/ask/how-can-i-save-money)
-- [Can saving $1 a day make a difference?](/ask/can-saving-small-amounts-grow)
-- [What is a ROSCA (Susu, Tanda)?](/ask/what-is-a-rosca)
-- [How do Savings Pods work?](/ask/how-do-savings-pods-work)
-- [Is the Daily Pool gambling?](/ask/is-the-daily-pool-gambling)
+- [What is Squirrellling?](/ask/what-is-squirrellling): Squirrellling is the practice of setting aside small amounts of money consistently — often as part of a community — to build financial stability. It draws on centuries-old traditions like Susu in West Africa and Tandas in Mexico, updated for a digital, daily-contribution model.
+- [How can I save money?](/ask/how-can-i-save-money): Start ridiculously small. Automate a tiny recurring transfer — even $1 a day — into a separate account you don't touch. Then cut one recurring cost this week. Motivation is unreliable; automation and friction (making saving easy and spending harder) do the real work.
+- [Can saving $1 a day make a difference?](/ask/can-saving-small-amounts-grow): Yes. $1 a day is $365 a year — an emergency-buffer starter. More importantly, the habit itself is what compounds: once daily saving is automatic, raising it to $2 or $5 costs nothing psychologically.
+- [What is a ROSCA?](/ask/what-is-a-rosca): A ROSCA (Rotating Savings and Credit Association) is a group of people who each contribute a fixed amount to a shared pot at regular intervals. Each cycle, one member receives the full pot. Everyone gets a turn. It's known as Susu in West Africa, Tanda in Mexico, Chit fund in India, and dozens of other names worldwide.
+- [How do Savings Pods work?](/ask/how-do-savings-pods-work): A Savings Pod is a goal-based auto-deposit account inside Squirrelll.ing. You set a target (e.g. $500 for a laptop), choose a fixed amount, pick daily or weekly, and the app moves the money automatically until you hit the goal. You can run multiple Pods at once.
+- [Is the Daily Pool gambling?](/ask/is-the-daily-pool-gambling): No. There is no betting, no odds you can buy into, and no risk of losing money in the gambling sense. You contribute a small daily amount you have already decided is insignificant to you, and one member from your region receives the pool each day.
 
-## Money Guides (selected)
+## Money Guides
 
-- [I'm broke — what should I do?](/money-guides/im-broke)
-- [Living paycheck to paycheck](/money-guides/paycheck-to-paycheck)
-- [I can't save money](/money-guides/cant-save-money)
-- [I need emergency savings](/money-guides/emergency-fund)
-- [I don't have time for another job](/money-guides/no-time-for-second-job)
-- [I want better financial habits](/money-guides/better-financial-habits)
-- [Passive ways to improve my finances](/money-guides/passive-financial-improvement)
-- [I need extra money](/money-guides/need-extra-money)
-- [I'm saving for my first home](/money-guides/saving-for-first-home)
+- [I'm Broke. What Should I Do?](/money-guides/im-broke)
+- [Living Paycheck to Paycheck](/money-guides/paycheck-to-paycheck)
+- [I Can't Save Money](/money-guides/cant-save-money)
+- [I Need Emergency Savings](/money-guides/emergency-fund)
+- [I Don't Have Time For Another Job](/money-guides/no-time-for-second-job)
+- [I Want Better Financial Habits](/money-guides/better-financial-habits)
+- [I Want Passive Ways To Improve My Finances](/money-guides/passive-financial-improvement)
+- [I Need Extra Money](/money-guides/need-extra-money)
+- [I'm Saving for My First Home](/money-guides/saving-for-first-home)
 
 ## Concepts
 
 - [Microfinance](/concepts/microfinance)
-- [ROSCA](/concepts/rosca)
+- [ROSCA (Rotating Savings and Credit Association)](/concepts/rosca)
 - [Compound Interest](/concepts/compound-interest)
 - [Emergency Fund](/concepts/emergency-fund)
 - [Pay Yourself First](/concepts/pay-yourself-first)
@@ -65,69 +66,20 @@ The core idea is simple: small amounts pooled together daily become something re
 
 ## Research
 
-- [Save More Tomorrow (Thaler & Benartzi, 2004)](/research/save-more-tomorrow)
-- [Mental Accounting Matters (Thaler, 1999)](/research/mental-accounting)
+- [Save More Tomorrow (Thaler & Benartzi, 2004)](/research/save-more-tomorrow): A landmark behavioral-economics program that increased employee savings rates from 3.5% to 13.6% over 40 months by asking workers to pre-commit future pay raises to their retirement plan. The mechanism: pre-commitment plus automatic escalation removes the pain of saving today.
+- [Mental Accounting Matters (Thaler, 1999)](/research/mental-accounting): Richard Thaler shows that people treat money differently depending on which mental "account" it sits in — a windfall, a paycheck, a savings jar — even though a dollar is a dollar. Labelling and separating money changes how it gets spent.
 
 ## Platform Documentation
 
-- [Daily Pool — How it works](/about-squirrelll.ing/daily-pool)
-- [Savings Pods — How they work](/about-squirrelll.ing/savings-pods)
-- [Fees & Charges](/about-squirrelll.ing/fees)
-
-
+- [Daily Pool — How it works](/about-squirrelll.ing/daily-pool): You contribute a small fixed amount each day, sized to your region so it feels insignificant. All contributions in your region combine into one pool. Each day, one member from your region receives the pool minus a 12% platform fee. Every region has its own separate pool.
+- [Savings Pods — How they work](/about-squirrelll.ing/savings-pods): A Savings Pod is a named, goal-based automatic-deposit account inside Squirrelll.ing. You define the goal (target amount and timeline), set a recurring transfer, and the app moves the money automatically. Run as many Pods in parallel as you want.
+- [Fees & Charges](/about-squirrelll.ing/fees): Squirrelll.ing keeps fees simple and visible: no fee on individual contributions, a 12% platform fee taken from the Daily Pool before distribution, and a 3% fee on Savings Pod withdrawals. No monthly subscription, no account fees.
 
 ## Core Features
 
 - **Daily Pool**: Contribute a small fixed amount each day (e.g., $0.20–$1, set by your region's currency) into a regional community pool. One participant from your region is randomly selected to receive the entire pool each day, minus a 12% platform fee. Every region has its own separate pool. Participation is optional. The pool runs on a 24-hour cycle that resets at 12 PM local time every day.
 - **Savings Pods**: Set personal savings goals and schedules (daily or weekly). Automatic deposits work like a subscription. Track progress, celebrate milestones, and withdraw once you reach your goal. Multiple pods are supported.
-- **Waitlist**: Join the Squirrelll-Byt waitlist for early access to crypto-powered savings and DeFi tools.
-
-## Frequently Asked Questions
-
-- **What is Squirrelll.ing?**
-  Squirrelll.ing is a community-based micro-fintech platform built around one simple idea: small amounts pooled together daily become something real — for someone today, and for you another day. Contribute to a shared Daily Pool or save toward your own goals with micro-financed Savings Pods.
-
-- **What is Squirrellling? (The Concept)**
-  Squirrellling is rooted in one of the oldest economic practices: setting aside small amounts for future use. Just like squirrels stash food bit by bit for winter, squirrellling in micro-finance means building stability, habits, and wealth through consistent micro-savings over time. Known as "Susu" in West Africa and "tandas" in Mexico, the name and goal may differ across communities, but the concept is the same: gather bigger with small amounts.
-
-- **What is the Daily Pool?**
-  The Daily Pool is a shared community pot. Every member contributes a small fixed amount each day. One member per region is randomly selected to receive the full pool — minus a 12% platform fee — to accelerate their financial goals. The more members in your region, the bigger and more impactful the pool becomes for everyone.
-
-- **What are Savings Pods?**
-  Savings Pods are goal-based auto-deposit accounts. Set a savings goal, choose a fixed amount, pick a daily or weekly schedule, and Squirrelll.ing handles the deposits automatically until you reach your goal or your set time is up. You can run multiple Pods for different goals to integrate micro-finance into your daily life savings strategy.
-
-- **Can I make money with Squirrelll.ing?**
-  Squirrelll.ing is not an investment platform, but any day could be your day to receive the full Daily Pool from your community. You contribute a small fixed amount daily — less than most people spend on coffee — and one regional member receives the entire pool each day. Set it up once and let it run silently in the background. No effort, no significant cost, and a real daily chance to receive a meaningful amount to help towards your financial goals.
-
-- **Is Squirrelll.ing a good side hustle?**
-  Squirrelll.ing works best as a silent financial tool running alongside whatever else you do. Contribute a tiny daily amount, stay in the pool, and any day could be your day to receive the community pot. No work required after setup — just a small daily contribution with a real daily chance of return. On the days you don't win, you helped someone just like you.
-
-- **What if I never receive the Daily Pool?**
-  Every day you contribute, you have a real chance of receiving the full community pool. On the days someone else receives it, your contribution helped someone in your community who needed it just as much as you do. That's not a loss — that's the whole point of Squirrelll.ing.
-
-- **Is Squirrelll.ing crypto or a traditional savings platform?**
-  Squirrelll.ing is a traditional micro-savings and community engagement platform. It is not a cryptocurrency product. Your money sits in regulated payment rails.
-
-- **Is the Daily Pool gambling?**
-  No. There's no betting or risking money. You contribute an amount that is insignificant to you and doesn't bother you. The platform is designed to ensure that none of its features promote obsessive or addictive behavior, nor cause any significant financial loss. The tool works for both gaining and helping others.
-
-- **Can I withdraw my money?**
-  Yes. You can withdraw both your savings and pool money whenever it suits you.
-
-- **What are the fees and charges?**
-  - A 3% withdrawal fee applies only when withdrawing from your savings.
-  - A 12% platform fee is taken from the total Daily Pool amount before it is added to the user's wallet.
-  - If your Daily Pool gains are added to your savings, they can be withdrawn without the 5% fee.
-  - No hidden charges.
-
-- **Is the Daily Pool global or local?**
-  The Daily Pool is region/country-based, and runs on a 24-hour cycle that resets at 12 PM local time every day.
-
-- **How can I get help or support?**
-  We offer live chat and email support directly inside the app, anytime you need assistance.
-
-- **Where can I download Squirrelll.ing?**
-  Squirrelll.ing is live on both Google Play Store for Android and App Store for iOS. Search Squirrelll.ing in the stores, or download from the website.
+- **Regional Pools**: Each region runs its own Daily Pool so the community stays local and impactful.
 
 ## Legal & Trust
 
@@ -138,3 +90,4 @@ The core idea is simple: small amounts pooled together daily become something re
 ## Optional
 
 - [Sitemap](/sitemap.xml): Full machine-readable URL list.
+- Last updated: 2026-07-18
