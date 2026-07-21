@@ -232,7 +232,7 @@ const webAppCalc = (name: string) => ({
 
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Squirrelll.ing - Community Based Micro-Fintech Platform",
+    title: "Squirrelll.ing -- Start Squirrellling Today!",
     description:
       "Squirrelll.ing turns spare change and small daily habits into real savings through round-ups, a community Daily Pool, and goal-based Savings Pods. On Google Play now.",
     h1: "Squirrelll.ing — Community-Based Micro-Fintech Platform",
