@@ -774,7 +774,7 @@ export const PLATFORM_DOCS: PlatformDoc[] = [
     slug: 'daily-pool',
     title: 'Daily Pool — How it works',
     category: 'daily-pool',
-    categories: ['community-finance'],
+    categories: ['community-finance', 'apps'],
     quickAnswer:
       'You contribute a small fixed amount each day, sized to your region so it feels insignificant. All contributions in your region combine into one pool. Each day, one member from your region receives the pool minus a 12% platform fee. Every region has its own separate pool.',
     sections: [
