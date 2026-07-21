@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-fintech-dark text-white">
       <SEO
-        title="Squirrelll.ing — Community Funding Where Everyone Gives & Everyone Gets"
+        title="Squirrelll.ing -- Start Squirrellling Today!"
         description="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day. Available on Google Play and App Store."
         path="/"
         ogDescription="Community funding where everyone gives — and everyone gets. Contribute to a shared Daily Pool, save toward your goals with Savings Pods. Any day could be your day."
