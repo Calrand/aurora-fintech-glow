@@ -54,5 +54,6 @@ User-agent: *
 Allow: /
 Disallow: /verify-email
 Disallow: /delete-account
+Disallow: /test-page
 
 Sitemap: https://squirrelll.ing/sitemap.xml
