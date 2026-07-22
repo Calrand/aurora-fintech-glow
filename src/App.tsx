@@ -28,6 +28,7 @@ import PlatformArticle from './pages/PlatformArticle';
 import CategoryLanding from './pages/CategoryLanding';
 import SearchPage from './pages/SearchPage';
 import CookieConsent from './components/CookieConsent';
+import TestPage from './pages/TestPage';
 
 const queryClient = new QueryClient();
 
