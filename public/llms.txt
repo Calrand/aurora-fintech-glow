@@ -90,4 +90,4 @@ The core idea is simple: small amounts pooled together daily become something re
 ## Optional
 
 - [Sitemap](/sitemap.xml): Full machine-readable URL list.
-- Last updated: 2026-07-21
+- Last updated: 2026-07-22
