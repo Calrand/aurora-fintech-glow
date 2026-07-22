@@ -28,6 +28,7 @@ import PlatformArticle from './pages/PlatformArticle';
 import CategoryLanding from './pages/CategoryLanding';
 import SearchPage from './pages/SearchPage';
 import CookieConsent from './components/CookieConsent';
+import TestPage from './pages/TestPage';
 
 const queryClient = new QueryClient();
 
@@ -67,9 +68,10 @@ const App = () => (
           <Route path="/about-squirrelll.ing/category/:slug" element={<CategoryLanding sectionPathSegment="about-squirrelll.ing" />} />
           <Route path="/about-squirrelll.ing/:slug" element={<PlatformArticle />} />
           <Route path="/search" element={<SearchPage />} />
-
+          <Route path="/test-page" element={<TestPage />} />
 
           <Route path="*" element={<NotFound />} />
+
         </Routes>
         <CookieConsent />
       </BrowserRouter>
